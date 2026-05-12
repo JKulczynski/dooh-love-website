@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden flex flex-col">
 
-      {/* Background image — Ken Burns zoom */}
+      {/* Background — clean truck photo, Ken Burns zoom */}
       <div
         className="absolute inset-0"
         style={{ animation: "kenBurns 15s ease-in-out infinite alternate" }}
@@ -12,14 +12,14 @@ export default function HeroSection() {
         <div
           className="absolute inset-[-5%]"
           style={{
-            backgroundImage: "url('/hero-bg-right.png')",
+            backgroundImage: "url('/truck.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
       </div>
 
-      {/* Scan lines overlay */}
+      {/* Scan lines */}
       <div
         className="absolute inset-0 pointer-events-none z-10"
         style={{
@@ -28,34 +28,80 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Neon glow pulse — cyan left */}
+      {/* Glow pulse — cyan left */}
       <div
         className="absolute inset-0 pointer-events-none z-10"
         style={{
-          background: "radial-gradient(ellipse 60% 80% at 20% 50%, rgba(0,255,229,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,255,229,0.1) 0%, transparent 70%)",
           animation: "glowPulse 4s ease-in-out infinite",
         }}
       />
 
-      {/* Neon glow pulse — magenta right */}
+      {/* Glow pulse — magenta right */}
       <div
         className="absolute inset-0 pointer-events-none z-10"
         style={{
-          background: "radial-gradient(ellipse 50% 70% at 75% 55%, rgba(255,0,170,0.07) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,170,0.08) 0%, transparent 70%)",
           animation: "glowPulse 4s ease-in-out infinite 2s",
         }}
       />
 
+      {/* Ghost text — DIGITAL / URBAN / ATTENTION */}
+      <div
+        className="absolute inset-0 flex flex-col justify-center pointer-events-none z-20"
+        style={{ paddingLeft: "5vw" }}
+      >
+        <span style={{
+          display: "block",
+          fontSize: "clamp(56px, 12vw, 172px)",
+          fontWeight: 900,
+          lineHeight: 0.88,
+          letterSpacing: "-0.02em",
+          textTransform: "uppercase",
+          color: "transparent",
+          WebkitTextStroke: "1.5px rgba(0,255,229,0.3)",
+          userSelect: "none",
+        }}>
+          DIGITAL
+        </span>
+        <span style={{
+          display: "block",
+          fontSize: "clamp(56px, 12vw, 172px)",
+          fontWeight: 900,
+          lineHeight: 0.88,
+          letterSpacing: "-0.02em",
+          textTransform: "uppercase",
+          color: "transparent",
+          WebkitTextStroke: "1.5px rgba(255,255,255,0.2)",
+          userSelect: "none",
+        }}>
+          URBAN
+        </span>
+        <span style={{
+          display: "block",
+          fontSize: "clamp(56px, 12vw, 172px)",
+          fontWeight: 900,
+          lineHeight: 0.88,
+          letterSpacing: "-0.02em",
+          textTransform: "uppercase",
+          color: "transparent",
+          WebkitTextStroke: "1.5px rgba(255,0,170,0.3)",
+          userSelect: "none",
+        }}>
+          ATTENTION
+        </span>
+      </div>
+
       {/* Dark gradient top */}
       <div
-        className="absolute top-0 left-0 right-0 h-36 pointer-events-none z-20"
-        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, transparent 100%)" }}
+        className="absolute top-0 left-0 right-0 h-40 pointer-events-none z-30"
+        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)" }}
       />
 
       {/* Dark gradient bottom */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none z-20"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%)" }}
+        className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none z-30"
+        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, transparent 100%)" }}
       />
 
       {/* Navbar */}
@@ -71,9 +117,15 @@ export default function HeroSection() {
         </div>
       </nav>
 
-      {/* Bottom CTA */}
+      {/* Bottom — tagline + CTA */}
       <div className="relative z-50 flex-1 flex flex-col justify-end px-8 pb-12">
-        <div className="max-w-xs">
+        <p
+          className="text-white/50 text-xs uppercase tracking-widest mb-3"
+          style={{ letterSpacing: "0.2em" }}
+        >
+          We love attention.
+        </p>
+        <div>
           <a
             href="#kontakt"
             className="inline-block px-8 py-4 font-black text-sm uppercase tracking-widest transition-all hover:brightness-110"
@@ -84,9 +136,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Star decoration */}
+      {/* Star */}
       <div className="absolute bottom-8 right-8 z-50">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" opacity="0.5">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" opacity="0.4">
           <path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5Z" />
         </svg>
       </div>

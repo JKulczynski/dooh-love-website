@@ -2,136 +2,78 @@
 
 export default function HeroSection() {
   return (
-    <section style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
 
-      {/* Gemini render jako tło — Ken Burns bardzo subtelny */}
-      <div style={{ position: "absolute", inset: 0 }}>
-        <div style={{
-          position: "absolute",
-          inset: "-5%",
-          backgroundImage: "url('/hero-bg-right.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          animation: "kenBurns 18s ease-in-out infinite alternate",
-        }} />
+      {/* Gemini render jako tło */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-[-5%]"
+          style={{
+            backgroundImage: "url('/hero-bg-right.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            animation: "kenBurns 18s ease-in-out infinite alternate",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
       </div>
 
       {/* Scan lines */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
+      <div className="absolute inset-0 pointer-events-none z-10" style={{
         backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.13) 3px, rgba(0,0,0,0.13) 4px)",
         animation: "scanLines 8s linear infinite",
-        pointerEvents: "none",
-        zIndex: 10,
       }} />
 
       {/* Glow pulse — cyan left */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,229,255,0.09) 0%, transparent 70%)",
+      <div className="absolute inset-0 pointer-events-none z-10" style={{
+        background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,229,255,0.08) 0%, transparent 70%)",
         animation: "glowPulse 4s ease-in-out infinite",
-        pointerEvents: "none",
-        zIndex: 10,
       }} />
 
       {/* Glow pulse — magenta right */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
+      <div className="absolute inset-0 pointer-events-none z-10" style={{
         background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,229,0.07) 0%, transparent 70%)",
         animation: "glowPulse 4s ease-in-out infinite 2s",
-        pointerEvents: "none",
-        zIndex: 10,
       }} />
 
-      {/* Gradient top — przykrywa baked-in nav/logo */}
-      <div style={{
-        position: "absolute",
-        top: 0, left: 0, right: 0,
+      {/* Gradient top — przykrywa baked-in nav */}
+      <div className="absolute top-0 left-0 right-0 pointer-events-none z-20" style={{
         height: "22%",
-        background: "linear-gradient(to bottom, rgba(7,7,10,1) 0%, rgba(7,7,10,0.92) 55%, transparent 100%)",
-        pointerEvents: "none",
-        zIndex: 20,
+        background: "linear-gradient(to bottom, rgba(5,5,5,1) 0%, rgba(5,5,5,0.9) 55%, transparent 100%)",
       }} />
 
       {/* Gradient bottom — przykrywa baked-in tagline/CTA */}
-      <div style={{
-        position: "absolute",
-        bottom: 0, left: 0, right: 0,
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-20" style={{
         height: "38%",
-        background: "linear-gradient(to top, rgba(7,7,10,1) 0%, rgba(7,7,10,0.95) 45%, transparent 100%)",
-        pointerEvents: "none",
-        zIndex: 20,
+        background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.95) 45%, transparent 100%)",
       }} />
 
-      {/* HTML Nav */}
-      <nav style={{
-        position: "relative",
-        zIndex: 50,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "2rem 4rem",
-      }}>
-        <div style={{ fontFamily: "'Archivo Black', sans-serif", fontSize: "2rem", letterSpacing: "2px", textTransform: "uppercase" }}>
-          <span style={{ color: "#ffffff" }}>DOOH</span>
-          <span style={{ color: "#00E5FF" }}>-</span>
-          <span style={{ color: "#555555" }}>LOVE</span>
+      {/* Content */}
+      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full pt-20">
+        <div className="max-w-2xl">
+          <h1 className="text-5xl md:text-7xl font-bold leading-[0.9] tracking-tighter uppercase mb-6">
+            <span className="text-brandCyan">WE</span> <span className="text-brandMagenta">LOVE</span><br />
+            ATTENTION.
+          </h1>
+          <div className="space-y-4 mb-10 max-w-md">
+            <p className="text-sm md:text-base text-gray-300 font-light leading-relaxed uppercase tracking-widest">
+              Mobile digital out-of-home advertising solutions for the urban frontier.
+            </p>
+            <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed uppercase tracking-widest">
+              Maximize visibility. Captivate audiences.
+            </p>
+          </div>
+          <a
+            href="#solutions"
+            className="inline-block bg-brandCyan text-black font-bold py-4 px-8 uppercase tracking-widest hover:bg-white transition-colors duration-300"
+            style={{ boxShadow: "0 0 20px rgba(0,255,255,0.3)" }}
+          >
+            Explore Solutions
+          </a>
         </div>
-        <div style={{ display: "flex", gap: "3rem" }}>
-          {["HOME", "SERVICES", "CASE STUDIES", "CONTACT"].map((item, i) => (
-            <a key={item} href={["#", "#uslugi", "#case-studies", "#kontakt"][i]} style={{
-              color: i === 0 ? "#ffffff" : "#888888",
-              textDecoration: "none",
-              fontSize: "0.8rem",
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              fontFamily: "'Montserrat', sans-serif",
-            }}>{item}</a>
-          ))}
-        </div>
-      </nav>
-
-      {/* HTML CTA bottom */}
-      <div style={{
-        position: "relative",
-        zIndex: 50,
-        flex: 1,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-end",
-        padding: "0 4rem 4rem",
-      }}>
-        <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px", lineHeight: 1.7, marginBottom: "0.4rem", maxWidth: "380px", fontFamily: "'Montserrat', sans-serif" }}>
-          Mobile digital out-of-home advertising<br />
-          solutions for the urban frontier.
-        </p>
-        <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "2rem", fontFamily: "'Montserrat', sans-serif" }}>
-          Maximize visibility. Captivate audiences.
-        </p>
-        <a href="#kontakt" style={{
-          display: "inline-block",
-          background: "#00E5FF",
-          color: "#000000",
-          padding: "1.2rem 3rem",
-          fontSize: "0.9rem",
-          fontWeight: 900,
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-          textDecoration: "none",
-          boxShadow: "0 0 30px rgba(0, 229, 255, 0.4)",
-          fontFamily: "'Montserrat', sans-serif",
-          width: "fit-content",
-        }}>
-          EXPLORE SOLUTIONS
-        </a>
       </div>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;700;900&display=swap');
         @keyframes kenBurns {
           from { transform: scale(1); }
           to   { transform: scale(1.06); }

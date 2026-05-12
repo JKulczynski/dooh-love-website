@@ -2,8 +2,179 @@ import HeroSection from "./components/HeroSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-darkBg text-white overflow-x-hidden">
+
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="font-bold text-xl tracking-tighter">
+            DOOH<span className="text-brandCyan">-</span>LOVE
+          </div>
+          <button aria-label="Menu" className="p-2 text-white">
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16m-7 6h7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      {/* Hero */}
       <HeroSection />
+
+      {/* Dlaczego to działa */}
+      <section className="py-24 px-6 bg-black" id="solutions">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+              Dlaczego <span className="text-brandCyan">to działa?</span>
+            </h2>
+            <div className="w-20 h-1 bg-brandMagenta" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-8 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group">
+              <div className="text-brandCyan mb-6 group-hover:scale-110 transition-transform">
+                <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-4 uppercase">Maksymalny Zasięg</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">Docieramy tam, gdzie stacjonarne billboardy nie mają wstępu. Twoja reklama krąży w samym sercu miasta.</p>
+            </div>
+            <div className="p-8 border border-white/10 bg-white/5 hover:border-brandMagenta/50 transition-all group">
+              <div className="text-brandMagenta mb-6 group-hover:scale-110 transition-transform">
+                <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-4 uppercase">Efekt &ldquo;Wow&rdquo;</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">Ekrany LED o wysokiej jasności i dynamiczne treści przyciągają wzrok przechodniów i kierowców skuteczniej niż statyczna grafika.</p>
+            </div>
+            <div className="p-8 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group">
+              <div className="text-brandCyan mb-6 group-hover:scale-110 transition-transform">
+                <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-4 uppercase">Mierzalne Wyniki</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">Dostarczamy raporty z tras oraz szacowaną liczbę kontaktów z Twoją marką w oparciu o dane o ruchu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Jak startujemy */}
+      <section className="py-24 px-6 bg-darkBg overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold uppercase tracking-tight mb-16 text-right">
+            Jak <span className="text-brandMagenta">startujemy?</span>
+          </h2>
+          <div className="relative">
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10 hidden md:block" />
+            <div className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
+                <h4 className="text-xl font-bold mb-2 text-brandCyan uppercase">01. Briefing</h4>
+                <p className="text-gray-400">Określamy cel kampanii, docelową grupę odbiorców oraz kluczowe lokalizacje w mieście.</p>
+              </div>
+              <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">1</div>
+              <div className="w-full md:w-[45%] order-3" />
+            </div>
+            <div className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-[45%] order-3 md:order-1" />
+              <div className="z-10 bg-brandMagenta text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">2</div>
+              <div className="w-full md:w-[45%] order-2 md:order-3 mt-6 md:mt-0">
+                <h4 className="text-xl font-bold mb-2 text-brandMagenta uppercase">02. Kreacja i Trasa</h4>
+                <p className="text-gray-400">Dostosowujemy Twoje materiały wideo pod ekrany LED i planujemy optymalną trasę przejazdu ciężarówki.</p>
+              </div>
+            </div>
+            <div className="relative flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
+                <h4 className="text-xl font-bold mb-2 text-brandCyan uppercase">03. Emisja</h4>
+                <p className="text-gray-400">Ciężarówka wyjeżdża na ulice. Monitorujesz kampanię w czasie rzeczywistym dzięki naszym systemom GPS.</p>
+              </div>
+              <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">3</div>
+              <div className="w-full md:w-[45%] order-3" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Wycena Online */}
+      <section className="py-24 px-6 bg-zinc-900">
+        <div className="max-w-3xl mx-auto border border-white/20 p-8 md:p-12">
+          <h2 className="text-2xl font-bold uppercase mb-8 text-center">
+            Wycena <span className="text-brandCyan">Online</span>
+          </h2>
+          <div className="space-y-6">
+            <div>
+              <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Czas trwania kampanii (dni)</label>
+              <input className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-brandCyan" max="30" min="1" type="range" defaultValue="7" />
+              <div className="flex justify-between text-xs mt-2 text-gray-500">
+                <span>1 dzień</span>
+                <span>30 dni</span>
+              </div>
+            </div>
+            <div>
+              <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Liczba ciężarówek</label>
+              <select className="w-full bg-black border border-white/20 p-3 focus:border-brandCyan outline-none transition-colors">
+                <option>1 Pojazd</option>
+                <option>2 Pojazdy</option>
+                <option>Flota (3+)</option>
+              </select>
+            </div>
+            <div className="pt-6 border-t border-white/10">
+              <div className="flex justify-between items-end mb-6">
+                <span className="text-sm uppercase text-gray-400">Szacowany koszt netto:</span>
+                <span className="text-3xl font-bold text-brandCyan">od 2 400 PLN</span>
+              </div>
+              <button
+                className="w-full bg-white text-black font-bold py-4 uppercase tracking-widest hover:bg-brandMagenta hover:text-white transition-all"
+                type="button"
+              >
+                Zapytaj o szczegóły
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black py-20 px-6 border-t border-white/5">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+          <div className="space-y-6 max-w-sm">
+            <div className="font-bold text-2xl tracking-tighter">
+              DOOH<span className="text-brandCyan">-</span>LOVE
+            </div>
+            <p className="text-gray-500 text-sm">
+              Rewolucjonizujemy miejską reklamę. Wykorzystujemy najnowocześniejsze ekrany LED mobilne, by Twoja marka zawsze była tam, gdzie dzieje się akcja.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-12">
+            <div className="space-y-4">
+              <h5 className="text-xs font-bold uppercase tracking-widest text-gray-400">Nawigacja</h5>
+              <ul className="text-sm space-y-2 text-gray-500">
+                <li><a className="hover:text-brandCyan transition-colors" href="#">Start</a></li>
+                <li><a className="hover:text-brandCyan transition-colors" href="#">Usługi</a></li>
+                <li><a className="hover:text-brandCyan transition-colors" href="#">Trasy</a></li>
+                <li><a className="hover:text-brandCyan transition-colors" href="#">Kontakt</a></li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h5 className="text-xs font-bold uppercase tracking-widest text-gray-400">Kontakt</h5>
+              <ul className="text-sm space-y-2 text-gray-500">
+                <li>hello@dooh-love.pl</li>
+                <li>+48 500 600 700</li>
+                <li>Warszawa, PL</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest text-gray-600 flex justify-between">
+          <span>© 2025 DOOH-LOVE</span>
+          <span>Created for Urban Frontier</span>
+        </div>
+      </footer>
+
     </main>
   );
 }

@@ -46,47 +46,54 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Ghost text — DIGITAL / URBAN / ATTENTION */}
-      <div
-        className="absolute inset-0 flex flex-col justify-center pointer-events-none z-20"
-        style={{ paddingLeft: "5vw" }}
-      >
+      {/* Ghost text — DIGITAL left | URBAN right | ATTENTION bottom */}
+      <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
         <span style={{
-          display: "block",
-          fontSize: "clamp(56px, 12vw, 172px)",
+          position: "absolute",
+          left: 0,
+          top: "4%",
+          fontSize: "clamp(72px, 19vw, 280px)",
           fontWeight: 900,
-          lineHeight: 0.88,
-          letterSpacing: "-0.02em",
+          lineHeight: 1,
+          letterSpacing: "-0.03em",
           textTransform: "uppercase",
           color: "transparent",
-          WebkitTextStroke: "1.5px rgba(0,255,229,0.3)",
+          WebkitTextStroke: "2px rgba(0,255,229,0.55)",
           userSelect: "none",
+          whiteSpace: "nowrap",
         }}>
           DIGITAL
         </span>
         <span style={{
-          display: "block",
-          fontSize: "clamp(56px, 12vw, 172px)",
+          position: "absolute",
+          right: 0,
+          top: "4%",
+          fontSize: "clamp(72px, 19vw, 280px)",
           fontWeight: 900,
-          lineHeight: 0.88,
-          letterSpacing: "-0.02em",
+          lineHeight: 1,
+          letterSpacing: "-0.03em",
           textTransform: "uppercase",
           color: "transparent",
-          WebkitTextStroke: "1.5px rgba(255,255,255,0.2)",
+          WebkitTextStroke: "2px rgba(255,0,170,0.5)",
           userSelect: "none",
+          whiteSpace: "nowrap",
         }}>
           URBAN
         </span>
         <span style={{
-          display: "block",
-          fontSize: "clamp(56px, 12vw, 172px)",
+          position: "absolute",
+          left: "50%",
+          bottom: "14%",
+          transform: "translateX(-50%)",
+          fontSize: "clamp(72px, 21vw, 300px)",
           fontWeight: 900,
-          lineHeight: 0.88,
-          letterSpacing: "-0.02em",
+          lineHeight: 1,
+          letterSpacing: "-0.03em",
           textTransform: "uppercase",
           color: "transparent",
-          WebkitTextStroke: "1.5px rgba(255,0,170,0.3)",
+          WebkitTextStroke: "2px rgba(255,0,170,0.45)",
           userSelect: "none",
+          whiteSpace: "nowrap",
         }}>
           ATTENTION
         </span>
@@ -119,11 +126,12 @@ export default function HeroSection() {
 
       {/* Bottom — tagline + CTA */}
       <div className="relative z-50 flex-1 flex flex-col justify-end px-8 pb-12">
-        <p
-          className="text-white/50 text-xs uppercase tracking-widest mb-3"
-          style={{ letterSpacing: "0.2em" }}
-        >
-          We love attention.
+        <p className="text-white/70 text-xs uppercase tracking-widest leading-relaxed mb-1 max-w-sm">
+          Mobile digital out-of-home advertising<br />
+          solutions for the urban frontier.
+        </p>
+        <p className="text-white/45 text-xs uppercase tracking-widest mb-5 max-w-sm">
+          Maximize visibility. Captivate audiences.
         </p>
         <div>
           <a

@@ -3,133 +3,142 @@
 export default function HeroSection() {
   return (
     <>
-      <header style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "2rem 5%",
-        position: "relative",
-        zIndex: 10,
-        background: "#07070a",
-      }}>
-        <div style={{ fontSize: "1.8rem", fontWeight: 900, letterSpacing: "1px", textTransform: "uppercase", color: "#fff", fontFamily: "'Montserrat', sans-serif" }}>
-          DOOH<span style={{ color: "#00E5FF" }}>-</span>LOVE
-        </div>
-        <nav>
-          <ul style={{ display: "flex", listStyle: "none", gap: "2.5rem" }}>
-            <li><a href="#" style={{ color: "#ffffff", textDecoration: "none", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'Montserrat', sans-serif" }}>HOME</a></li>
-            <li><a href="#uslugi" style={{ color: "#888888", textDecoration: "none", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'Montserrat', sans-serif" }}>SERVICES</a></li>
-            <li><a href="#case-studies" style={{ color: "#888888", textDecoration: "none", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'Montserrat', sans-serif" }}>CASE STUDIES</a></li>
-            <li><a href="#kontakt" style={{ color: "#888888", textDecoration: "none", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'Montserrat', sans-serif" }}>CONTACT</a></li>
-          </ul>
-        </nav>
-      </header>
+      <div style={{ width: "100vw", height: "100vh", overflow: "hidden", background: "#07070a", position: "relative" }}>
 
-      <section style={{
-        position: "relative",
-        minHeight: "88vh",
-        display: "flex",
-        alignItems: "flex-end",
-        padding: "0 5% 5% 5%",
-        overflow: "hidden",
-        background: "#07070a",
-      }}>
-
-        {/* Warstwa 1: Ghost text tło */}
-        <div style={{
-          position: "absolute",
-          top: "5%",
-          left: "-5%",
-          width: "110%",
-          zIndex: 1,
-          display: "flex",
-          flexDirection: "column",
-          lineHeight: 0.85,
-          pointerEvents: "none",
-          textAlign: "center",
-        }}>
-          <span style={{
-            fontSize: "18vw",
-            fontWeight: 900,
-            color: "transparent",
-            textTransform: "uppercase",
-            letterSpacing: "-2px",
-            WebkitTextStroke: "2px rgba(0, 229, 255, 0.4)",
-            fontFamily: "'Montserrat', sans-serif",
-          }}>DIGITAL</span>
-          <span style={{
-            fontSize: "18vw",
-            fontWeight: 900,
-            color: "transparent",
-            textTransform: "uppercase",
-            letterSpacing: "-2px",
-            WebkitTextStroke: "2px rgba(255, 0, 229, 0.4)",
-            fontFamily: "'Montserrat', sans-serif",
-          }}>URBAN</span>
-          <span style={{
-            fontSize: "18vw",
-            fontWeight: 900,
-            color: "transparent",
-            textTransform: "uppercase",
-            letterSpacing: "-2px",
-            WebkitTextStroke: "2px rgba(255, 255, 255, 0.2)",
-            fontFamily: "'Montserrat', sans-serif",
-          }}>ATTENTION</span>
-        </div>
-
-        {/* Hero content */}
-        <div style={{
-          position: "relative",
-          zIndex: 5,
+        {/* Header — absolute, floating */}
+        <header style={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "flex-end",
+          alignItems: "center",
+          padding: "2rem 4rem",
+          position: "absolute",
+          top: 0,
+          left: 0,
           width: "100%",
-          maxWidth: "1600px",
-          margin: "0 auto",
+          zIndex: 100,
+        }}>
+          <div style={{ fontSize: "2rem", fontFamily: "'Archivo Black', sans-serif", letterSpacing: "2px", textTransform: "uppercase" }}>
+            <span style={{ color: "#ffffff" }}>DOOH</span>
+            <span style={{ color: "#00E5FF" }}>-</span>
+            <span style={{ color: "#555555" }}>LOVE</span>
+          </div>
+          <nav>
+            <ul style={{ display: "flex", listStyle: "none", gap: "3rem" }}>
+              <li><a href="#" style={{ color: "#ffffff", textDecoration: "none", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", fontFamily: "'Montserrat', sans-serif" }}>HOME</a></li>
+              <li><a href="#uslugi" style={{ color: "#888", textDecoration: "none", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", fontFamily: "'Montserrat', sans-serif" }}>SERVICES</a></li>
+              <li><a href="#case-studies" style={{ color: "#888", textDecoration: "none", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", fontFamily: "'Montserrat', sans-serif" }}>CASE STUDIES</a></li>
+              <li><a href="#kontakt" style={{ color: "#888", textDecoration: "none", fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", fontFamily: "'Montserrat', sans-serif" }}>CONTACT</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        {/* Hero */}
+        <section style={{
+          position: "relative",
+          width: "100vw",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}>
 
-          {/* Tekst + CTA po lewej */}
-          <div style={{ maxWidth: "420px", marginBottom: "2rem" }}>
-            <p style={{
-              fontSize: "0.9rem",
-              lineHeight: 1.6,
-              color: "#a0a0a0",
-              marginBottom: "2rem",
-              letterSpacing: "1px",
-              fontFamily: "'Montserrat', sans-serif",
-            }}>
-              MOBILE DIGITAL OUT-OF-HOME ADVERTISING<br />
-              SOLUTIONS FOR THE URBAN FRONTIER.<br />
-              MAXIMIZE VISIBILITY. CAPTIVATE AUDIENCES.
-            </p>
-            <a
-              href="#kontakt"
-              style={{
-                background: "#00E5FF",
-                color: "#000000",
-                padding: "1.2rem 2.5rem",
-                fontSize: "0.9rem",
-                fontWeight: 900,
-                textTransform: "uppercase",
-                letterSpacing: "1.5px",
-                display: "inline-block",
-                textDecoration: "none",
-                boxShadow: "0 0 25px rgba(0, 229, 255, 0.3)",
-                fontFamily: "'Montserrat', sans-serif",
-              }}
-            >
-              EXPLORE SOLUTIONS
-            </a>
+          {/* Ghost text — monumentalna typografia */}
+          <div style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "110vw",
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "center",
+            zIndex: 1,
+            pointerEvents: "none",
+          }}>
+            <span style={{
+              fontFamily: "'Archivo Black', sans-serif",
+              fontSize: "26vw",
+              lineHeight: 0.72,
+              letterSpacing: "-1vw",
+              color: "transparent",
+              textTransform: "uppercase",
+              WebkitTextStroke: "2px rgba(0, 229, 255, 0.4)",
+            }}>DIGITAL</span>
+            <span style={{
+              fontFamily: "'Archivo Black', sans-serif",
+              fontSize: "26vw",
+              lineHeight: 0.72,
+              letterSpacing: "-1vw",
+              color: "transparent",
+              textTransform: "uppercase",
+              WebkitTextStroke: "2px rgba(255, 0, 229, 0.3)",
+            }}>URBAN</span>
+            <span style={{
+              fontFamily: "'Archivo Black', sans-serif",
+              fontSize: "26vw",
+              lineHeight: 0.72,
+              letterSpacing: "-1vw",
+              color: "transparent",
+              textTransform: "uppercase",
+              WebkitTextStroke: "2px rgba(255, 255, 255, 0.15)",
+            }}>ATTENTION</span>
           </div>
 
-          {/* Truck z napisem na ekranie LED */}
-          <div className="truck-reflect" style={{
+          {/* Copy + CTA — bottom left */}
+          <div style={{
             position: "absolute",
-            right: 0,
+            bottom: "10%",
+            left: 0,
+            width: "100%",
+            padding: "0 4rem",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            zIndex: 10,
+          }}>
+            <div style={{ width: "35%", marginBottom: "2rem", position: "relative", zIndex: 20 }}>
+              <p style={{
+                fontSize: "1rem",
+                lineHeight: 1.6,
+                color: "#b0b0b0",
+                marginBottom: "2.5rem",
+                letterSpacing: "1px",
+                fontWeight: 400,
+                fontFamily: "'Montserrat', sans-serif",
+              }}>
+                MOBILE DIGITAL OUT-OF-HOME ADVERTISING<br />
+                SOLUTIONS FOR THE URBAN FRONTIER.<br />
+                MAXIMIZE VISIBILITY. CAPTIVATE AUDIENCES.
+              </p>
+              <a
+                href="#kontakt"
+                style={{
+                  background: "#00E5FF",
+                  color: "#000",
+                  padding: "1.2rem 3rem",
+                  fontSize: "1rem",
+                  fontWeight: 900,
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                  display: "inline-block",
+                  textDecoration: "none",
+                  boxShadow: "0 0 30px rgba(0, 229, 255, 0.4)",
+                  fontFamily: "'Montserrat', sans-serif",
+                }}
+              >
+                EXPLORE SOLUTIONS
+              </a>
+            </div>
+          </div>
+
+          {/* Truck — gigantyczne, wychodzi poza kadr */}
+          <div style={{
+            position: "absolute",
+            right: "-5%",
             bottom: "-5%",
-            width: "65%",
-            zIndex: 4,
+            width: "65vw",
+            zIndex: 15,
+            pointerEvents: "none",
           }}>
             <img
               src="/truck2.png"
@@ -138,19 +147,16 @@ export default function HeroSection() {
                 width: "100%",
                 height: "auto",
                 display: "block",
-                filter: "drop-shadow(0 0 30px rgba(255, 0, 229, 0.2)) drop-shadow(0 0 60px rgba(0, 229, 255, 0.1))",
+                filter: "drop-shadow(-20px 20px 50px rgba(0,0,0,0.8))",
               }}
             />
           </div>
-        </div>
-      </section>
+
+        </section>
+      </div>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
-
-        .truck-reflect {
-          -webkit-box-reflect: below -20px linear-gradient(transparent, transparent, rgba(0,0,0,0.45));
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;700;900&display=swap');
       `}</style>
     </>
   );

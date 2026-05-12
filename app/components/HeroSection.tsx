@@ -19,13 +19,6 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Layer 2: Ghost text PNG — transparent overlay */}
-      <img
-        src="/hero-ghost.png"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none z-10"
-        alt=""
-      />
-
       {/* Scan lines */}
       <div
         className="absolute inset-0 pointer-events-none z-10"
@@ -39,7 +32,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none z-10"
         style={{
-          background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,255,229,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,255,229,0.1) 0%, transparent 70%)",
           animation: "glowPulse 4s ease-in-out infinite",
         }}
       />
@@ -48,15 +41,64 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none z-10"
         style={{
-          background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,170,0.07) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,170,0.08) 0%, transparent 70%)",
           animation: "glowPulse 4s ease-in-out infinite 2s",
         }}
       />
 
+      {/* Layer 2: Ghost text HTML — behind truck (z-15) */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 15 }}>
+        <span style={{
+          position: "absolute",
+          left: 0,
+          top: "4%",
+          fontSize: "clamp(60px, 13vw, 196px)",
+          fontWeight: 900,
+          lineHeight: 1,
+          letterSpacing: "-0.02em",
+          textTransform: "uppercase",
+          color: "transparent",
+          WebkitTextStroke: "1.5px rgba(0,255,229,0.6)",
+          userSelect: "none",
+          whiteSpace: "nowrap",
+        }}>DIGITAL</span>
+
+        <span style={{
+          position: "absolute",
+          right: 0,
+          top: "4%",
+          fontSize: "clamp(60px, 13vw, 196px)",
+          fontWeight: 900,
+          lineHeight: 1,
+          letterSpacing: "-0.02em",
+          textTransform: "uppercase",
+          color: "transparent",
+          WebkitTextStroke: "1.5px rgba(255,0,170,0.55)",
+          userSelect: "none",
+          whiteSpace: "nowrap",
+        }}>URBAN</span>
+
+        <span style={{
+          position: "absolute",
+          left: "50%",
+          bottom: "13%",
+          transform: "translateX(-50%)",
+          fontSize: "clamp(60px, 15vw, 220px)",
+          fontWeight: 900,
+          lineHeight: 1,
+          letterSpacing: "-0.02em",
+          textTransform: "uppercase",
+          color: "transparent",
+          WebkitTextStroke: "1.5px rgba(255,0,170,0.5)",
+          userSelect: "none",
+          whiteSpace: "nowrap",
+        }}>ATTENTION</span>
+      </div>
+
       {/* Layer 3: Truck (transparent PNG) + LED screen text */}
       <div
-        className="absolute z-20 pointer-events-none"
-        style={{ right: 0, bottom: 0, height: "88%" }}
+        className="absolute pointer-events-none"
+        style={{ zIndex: 20, right: 0, bottom: 0, height: "82%", maxWidth: "62vw" }}
       >
         <img
           src="/hero-truck.png"

@@ -16,6 +16,36 @@ export default function HeroSection() {
         }} />
       </div>
 
+      {/* Scan lines */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.13) 3px, rgba(0,0,0,0.13) 4px)",
+        animation: "scanLines 8s linear infinite",
+        pointerEvents: "none",
+        zIndex: 10,
+      }} />
+
+      {/* Glow pulse — cyan left */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,229,255,0.09) 0%, transparent 70%)",
+        animation: "glowPulse 4s ease-in-out infinite",
+        pointerEvents: "none",
+        zIndex: 10,
+      }} />
+
+      {/* Glow pulse — magenta right */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,229,0.07) 0%, transparent 70%)",
+        animation: "glowPulse 4s ease-in-out infinite 2s",
+        pointerEvents: "none",
+        zIndex: 10,
+      }} />
+
       {/* Gradient top — przykrywa baked-in nav/logo */}
       <div style={{
         position: "absolute",
@@ -104,7 +134,15 @@ export default function HeroSection() {
         @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;700;900&display=swap');
         @keyframes kenBurns {
           from { transform: scale(1); }
-          to   { transform: scale(1.04); }
+          to   { transform: scale(1.06); }
+        }
+        @keyframes scanLines {
+          from { background-position: 0 0; }
+          to   { background-position: 0 100px; }
+        }
+        @keyframes glowPulse {
+          0%, 100% { opacity: 0.6; }
+          50%       { opacity: 1; }
         }
       `}</style>
     </section>

@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden flex flex-col">
 
-      {/* Background — clean truck photo, Ken Burns zoom */}
+      {/* Layer 1: City background — Ken Burns zoom */}
       <div
         className="absolute inset-0"
         style={{ animation: "kenBurns 15s ease-in-out infinite alternate" }}
@@ -12,18 +12,28 @@ export default function HeroSection() {
         <div
           className="absolute inset-[-5%]"
           style={{
-            backgroundImage: "url('/truck.png')",
+            backgroundImage: "url('/hero-bg.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
       </div>
 
+      {/* Layer 2: Ghost text PNG overlay */}
+      <div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          backgroundImage: "url('/hero-ghost.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+
       {/* Scan lines */}
       <div
         className="absolute inset-0 pointer-events-none z-10"
         style={{
-          backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.15) 3px, rgba(0,0,0,0.15) 4px)",
+          backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.12) 3px, rgba(0,0,0,0.12) 4px)",
           animation: "scanLines 8s linear infinite",
         }}
       />
@@ -32,7 +42,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none z-10"
         style={{
-          background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,255,229,0.1) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,255,229,0.08) 0%, transparent 70%)",
           animation: "glowPulse 4s ease-in-out infinite",
         }}
       />
@@ -41,74 +51,51 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none z-10"
         style={{
-          background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,170,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,170,0.07) 0%, transparent 70%)",
           animation: "glowPulse 4s ease-in-out infinite 2s",
         }}
       />
 
-      {/* Ghost text */}
-      <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
-        <span style={{
-          position: "absolute",
-          left: 0,
-          top: "4%",
-          fontSize: "clamp(60px, 12vw, 180px)",
-          fontWeight: 900,
-          lineHeight: 1,
-          letterSpacing: "-0.02em",
-          textTransform: "uppercase",
-          color: "transparent",
-          WebkitTextStroke: "1.5px rgba(0,255,229,0.55)",
-          userSelect: "none",
-          whiteSpace: "nowrap",
-        }}>
-          DIGITAL
-        </span>
-        <span style={{
-          position: "absolute",
-          right: 0,
-          top: "4%",
-          fontSize: "clamp(60px, 12vw, 180px)",
-          fontWeight: 900,
-          lineHeight: 1,
-          letterSpacing: "-0.02em",
-          textTransform: "uppercase",
-          color: "transparent",
-          WebkitTextStroke: "1.5px rgba(255,0,170,0.5)",
-          userSelect: "none",
-          whiteSpace: "nowrap",
-        }}>
-          URBAN
-        </span>
-        <span style={{
-          position: "absolute",
-          left: "50%",
-          bottom: "14%",
-          transform: "translateX(-50%)",
-          fontSize: "clamp(60px, 14vw, 210px)",
-          fontWeight: 900,
-          lineHeight: 1,
-          letterSpacing: "-0.02em",
-          textTransform: "uppercase",
-          color: "transparent",
-          WebkitTextStroke: "1.5px rgba(255,0,170,0.45)",
-          userSelect: "none",
-          whiteSpace: "nowrap",
-        }}>
-          ATTENTION
-        </span>
+      {/* Layer 3: Truck + LED screen text */}
+      <div className="absolute inset-0 z-20 pointer-events-none flex items-end justify-end">
+        <div className="relative" style={{ height: "92%", marginBottom: "2%" }}>
+          <img
+            src="/hero-truck.png"
+            style={{
+              height: "100%",
+              width: "auto",
+              objectFit: "contain",
+              objectPosition: "bottom right",
+              display: "block",
+            }}
+            alt=""
+          />
+          {/* LED screen text — positioned on truck panel */}
+          <img
+            src="/hero-screen.png"
+            style={{
+              position: "absolute",
+              left: "6%",
+              top: "19%",
+              width: "52%",
+              height: "54%",
+              objectFit: "fill",
+            }}
+            alt=""
+          />
+        </div>
       </div>
 
       {/* Dark gradient top */}
       <div
         className="absolute top-0 left-0 right-0 h-40 pointer-events-none z-30"
-        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%)" }}
+        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, transparent 100%)" }}
       />
 
       {/* Dark gradient bottom */}
       <div
         className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none z-30"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, transparent 100%)" }}
+        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.93) 0%, transparent 100%)" }}
       />
 
       {/* Navbar */}

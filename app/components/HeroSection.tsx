@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden flex flex-col">
 
-      {/* Layer 1: City background — Ken Burns zoom */}
+      {/* Layer 1: Truck + city background — Ken Burns zoom */}
       <div
         className="absolute inset-0"
         style={{ animation: "kenBurns 15s ease-in-out infinite alternate" }}
@@ -12,21 +12,19 @@ export default function HeroSection() {
         <div
           className="absolute inset-[-5%]"
           style={{
-            backgroundImage: "url('/hero-bg.png')",
+            backgroundImage: "url('/truck.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
       </div>
 
-      {/* Layer 2: Ghost text PNG overlay */}
-      <div
-        className="absolute inset-0 z-10 pointer-events-none"
-        style={{
-          backgroundImage: "url('/hero-ghost.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+      {/* Layer 2: Ghost text PNG — transparent overlay */}
+      <img
+        src="/hero-ghost.png"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none z-10"
+        style={{ opacity: 0.85 }}
+        alt=""
       />
 
       {/* Scan lines */}
@@ -56,35 +54,19 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Layer 3: Truck + LED screen text */}
-      <div className="absolute inset-0 z-20 pointer-events-none flex items-end justify-end">
-        <div className="relative" style={{ height: "92%", marginBottom: "2%" }}>
-          <img
-            src="/hero-truck.png"
-            style={{
-              height: "100%",
-              width: "auto",
-              objectFit: "contain",
-              objectPosition: "bottom right",
-              display: "block",
-            }}
-            alt=""
-          />
-          {/* LED screen text — positioned on truck panel */}
-          <img
-            src="/hero-screen.png"
-            style={{
-              position: "absolute",
-              left: "6%",
-              top: "19%",
-              width: "52%",
-              height: "54%",
-              objectFit: "fill",
-            }}
-            alt=""
-          />
-        </div>
-      </div>
+      {/* Layer 3: LED screen text — positioned on truck panel */}
+      <img
+        src="/hero-screen.png"
+        className="absolute pointer-events-none z-20"
+        style={{
+          left: "28%",
+          top: "15%",
+          width: "32%",
+          height: "50%",
+          objectFit: "fill",
+        }}
+        alt=""
+      />
 
       {/* Dark gradient top */}
       <div

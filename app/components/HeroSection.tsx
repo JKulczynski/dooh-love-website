@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-[#0a0a0a] flex flex-col">
@@ -60,7 +62,17 @@ export default function HeroSection() {
 
         {/* Truck — centered, large, on top of ghost text */}
         <div className="relative z-10 w-full flex flex-col items-center justify-center px-4">
-          <TruckHero />
+          <div className="relative w-full" style={{ maxWidth: "900px" }}>
+            <Image
+              src="/truck.png"
+              alt="DOOH-LOVE LED Truck"
+              width={900}
+              height={500}
+              className="w-full h-auto object-contain drop-shadow-2xl"
+              style={{ filter: "drop-shadow(0 0 40px rgba(0,255,229,0.25)) drop-shadow(0 20px 60px rgba(0,0,0,0.8))" }}
+              priority
+            />
+          </div>
         </div>
 
         {/* Bottom overlay — copy */}

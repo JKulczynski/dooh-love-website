@@ -19,11 +19,10 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Layer 2: Ghost text PNG — screen blend makes black bg disappear */}
+      {/* Layer 2: Ghost text PNG — transparent overlay */}
       <img
         src="/hero-ghost.png"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none z-10"
-        style={{ mixBlendMode: "screen", opacity: 0.9 }}
         alt=""
       />
 

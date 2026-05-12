@@ -46,19 +46,19 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Ghost text — DIGITAL left | URBAN right | ATTENTION bottom */}
+      {/* Ghost text */}
       <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
         <span style={{
           position: "absolute",
           left: 0,
-          top: "4%",
-          fontSize: "clamp(72px, 19vw, 280px)",
+          top: "3%",
+          fontSize: "clamp(60px, 13.5vw, 200px)",
           fontWeight: 900,
           lineHeight: 1,
-          letterSpacing: "-0.03em",
+          letterSpacing: "-0.02em",
           textTransform: "uppercase",
           color: "transparent",
-          WebkitTextStroke: "2px rgba(0,255,229,0.55)",
+          WebkitTextStroke: "1.5px rgba(0,255,229,0.5)",
           userSelect: "none",
           whiteSpace: "nowrap",
         }}>
@@ -67,14 +67,14 @@ export default function HeroSection() {
         <span style={{
           position: "absolute",
           right: 0,
-          top: "4%",
-          fontSize: "clamp(72px, 19vw, 280px)",
+          top: "32%",
+          fontSize: "clamp(60px, 13.5vw, 200px)",
           fontWeight: 900,
           lineHeight: 1,
-          letterSpacing: "-0.03em",
+          letterSpacing: "-0.02em",
           textTransform: "uppercase",
           color: "transparent",
-          WebkitTextStroke: "2px rgba(255,0,170,0.5)",
+          WebkitTextStroke: "1.5px rgba(255,0,170,0.45)",
           userSelect: "none",
           whiteSpace: "nowrap",
         }}>
@@ -83,15 +83,15 @@ export default function HeroSection() {
         <span style={{
           position: "absolute",
           left: "50%",
-          bottom: "14%",
+          bottom: "16%",
           transform: "translateX(-50%)",
-          fontSize: "clamp(72px, 21vw, 300px)",
+          fontSize: "clamp(60px, 15vw, 220px)",
           fontWeight: 900,
           lineHeight: 1,
-          letterSpacing: "-0.03em",
+          letterSpacing: "-0.02em",
           textTransform: "uppercase",
           color: "transparent",
-          WebkitTextStroke: "2px rgba(255,0,170,0.45)",
+          WebkitTextStroke: "1.5px rgba(255,0,170,0.4)",
           userSelect: "none",
           whiteSpace: "nowrap",
         }}>

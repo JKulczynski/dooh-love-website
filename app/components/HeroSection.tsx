@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section
       className="relative w-full min-h-screen overflow-hidden flex flex-col"
       style={{
-        backgroundImage: "url('/hero-bg.png')",
+        backgroundImage: "url('/hero-bg-right.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

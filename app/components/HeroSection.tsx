@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden flex flex-col">
 
-      {/* Layer 1: Truck + city background — Ken Burns zoom */}
+      {/* Layer 1: City background — Ken Burns zoom */}
       <div
         className="absolute inset-0"
         style={{ animation: "kenBurns 15s ease-in-out infinite alternate" }}
@@ -12,18 +12,18 @@ export default function HeroSection() {
         <div
           className="absolute inset-[-5%]"
           style={{
-            backgroundImage: "url('/truck.png')",
+            backgroundImage: "url('/hero-bg.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
       </div>
 
-      {/* Layer 2: Ghost text PNG — transparent overlay */}
+      {/* Layer 2: Ghost text PNG — screen blend makes black bg disappear */}
       <img
         src="/hero-ghost.png"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none z-10"
-        style={{ opacity: 0.85 }}
+        style={{ mixBlendMode: "screen", opacity: 0.9 }}
         alt=""
       />
 
@@ -54,19 +54,30 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Layer 3: LED screen text — positioned on truck panel */}
-      <img
-        src="/hero-screen.png"
-        className="absolute pointer-events-none z-20"
-        style={{
-          left: "28%",
-          top: "15%",
-          width: "32%",
-          height: "50%",
-          objectFit: "fill",
-        }}
-        alt=""
-      />
+      {/* Layer 3: Truck (transparent PNG) + LED screen text */}
+      <div
+        className="absolute z-20 pointer-events-none"
+        style={{ right: 0, bottom: 0, height: "88%" }}
+      >
+        <img
+          src="/hero-truck.png"
+          style={{ height: "100%", width: "auto", display: "block" }}
+          alt=""
+        />
+        <img
+          src="/hero-screen.png"
+          style={{
+            position: "absolute",
+            left: "7%",
+            top: "18%",
+            width: "50%",
+            height: "54%",
+            objectFit: "fill",
+            mixBlendMode: "screen",
+          }}
+          alt=""
+        />
+      </div>
 
       {/* Dark gradient top */}
       <div

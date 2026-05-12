@@ -2,190 +2,170 @@
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen overflow-hidden flex flex-col">
+    <>
+      <header style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "2rem 5%",
+        position: "relative",
+        zIndex: 10,
+        background: "#07070a",
+      }}>
+        <div style={{ fontSize: "1.8rem", fontWeight: 900, letterSpacing: "1px", textTransform: "uppercase", color: "#fff", fontFamily: "'Montserrat', sans-serif" }}>
+          DOOH<span style={{ color: "#00E5FF" }}>-</span>LOVE
+        </div>
+        <nav>
+          <ul style={{ display: "flex", listStyle: "none", gap: "2.5rem" }}>
+            <li><a href="#" style={{ color: "#ffffff", textDecoration: "none", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'Montserrat', sans-serif" }}>HOME</a></li>
+            <li><a href="#uslugi" style={{ color: "#888888", textDecoration: "none", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'Montserrat', sans-serif" }}>SERVICES</a></li>
+            <li><a href="#case-studies" style={{ color: "#888888", textDecoration: "none", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'Montserrat', sans-serif" }}>CASE STUDIES</a></li>
+            <li><a href="#kontakt" style={{ color: "#888888", textDecoration: "none", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", fontFamily: "'Montserrat', sans-serif" }}>CONTACT</a></li>
+          </ul>
+        </nav>
+      </header>
 
-      {/* Layer 1: City background — Ken Burns zoom */}
-      <div
-        className="absolute inset-0"
-        style={{ animation: "kenBurns 15s ease-in-out infinite alternate" }}
-      >
-        <div
-          className="absolute inset-[-5%]"
-          style={{
-            backgroundImage: "url('/hero-bg.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-      </div>
+      <section style={{
+        position: "relative",
+        minHeight: "88vh",
+        display: "flex",
+        alignItems: "flex-end",
+        padding: "0 5% 5% 5%",
+        overflow: "hidden",
+        background: "#07070a",
+      }}>
 
-      {/* Scan lines */}
-      <div
-        className="absolute inset-0 pointer-events-none z-10"
-        style={{
-          backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.12) 3px, rgba(0,0,0,0.12) 4px)",
-          animation: "scanLines 8s linear infinite",
-        }}
-      />
-
-      {/* Glow pulse — cyan left */}
-      <div
-        className="absolute inset-0 pointer-events-none z-10"
-        style={{
-          background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,255,229,0.1) 0%, transparent 70%)",
-          animation: "glowPulse 4s ease-in-out infinite",
-        }}
-      />
-
-      {/* Glow pulse — magenta right */}
-      <div
-        className="absolute inset-0 pointer-events-none z-10"
-        style={{
-          background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,170,0.08) 0%, transparent 70%)",
-          animation: "glowPulse 4s ease-in-out infinite 2s",
-        }}
-      />
-
-      {/* Layer 2: Ghost text HTML — behind truck (z-15) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 15 }}>
-        <span style={{
+        {/* Warstwa 1: Ghost text tło */}
+        <div style={{
           position: "absolute",
-          left: 0,
-          top: "4%",
-          fontSize: "clamp(60px, 13vw, 196px)",
-          fontWeight: 900,
-          lineHeight: 1,
-          letterSpacing: "-0.02em",
-          textTransform: "uppercase",
-          color: "transparent",
-          WebkitTextStroke: "1.5px rgba(0,255,229,0.6)",
-          userSelect: "none",
-          whiteSpace: "nowrap",
-        }}>DIGITAL</span>
+          top: "5%",
+          left: "-5%",
+          width: "110%",
+          zIndex: 1,
+          display: "flex",
+          flexDirection: "column",
+          lineHeight: 0.85,
+          pointerEvents: "none",
+          textAlign: "center",
+        }}>
+          <span style={{
+            fontSize: "18vw",
+            fontWeight: 900,
+            color: "transparent",
+            textTransform: "uppercase",
+            letterSpacing: "-2px",
+            WebkitTextStroke: "2px rgba(0, 229, 255, 0.4)",
+            fontFamily: "'Montserrat', sans-serif",
+          }}>DIGITAL</span>
+          <span style={{
+            fontSize: "18vw",
+            fontWeight: 900,
+            color: "transparent",
+            textTransform: "uppercase",
+            letterSpacing: "-2px",
+            WebkitTextStroke: "2px rgba(255, 0, 229, 0.4)",
+            fontFamily: "'Montserrat', sans-serif",
+          }}>URBAN</span>
+          <span style={{
+            fontSize: "18vw",
+            fontWeight: 900,
+            color: "transparent",
+            textTransform: "uppercase",
+            letterSpacing: "-2px",
+            WebkitTextStroke: "2px rgba(255, 255, 255, 0.2)",
+            fontFamily: "'Montserrat', sans-serif",
+          }}>ATTENTION</span>
+        </div>
 
-        <span style={{
-          position: "absolute",
-          right: 0,
-          top: "4%",
-          fontSize: "clamp(60px, 13vw, 196px)",
-          fontWeight: 900,
-          lineHeight: 1,
-          letterSpacing: "-0.02em",
-          textTransform: "uppercase",
-          color: "transparent",
-          WebkitTextStroke: "1.5px rgba(255,0,170,0.55)",
-          userSelect: "none",
-          whiteSpace: "nowrap",
-        }}>URBAN</span>
+        {/* Hero content */}
+        <div style={{
+          position: "relative",
+          zIndex: 5,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-end",
+          width: "100%",
+          maxWidth: "1600px",
+          margin: "0 auto",
+        }}>
 
-        <span style={{
-          position: "absolute",
-          left: "50%",
-          bottom: "13%",
-          transform: "translateX(-50%)",
-          fontSize: "clamp(60px, 15vw, 220px)",
-          fontWeight: 900,
-          lineHeight: 1,
-          letterSpacing: "-0.02em",
-          textTransform: "uppercase",
-          color: "transparent",
-          WebkitTextStroke: "1.5px rgba(255,0,170,0.5)",
-          userSelect: "none",
-          whiteSpace: "nowrap",
-        }}>ATTENTION</span>
-      </div>
+          {/* Tekst + CTA po lewej */}
+          <div style={{ maxWidth: "420px", marginBottom: "2rem" }}>
+            <p style={{
+              fontSize: "0.9rem",
+              lineHeight: 1.6,
+              color: "#a0a0a0",
+              marginBottom: "2rem",
+              letterSpacing: "1px",
+              fontFamily: "'Montserrat', sans-serif",
+            }}>
+              MOBILE DIGITAL OUT-OF-HOME ADVERTISING<br />
+              SOLUTIONS FOR THE URBAN FRONTIER.<br />
+              MAXIMIZE VISIBILITY. CAPTIVATE AUDIENCES.
+            </p>
+            <a
+              href="#kontakt"
+              style={{
+                background: "#00E5FF",
+                color: "#000000",
+                padding: "1.2rem 2.5rem",
+                fontSize: "0.9rem",
+                fontWeight: 900,
+                textTransform: "uppercase",
+                letterSpacing: "1.5px",
+                display: "inline-block",
+                textDecoration: "none",
+                boxShadow: "0 0 25px rgba(0, 229, 255, 0.3)",
+                fontFamily: "'Montserrat', sans-serif",
+              }}
+            >
+              EXPLORE SOLUTIONS
+            </a>
+          </div>
 
-      {/* Layer 3: Truck (transparent PNG) + LED screen text */}
-      <div
-        className="absolute pointer-events-none"
-        style={{ zIndex: 20, right: 0, bottom: 0, height: "82%", maxWidth: "62vw" }}
-      >
-        <img
-          src="/hero-truck.png"
-          style={{ height: "100%", width: "auto", display: "block" }}
-          alt=""
-        />
-        <img
-          src="/hero-screen.png"
-          style={{
+          {/* Truck */}
+          <div className="truck-reflect" style={{
             position: "absolute",
-            left: "7%",
-            top: "18%",
-            width: "50%",
-            height: "54%",
-            objectFit: "fill",
-            mixBlendMode: "screen",
-          }}
-          alt=""
-        />
-      </div>
-
-      {/* Dark gradient top */}
-      <div
-        className="absolute top-0 left-0 right-0 h-40 pointer-events-none z-30"
-        style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, transparent 100%)" }}
-      />
-
-      {/* Dark gradient bottom */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none z-30"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.93) 0%, transparent 100%)" }}
-      />
-
-      {/* Navbar */}
-      <nav className="relative z-50 flex items-center justify-between px-8 py-6">
-        <span className="text-white font-black text-2xl uppercase tracking-wider">
-          DOOH<span style={{ color: "#00FFE5" }}>-</span>LOVE
-        </span>
-        <div className="hidden md:flex items-center gap-10 text-white/70 text-sm uppercase tracking-widest">
-          <a href="#" className="text-white border-b border-white pb-0.5">Home</a>
-          <a href="#uslugi" className="hover:text-white transition-colors">Services</a>
-          <a href="#case-studies" className="hover:text-white transition-colors">Case Studies</a>
-          <a href="#kontakt" className="hover:text-white transition-colors">Contact</a>
+            right: 0,
+            bottom: "-5%",
+            width: "65%",
+            zIndex: 4,
+          }}>
+            <img
+              src="/hero-truck.png"
+              alt="Digital Billboard Van"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                filter: "drop-shadow(0 0 30px rgba(255, 0, 229, 0.2)) drop-shadow(0 0 60px rgba(0, 229, 255, 0.1))",
+              }}
+            />
+            {/* LED screen overlay */}
+            <img
+              src="/hero-screen.png"
+              alt=""
+              style={{
+                position: "absolute",
+                left: "7%",
+                top: "18%",
+                width: "50%",
+                height: "54%",
+                objectFit: "fill",
+                mixBlendMode: "screen",
+              }}
+            />
+          </div>
         </div>
-      </nav>
-
-      {/* Bottom — tagline + CTA */}
-      <div className="relative z-50 flex-1 flex flex-col justify-end px-8 pb-12">
-        <p className="text-white/70 text-xs uppercase tracking-widest leading-relaxed mb-1 max-w-sm">
-          Mobile digital out-of-home advertising<br />
-          solutions for the urban frontier.
-        </p>
-        <p className="text-white/45 text-xs uppercase tracking-widest mb-5 max-w-sm">
-          Maximize visibility. Captivate audiences.
-        </p>
-        <div>
-          <a
-            href="#kontakt"
-            className="inline-block px-8 py-4 font-black text-sm uppercase tracking-widest transition-all hover:brightness-110"
-            style={{ background: "#00FFE5", color: "#0a0a0a" }}
-          >
-            Explore Solutions
-          </a>
-        </div>
-      </div>
-
-      {/* Star */}
-      <div className="absolute bottom-8 right-8 z-50">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" opacity="0.4">
-          <path d="M12 0L13.5 10.5L24 12L13.5 13.5L12 24L10.5 13.5L0 12L10.5 10.5Z" />
-        </svg>
-      </div>
+      </section>
 
       <style>{`
-        @keyframes kenBurns {
-          from { transform: scale(1); }
-          to   { transform: scale(1.08); }
-        }
-        @keyframes scanLines {
-          from { background-position: 0 0; }
-          to   { background-position: 0 100px; }
-        }
-        @keyframes glowPulse {
-          0%, 100% { opacity: 0.6; }
-          50%       { opacity: 1; }
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+        .truck-reflect {
+          -webkit-box-reflect: below -20px linear-gradient(transparent, transparent, rgba(0,0,0,0.45));
         }
       `}</style>
-    </section>
+    </>
   );
 }

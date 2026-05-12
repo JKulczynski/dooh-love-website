@@ -123,7 +123,7 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Truck */}
+          {/* Truck z napisem na ekranie LED */}
           <div className="truck-reflect" style={{
             position: "absolute",
             right: 0,
@@ -132,27 +132,13 @@ export default function HeroSection() {
             zIndex: 4,
           }}>
             <img
-              src="/hero-truck.png"
+              src="/truck2.png"
               alt="Digital Billboard Van"
               style={{
                 width: "100%",
                 height: "auto",
                 display: "block",
                 filter: "drop-shadow(0 0 30px rgba(255, 0, 229, 0.2)) drop-shadow(0 0 60px rgba(0, 229, 255, 0.1))",
-              }}
-            />
-            {/* LED screen overlay */}
-            <img
-              src="/hero-screen.png"
-              alt=""
-              style={{
-                position: "absolute",
-                left: "7%",
-                top: "18%",
-                width: "50%",
-                height: "54%",
-                objectFit: "fill",
-                mixBlendMode: "screen",
               }}
             />
           </div>

@@ -48,24 +48,23 @@ export default function HeroSection() {
         background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.95) 45%, transparent 100%)",
       }} />
 
-      {/* Content */}
-      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full pt-20">
+      {/* Content — centered */}
+      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full pt-20 flex flex-col items-center text-center">
         <div className="max-w-2xl">
-          <h1 className="text-5xl md:text-7xl font-bold leading-[0.9] tracking-tighter uppercase mb-6">
-            <span className="text-brandCyan">WE</span> <span className="text-brandMagenta">LOVE</span><br />
-            ATTENTION.
+          <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-6 font-light">
+            Mobilna reklama LED · Warszawa
+          </p>
+          <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight mb-6">
+            <span className="text-white">18m² ekranu.</span>{" "}
+            <span className="text-brandCyan">10 godzin.</span><br />
+            <span className="text-white">Centrum Warszawy.</span>
           </h1>
-          <div className="space-y-4 mb-10 max-w-md">
-            <p className="text-sm md:text-base text-gray-300 font-light leading-relaxed uppercase tracking-widest">
-              Mobile digital out-of-home advertising solutions for the urban frontier.
-            </p>
-            <p className="text-sm md:text-base text-gray-400 font-light leading-relaxed uppercase tracking-widest">
-              Maximize visibility. Captivate audiences.
-            </p>
-          </div>
+          <p className="text-sm text-gray-400 font-light uppercase tracking-widest mb-10">
+            Twoja kampania rusza w 48h od briefingu.
+          </p>
           <a
             href="#wycena"
-            className="inline-block bg-brandCyan text-black font-bold py-4 px-8 uppercase tracking-widest hover:bg-white transition-colors duration-300"
+            className="inline-block bg-brandCyan text-black font-bold py-4 px-10 uppercase tracking-widest hover:bg-white transition-colors duration-300"
             style={{ boxShadow: "0 0 20px rgba(0,255,229,0.3)" }}
           >
             Zarezerwuj w 48h

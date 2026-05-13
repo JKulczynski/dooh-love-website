@@ -43,8 +43,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Video — placeholder czeka na materiał od Pawła */}
+      <section className="py-24 px-6 bg-darkBg" id="video">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+              Obejrzyj nas <span className="text-brandCyan">w akcji</span>
+            </h2>
+            <div className="w-20 h-1 bg-brandMagenta mx-auto" />
+          </div>
+          {/* 16:9 video placeholder */}
+          <div
+            className="relative w-full border border-white/10 bg-black overflow-hidden group cursor-pointer"
+            style={{ paddingBottom: "56.25%" }}
+          >
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
+              {/* Pulsing play button */}
+              <div className="relative">
+                <div
+                  className="absolute inset-0 rounded-full bg-brandCyan/20"
+                  style={{ animation: "glowPulse 2s ease-in-out infinite", transform: "scale(1.6)" }}
+                />
+                <div className="relative z-10 w-20 h-20 rounded-full border-2 border-brandCyan flex items-center justify-center group-hover:bg-brandCyan/10 transition-colors">
+                  <svg className="h-8 w-8 text-brandCyan ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+              <p className="text-xs uppercase tracking-widest text-gray-500">Materiał wideo — wkrótce</p>
+            </div>
+            {/* Scan lines overlay */}
+            <div className="absolute inset-0 pointer-events-none opacity-20" style={{
+              backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.3) 3px, rgba(0,0,0,0.3) 4px)",
+            }} />
+          </div>
+        </div>
+      </section>
+
       {/* Dlaczego to działa */}
-      <section className="py-24 px-6 bg-darkBg" id="solutions">
+      <section className="py-24 px-6 bg-black" id="solutions">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
@@ -86,7 +123,7 @@ export default function Home() {
       </section>
 
       {/* Dla kogo */}
-      <section className="py-24 px-6 bg-black" id="dla-kogo">
+      <section className="py-24 px-6 bg-darkBg" id="dla-kogo">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-right">
             <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
@@ -111,7 +148,7 @@ export default function Home() {
       </section>
 
       {/* Trasy */}
-      <section className="py-24 px-6 bg-darkBg" id="trasy">
+      <section className="py-24 px-6 bg-black" id="trasy">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
@@ -138,6 +175,82 @@ export default function Home() {
               <p className="text-gray-400 text-sm leading-relaxed mb-4">Plac Zbawiciela → Hala Koszyki → Mazowiecka → Bulwary Wiślane</p>
               <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 22:00 – 01:00</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Galeria kampanii — placeholder czeka na zdjęcia od Pawła */}
+      <section className="py-24 px-6 bg-black" id="galeria">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 text-right">
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+              Kampanie <span className="text-brandMagenta">w akcji</span>
+            </h2>
+            <div className="w-20 h-1 bg-brandCyan ml-auto" />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {[
+              { size: "md:col-span-2", aspect: "aspect-[16/9]" },
+              { size: "",             aspect: "aspect-square" },
+              { size: "",             aspect: "aspect-square" },
+              { size: "",             aspect: "aspect-square" },
+              { size: "md:col-span-2", aspect: "aspect-[16/9]" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className={`${item.size} ${item.aspect} border border-white/10 bg-white/5 relative overflow-hidden group hover:border-brandMagenta/40 transition-all`}
+              >
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                  <svg className="h-8 w-8 text-white/20 group-hover:text-brandMagenta/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                    <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                  </svg>
+                  <span className="text-[10px] uppercase tracking-widest text-white/20">Zdjęcie kampanii</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimoniale — placeholder czeka na opinie od klientów Pawła */}
+      <section className="py-24 px-6 bg-darkBg" id="opinie">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+              Co mówią <span className="text-brandCyan">klienci?</span>
+            </h2>
+            <div className="w-20 h-1 bg-brandMagenta" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: "Anna K.", role: "Event Manager", company: "Agencja Eventowa" },
+              { name: "Marek W.", role: "Brand Manager", company: "FMCG" },
+              { name: "Tomasz B.", role: "Media Buyer", company: "Dom Mediowy" },
+            ].map((t, i) => (
+              <div key={i} className="border border-white/10 bg-white/5 p-8 relative">
+                <div
+                  className="absolute top-6 left-8 text-5xl leading-none font-serif"
+                  style={{ color: i % 2 === 0 ? "rgba(0,255,229,0.15)" : "rgba(255,0,170,0.15)" }}
+                >
+                  &ldquo;
+                </div>
+                <div className="pt-8">
+                  <p className="text-gray-400 text-sm leading-relaxed italic mb-6">
+                    Opinia klienta — pojawi się wkrótce.
+                  </p>
+                  <div className="flex items-center gap-3 border-t border-white/10 pt-6">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs text-gray-400 font-bold">
+                      {t.name.split(" ").map(n => n[0]).join("")}
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold">{t.name}</div>
+                      <div className="text-[10px] uppercase tracking-widest text-gray-500">{t.role} · {t.company}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

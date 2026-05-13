@@ -26,13 +26,13 @@ export default function HeroSection() {
 
       {/* Glow pulse — cyan left */}
       <div className="absolute inset-0 pointer-events-none z-10" style={{
-        background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,229,255,0.08) 0%, transparent 70%)",
+        background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,255,229,0.08) 0%, transparent 70%)",
         animation: "glowPulse 4s ease-in-out infinite",
       }} />
 
       {/* Glow pulse — magenta right */}
       <div className="absolute inset-0 pointer-events-none z-10" style={{
-        background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,229,0.07) 0%, transparent 70%)",
+        background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,170,0.07) 0%, transparent 70%)",
         animation: "glowPulse 4s ease-in-out infinite 2s",
       }} />
 
@@ -66,7 +66,7 @@ export default function HeroSection() {
           <a
             href="#solutions"
             className="inline-block bg-brandCyan text-black font-bold py-4 px-8 uppercase tracking-widest hover:bg-white transition-colors duration-300"
-            style={{ boxShadow: "0 0 20px rgba(0,255,255,0.3)" }}
+            style={{ boxShadow: "0 0 20px rgba(0,255,229,0.3)" }}
           >
             Explore Solutions
           </a>

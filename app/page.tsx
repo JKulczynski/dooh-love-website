@@ -21,8 +21,30 @@ export default function Home() {
       {/* Hero */}
       <HeroSection />
 
+      {/* Social Proof — tuż po hero, buduje wiarygodność */}
+      <section className="py-20 px-6 bg-black border-t border-white/5">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div className="text-4xl font-bold text-brandCyan mb-2">18 m²</div>
+            <div className="text-xs uppercase tracking-widest text-gray-500">Powierzchnia ekranów</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-brandMagenta mb-2">10h</div>
+            <div className="text-xs uppercase tracking-widest text-gray-500">Ekspozycja dziennie</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-brandCyan mb-2">3</div>
+            <div className="text-xs uppercase tracking-widest text-gray-500">Trasy w Warszawie</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-brandMagenta mb-2">GPS</div>
+            <div className="text-xs uppercase tracking-widest text-gray-500">Monitoring w czasie rzeczywistym</div>
+          </div>
+        </div>
+      </section>
+
       {/* Dlaczego to działa */}
-      <section className="py-24 px-6 bg-black" id="solutions">
+      <section className="py-24 px-6 bg-darkBg" id="solutions">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
@@ -63,44 +85,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Jak startujemy */}
-      <section className="py-24 px-6 bg-darkBg overflow-hidden">
+      {/* Dla kogo */}
+      <section className="py-24 px-6 bg-black" id="dla-kogo">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-16 text-right">
-            Jak <span className="text-brandMagenta">startujemy?</span>
-          </h2>
-          <div className="relative">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10 hidden md:block" />
-            <div className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
-              <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
-                <h4 className="text-xl font-bold mb-2 text-brandCyan uppercase">01. Briefing</h4>
-                <p className="text-gray-400">Określamy cel kampanii, docelową grupę odbiorców oraz kluczowe lokalizacje w mieście.</p>
+          <div className="mb-16 text-right">
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+              Dla <span className="text-brandMagenta">kogo?</span>
+            </h2>
+            <div className="w-20 h-1 bg-brandCyan ml-auto" />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: "Eventy & Festiwale", desc: "Open'er, Orange Warsaw, gale MMA, koncerty" },
+              { label: "FMCG & Retail", desc: "Red Bull, Coca-Cola, kampanie produktowe" },
+              { label: "Domy Mediowe", desc: "GroupM, Publicis, Dentsu — kampanie klientów" },
+              { label: "Korporacje", desc: "Launche produktów, eventy employer brandingowe" },
+            ].map((item, i) => (
+              <div key={i} className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/30 transition-all">
+                <h4 className="text-sm font-bold uppercase mb-2">{item.label}</h4>
+                <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
               </div>
-              <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">1</div>
-              <div className="w-full md:w-[45%] order-3" />
-            </div>
-            <div className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
-              <div className="w-full md:w-[45%] order-3 md:order-1" />
-              <div className="z-10 bg-brandMagenta text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">2</div>
-              <div className="w-full md:w-[45%] order-2 md:order-3 mt-6 md:mt-0">
-                <h4 className="text-xl font-bold mb-2 text-brandMagenta uppercase">02. Kreacja i Trasa</h4>
-                <p className="text-gray-400">Dostosowujemy Twoje materiały wideo pod ekrany LED i planujemy optymalną trasę przejazdu ciężarówki.</p>
-              </div>
-            </div>
-            <div className="relative flex flex-col md:flex-row items-center justify-between">
-              <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
-                <h4 className="text-xl font-bold mb-2 text-brandCyan uppercase">03. Emisja</h4>
-                <p className="text-gray-400">Ciężarówka wyjeżdża na ulice. Monitorujesz kampanię w czasie rzeczywistym dzięki naszym systemom GPS.</p>
-              </div>
-              <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">3</div>
-              <div className="w-full md:w-[45%] order-3" />
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Trasy */}
-      <section className="py-24 px-6 bg-black" id="trasy">
+      <section className="py-24 px-6 bg-darkBg" id="trasy">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
@@ -131,49 +142,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Dla kogo */}
-      <section className="py-24 px-6 bg-darkBg" id="dla-kogo">
+      {/* Jak startujemy */}
+      <section className="py-24 px-6 bg-black overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16 text-right">
-            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-              Dla <span className="text-brandMagenta">kogo?</span>
-            </h2>
-            <div className="w-20 h-1 bg-brandCyan ml-auto" />
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { label: "Eventy & Festiwale", desc: "Open'er, Orange Warsaw, gale MMA, koncerty" },
-              { label: "FMCG & Retail", desc: "Red Bull, Coca-Cola, kampanie produktowe" },
-              { label: "Domy Mediowe", desc: "GroupM, Publicis, Dentsu — kampanie klientów" },
-              { label: "Korporacje", desc: "Launche produktów, eventy employer brandingowe" },
-            ].map((item, i) => (
-              <div key={i} className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/30 transition-all">
-                <h4 className="text-sm font-bold uppercase mb-2">{item.label}</h4>
-                <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+          <h2 className="text-3xl font-bold uppercase tracking-tight mb-16 text-right">
+            Jak <span className="text-brandMagenta">startujemy?</span>
+          </h2>
+          <div className="relative">
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10 hidden md:block" />
+            <div className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
+                <h4 className="text-xl font-bold mb-2 text-brandCyan uppercase">01. Briefing</h4>
+                <p className="text-gray-400">Określamy cel kampanii, docelową grupę odbiorców oraz kluczowe lokalizacje w mieście.</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-20 px-6 bg-black border-t border-white/5">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-4xl font-bold text-brandCyan mb-2">18 m²</div>
-            <div className="text-xs uppercase tracking-widest text-gray-500">Powierzchnia ekranów</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-brandMagenta mb-2">10h</div>
-            <div className="text-xs uppercase tracking-widest text-gray-500">Ekspozycja dziennie</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-brandCyan mb-2">3</div>
-            <div className="text-xs uppercase tracking-widest text-gray-500">Trasy w Warszawie</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-brandMagenta mb-2">GPS</div>
-            <div className="text-xs uppercase tracking-widest text-gray-500">Monitoring w czasie rzeczywistym</div>
+              <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">1</div>
+              <div className="w-full md:w-[45%] order-3" />
+            </div>
+            <div className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-[45%] order-3 md:order-1" />
+              <div className="z-10 bg-brandMagenta text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">2</div>
+              <div className="w-full md:w-[45%] order-2 md:order-3 mt-6 md:mt-0">
+                <h4 className="text-xl font-bold mb-2 text-brandMagenta uppercase">02. Kreacja i Trasa</h4>
+                <p className="text-gray-400">Dostosowujemy Twoje materiały wideo pod ekrany LED i planujemy optymalną trasę przejazdu ciężarówki.</p>
+              </div>
+            </div>
+            <div className="relative flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
+                <h4 className="text-xl font-bold mb-2 text-brandCyan uppercase">03. Emisja</h4>
+                <p className="text-gray-400">Ciężarówka wyjeżdża na ulice. Monitorujesz kampanię w czasie rzeczywistym dzięki naszym systemom GPS.</p>
+              </div>
+              <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">3</div>
+              <div className="w-full md:w-[45%] order-3" />
+            </div>
           </div>
         </div>
       </section>
@@ -252,9 +252,9 @@ export default function Home() {
               <h5 className="text-xs font-bold uppercase tracking-widest text-gray-400">Nawigacja</h5>
               <ul className="text-sm space-y-2 text-gray-500">
                 <li><a className="hover:text-brandCyan transition-colors" href="#">Start</a></li>
-                <li><a className="hover:text-brandCyan transition-colors" href="#">Usługi</a></li>
-                <li><a className="hover:text-brandCyan transition-colors" href="#">Trasy</a></li>
-                <li><a className="hover:text-brandCyan transition-colors" href="#">Kontakt</a></li>
+                <li><a className="hover:text-brandCyan transition-colors" href="#solutions">Dlaczego to działa</a></li>
+                <li><a className="hover:text-brandCyan transition-colors" href="#trasy">Trasy</a></li>
+                <li><a className="hover:text-brandCyan transition-colors" href="#dla-kogo">Dla kogo</a></li>
               </ul>
             </div>
             <div className="space-y-4">

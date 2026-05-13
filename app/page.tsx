@@ -99,6 +99,85 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trasy */}
+      <section className="py-24 px-6 bg-black" id="trasy">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+              Nasze <span className="text-brandCyan">Trasy</span>
+            </h2>
+            <div className="w-20 h-1 bg-brandMagenta" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="border border-white/10 bg-white/5 p-8 hover:border-brandCyan/50 transition-all">
+              <div className="text-brandCyan text-xs uppercase tracking-widest mb-4">Trasa 01</div>
+              <h3 className="text-xl font-bold uppercase mb-3">Premium / Centrum</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">Rondo Daszyńskiego → PKiN → Marszałkowska → Plac Trzech Krzyży → Elektrownia Powiśle</p>
+              <div className="text-xs text-gray-500 uppercase tracking-wider">08:00 – 23:00</div>
+            </div>
+            <div className="border border-white/10 bg-white/5 p-8 hover:border-brandMagenta/50 transition-all">
+              <div className="text-brandMagenta text-xs uppercase tracking-widest mb-4">Trasa 02</div>
+              <h3 className="text-xl font-bold uppercase mb-3">Max Zasięg</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">Rondo Dmowskiego → Al. Jerozolimskie → Marszałkowska → Rondo ONZ → Jana Pawła II → Puławska</p>
+              <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 07:00–10:00 / 15:30–19:30</div>
+            </div>
+            <div className="border border-white/10 bg-white/5 p-8 hover:border-brandCyan/50 transition-all">
+              <div className="text-brandCyan text-xs uppercase tracking-widest mb-4">Trasa 03</div>
+              <h3 className="text-xl font-bold uppercase mb-3">Noc / Nightlife</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">Plac Zbawiciela → Hala Koszyki → Mazowiecka → Bulwary Wiślane</p>
+              <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 22:00 – 01:00</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dla kogo */}
+      <section className="py-24 px-6 bg-darkBg" id="dla-kogo">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 text-right">
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+              Dla <span className="text-brandMagenta">kogo?</span>
+            </h2>
+            <div className="w-20 h-1 bg-brandCyan ml-auto" />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: "Eventy & Festiwale", desc: "Open'er, Orange Warsaw, gale MMA, koncerty" },
+              { label: "FMCG & Retail", desc: "Red Bull, Coca-Cola, kampanie produktowe" },
+              { label: "Domy Mediowe", desc: "GroupM, Publicis, Dentsu — kampanie klientów" },
+              { label: "Korporacje", desc: "Launche produktów, eventy employer brandingowe" },
+            ].map((item, i) => (
+              <div key={i} className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/30 transition-all">
+                <h4 className="text-sm font-bold uppercase mb-2">{item.label}</h4>
+                <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof */}
+      <section className="py-20 px-6 bg-black border-t border-white/5">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div className="text-4xl font-bold text-brandCyan mb-2">18 m²</div>
+            <div className="text-xs uppercase tracking-widest text-gray-500">Powierzchnia ekranów</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-brandMagenta mb-2">10h</div>
+            <div className="text-xs uppercase tracking-widest text-gray-500">Ekspozycja dziennie</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-brandCyan mb-2">3</div>
+            <div className="text-xs uppercase tracking-widest text-gray-500">Trasy w Warszawie</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-brandMagenta mb-2">GPS</div>
+            <div className="text-xs uppercase tracking-widest text-gray-500">Monitoring w czasie rzeczywistym</div>
+          </div>
+        </div>
+      </section>
+
       {/* Wycena Online */}
       <section className="py-24 px-6 bg-zinc-900">
         <div className="max-w-3xl mx-auto border border-white/20 p-8 md:p-12">
@@ -135,6 +214,25 @@ export default function Home() {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-24 px-6 bg-darkBg text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
+            Zarezerwuj termin<br />
+            <span className="text-brandCyan">zanim zrobi to</span>{" "}
+            <span className="text-brandMagenta">konkurencja.</span>
+          </h2>
+          <p className="text-gray-400 uppercase tracking-widest text-sm mb-10">Dostępność ograniczona. Jeden klient = jedna trasa.</p>
+          <a
+            href="mailto:hello@dooh-love.pl"
+            className="inline-block bg-brandCyan text-black font-bold py-4 px-12 uppercase tracking-widest hover:bg-white transition-colors duration-300 text-sm"
+            style={{ boxShadow: "0 0 30px rgba(0,255,229,0.3)" }}
+          >
+            Napisz do nas
+          </a>
         </div>
       </section>
 

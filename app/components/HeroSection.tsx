@@ -2,7 +2,7 @@
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-end pt-16 overflow-hidden">
 
       {/* Gemini render jako tło */}
       <div className="absolute inset-0 z-0">
@@ -44,12 +44,12 @@ export default function HeroSection() {
 
       {/* Gradient bottom — przykrywa baked-in tagline/CTA */}
       <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-20" style={{
-        height: "38%",
-        background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.95) 45%, transparent 100%)",
+        height: "55%",
+        background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.98) 40%, rgba(5,5,5,0.7) 70%, transparent 100%)",
       }} />
 
       {/* Content — centered */}
-      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full pt-20 flex flex-col items-center text-center">
+      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full pb-16 flex flex-col items-center text-center">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-6 font-light">
             Mobilna reklama LED · Warszawa

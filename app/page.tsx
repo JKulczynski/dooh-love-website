@@ -23,6 +23,23 @@ export default function Home() {
       {/* Hero */}
       <HeroSection />
 
+      {/* Intro — copy przeniesione z hero */}
+      <section className="py-16 px-6 bg-black border-t border-white/5 text-center">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-5 font-light">
+            Mobilna reklama LED · Warszawa
+          </p>
+          <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight mb-5">
+            <span className="text-white">18m² ekranu.</span>{" "}
+            <span className="text-brandCyan">10 godzin.</span>{" "}
+            <span className="text-white">Centrum Warszawy.</span>
+          </h1>
+          <p className="text-sm text-gray-400 font-light uppercase tracking-widest">
+            Twoja kampania rusza w 48h od briefingu.
+          </p>
+        </div>
+      </section>
+
       {/* Social Proof — tuż po hero, buduje wiarygodność */}
       <section className="py-20 px-6 bg-black border-t border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center">

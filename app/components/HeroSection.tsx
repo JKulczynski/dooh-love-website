@@ -42,10 +42,15 @@ export default function HeroSection() {
         background: "linear-gradient(to bottom, rgba(5,5,5,1) 0%, rgba(5,5,5,0.9) 55%, transparent 100%)",
       }} />
 
-      {/* Gradient bottom — przykrywa baked-in tagline/CTA */}
+      {/* Gradient bottom — cienki, tylko pod przycisk */}
       <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-20" style={{
-        height: "55%",
-        background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.98) 40%, rgba(5,5,5,0.7) 70%, transparent 100%)",
+        height: "18%",
+        background: "linear-gradient(to top, rgba(5,5,5,0.85) 0%, transparent 100%)",
+      }} />
+
+      {/* LED flicker — delikatne migotanie ekranu trucka */}
+      <div className="absolute inset-0 pointer-events-none z-10" style={{
+        animation: "ledFlicker 6s linear infinite",
       }} />
 
       {/* CTA only — truck speaks for itself */}
@@ -71,6 +76,14 @@ export default function HeroSection() {
         @keyframes glowPulse {
           0%, 100% { opacity: 0.6; }
           50%       { opacity: 1; }
+        }
+        @keyframes ledFlicker {
+          0%, 17%, 19%, 21%, 52%, 56%, 100% { opacity: 0; }
+          18%  { opacity: 0.04; }
+          20%  { opacity: 0.02; }
+          53%  { opacity: 0.05; }
+          54%  { opacity: 0.01; }
+          55%  { opacity: 0.04; }
         }
       `}</style>
     </section>

@@ -23,7 +23,7 @@ export default function Home() {
 
       {/* Social Proof — tuż po hero, buduje wiarygodność */}
       <section className="py-20 px-6 bg-black border-t border-white/5">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
           <div>
             <div className="text-4xl font-bold text-brandCyan mb-2">18 m²</div>
             <div className="text-xs uppercase tracking-widest text-gray-500">Powierzchnia ekranów</div>
@@ -39,6 +39,10 @@ export default function Home() {
           <div>
             <div className="text-4xl font-bold text-brandMagenta mb-2">GPS</div>
             <div className="text-xs uppercase tracking-widest text-gray-500">Monitoring w czasie rzeczywistym</div>
+          </div>
+          <div className="border border-brandCyan/20 py-4 px-2">
+            <div className="text-3xl font-bold text-brandCyan mb-2">od 1 600 zł</div>
+            <div className="text-xs uppercase tracking-widest text-gray-500">Cena netto / dzień</div>
           </div>
         </div>
       </section>
@@ -292,7 +296,7 @@ export default function Home() {
       </section>
 
       {/* Wycena Online */}
-      <section className="py-24 px-6 bg-zinc-900">
+      <section className="py-24 px-6 bg-zinc-900" id="wycena">
         <div className="max-w-3xl mx-auto border border-white/20 p-8 md:p-12">
           <h2 className="text-2xl font-bold uppercase mb-8 text-center">
             Wycena <span className="text-brandCyan">Online</span>
@@ -317,7 +321,7 @@ export default function Home() {
             <div className="pt-6 border-t border-white/10">
               <div className="flex justify-between items-end mb-6">
                 <span className="text-sm uppercase text-gray-400">Szacowany koszt netto:</span>
-                <span className="text-3xl font-bold text-brandCyan">od 2 400 PLN</span>
+                <span className="text-3xl font-bold text-brandCyan">od 1 600 PLN</span>
               </div>
               <button
                 className="w-full bg-white text-black font-bold py-4 uppercase tracking-widest hover:bg-brandMagenta hover:text-white transition-all"
@@ -333,19 +337,27 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-24 px-6 bg-darkBg text-center">
         <div className="max-w-3xl mx-auto">
+          {/* Urgency bar */}
+          <div className="inline-flex items-center gap-2 border border-brandMagenta/40 px-4 py-2 mb-8 text-xs uppercase tracking-widest text-brandMagenta">
+            <span className="w-2 h-2 rounded-full bg-brandMagenta animate-pulse inline-block" />
+            Dostępność: kampanie realizujemy w 48h od briefingu
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
             Zarezerwuj termin<br />
             <span className="text-brandCyan">zanim zrobi to</span>{" "}
             <span className="text-brandMagenta">konkurencja.</span>
           </h2>
-          <p className="text-gray-400 uppercase tracking-widest text-sm mb-10">Dostępność ograniczona. Jeden klient = jedna trasa.</p>
+          <p className="text-gray-400 uppercase tracking-widest text-sm mb-10">Jeden klient = jedna trasa. Terminy znikają.</p>
           <a
             href="mailto:hello@dooh-love.pl"
             className="inline-block bg-brandCyan text-black font-bold py-4 px-12 uppercase tracking-widest hover:bg-white transition-colors duration-300 text-sm"
             style={{ boxShadow: "0 0 30px rgba(0,255,229,0.3)" }}
           >
-            Napisz do nas
+            Zarezerwuj w 48h
           </a>
+          <p className="mt-6 text-xs text-gray-600 uppercase tracking-widest">
+            Briefing → kampania w 48 godzin
+          </p>
         </div>
       </section>
 

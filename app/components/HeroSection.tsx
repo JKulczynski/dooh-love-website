@@ -64,11 +64,11 @@ export default function HeroSection() {
             </p>
           </div>
           <a
-            href="#solutions"
+            href="#wycena"
             className="inline-block bg-brandCyan text-black font-bold py-4 px-8 uppercase tracking-widest hover:bg-white transition-colors duration-300"
             style={{ boxShadow: "0 0 20px rgba(0,255,229,0.3)" }}
           >
-            Explore Solutions
+            Zarezerwuj w 48h
           </a>
         </div>
       </div>

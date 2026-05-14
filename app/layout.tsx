@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DOOH-LOVE — Mobilna Reklama LED Warszawa",
+  title: "DOOH-LOVE | Mobilna Reklama LED Warszawa",
   description: "18m² ekranu LED na ciężarówce w centrum Warszawy. Kampania w 48h od briefingu. Od 1 600 PLN/dzień netto.",
 };
 

@@ -45,3 +45,8 @@ body {
   0%, 100% { box-shadow: 0 0 20px #00FFE5, 0 0 40px #00FFE5; }
   50% { box-shadow: 0 0 40px #00FFE5, 0 0 80px #00FFE5, 0 0 120px #00FFE566; }
 }
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

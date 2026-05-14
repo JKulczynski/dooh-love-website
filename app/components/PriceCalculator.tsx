@@ -98,7 +98,7 @@ export default function PriceCalculator() {
           Zapytaj o szczegóły
         </a>
         <p className="text-center text-xs text-gray-600 uppercase tracking-widest mt-3">
-          Dokładna cena po briefingu — odpowiadamy w 48h
+          Dokładna cena po briefingu. Odpowiadamy szybko.
         </p>
       </div>
     </div>

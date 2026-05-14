@@ -24,36 +24,36 @@ export default function HeroSection() {
         animation: "scanLines 8s linear infinite",
       }} />
 
-      {/* Glow pulse — cyan left */}
+      {/* Glow pulse:cyan left */}
       <div className="absolute inset-0 pointer-events-none z-10" style={{
         background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,255,229,0.08) 0%, transparent 70%)",
         animation: "glowPulse 4s ease-in-out infinite",
       }} />
 
-      {/* Glow pulse — magenta right */}
+      {/* Glow pulse:magenta right */}
       <div className="absolute inset-0 pointer-events-none z-10" style={{
         background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,170,0.07) 0%, transparent 70%)",
         animation: "glowPulse 4s ease-in-out infinite 2s",
       }} />
 
-      {/* Gradient top — przykrywa baked-in nav */}
+      {/* Gradient top:przykrywa baked-in nav */}
       <div className="absolute top-0 left-0 right-0 pointer-events-none z-20" style={{
         height: "22%",
         background: "linear-gradient(to bottom, rgba(5,5,5,1) 0%, rgba(5,5,5,0.9) 55%, transparent 100%)",
       }} />
 
-      {/* Gradient bottom — cienki, tylko pod przycisk */}
+      {/* Gradient bottom:cienki, tylko pod przycisk */}
       <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-20" style={{
         height: "18%",
         background: "linear-gradient(to top, rgba(5,5,5,0.85) 0%, transparent 100%)",
       }} />
 
-      {/* LED flicker — delikatne migotanie ekranu trucka */}
+      {/* LED flicker:delikatne migotanie ekranu trucka */}
       <div className="absolute inset-0 pointer-events-none z-10" style={{
         animation: "ledFlicker 6s linear infinite",
       }} />
 
-      {/* CTA only — truck speaks for itself */}
+      {/* CTA only:truck speaks for itself */}
       <div className="relative z-30 w-full flex justify-center">
         <a
           href="#wycena"

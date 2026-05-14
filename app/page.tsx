@@ -3,6 +3,10 @@ import StickyBar from "./components/StickyBar";
 import ContactForm from "./components/ContactForm";
 import NavBar from "./components/NavBar";
 import PriceCalculator from "./components/PriceCalculator";
+import Ticker from "./components/Ticker";
+import AnimatedCounter from "./components/AnimatedCounter";
+import RevealOnScroll from "./components/RevealOnScroll";
+
 export default function Home() {
   return (
     <main className="bg-darkBg text-white overflow-x-hidden pb-12">
@@ -12,7 +16,10 @@ export default function Home() {
       {/* Hero */}
       <HeroSection />
 
-      {/* Intro — copy przeniesione z hero */}
+      {/* Ticker */}
+      <Ticker />
+
+      {/* Intro */}
       <section className="py-16 px-6 bg-black border-t border-white/5 text-center">
         <div className="max-w-2xl mx-auto">
           <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-5 font-light">
@@ -20,12 +27,12 @@ export default function Home() {
           </p>
           <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight mb-5">
             <span className="text-white">18m² ekranu.</span>{" "}
-            <span className="text-brandCyan">10 godzin.</span>{" "}
+            <span className="text-brandCyan">15 godzin.</span>{" "}
             <span className="text-white">Centrum Warszawy.</span>
           </h1>
           <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xl mx-auto">
             Nie czekaj aż klienci trafią na Twój billboard. Jedź do nich.
-            Twoja marka tam, gdzie tłum — każdego dnia.
+            Twoja marka tam, gdzie tłum. Każdego dnia.
           </p>
           <a
             href="#wycena"
@@ -33,54 +40,72 @@ export default function Home() {
           >
             Sprawdź wycenę
           </a>
-          <p className="text-xs text-gray-600 uppercase tracking-widest mt-4">
-            Odpowiadamy w ciągu godziny · Kampania w 48h
-          </p>
         </div>
       </section>
 
-      {/* Social Proof — tuż po hero, buduje wiarygodność */}
+      {/* Social Proof */}
       <section className="py-20 px-6 bg-black border-t border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
-          <div>
-            <div className="text-4xl font-bold text-brandCyan mb-2">18 m²</div>
-            <div className="text-xs uppercase tracking-widest text-gray-500">Powierzchnia ekranów</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-brandMagenta mb-2">10h</div>
-            <div className="text-xs uppercase tracking-widest text-gray-500">Ekspozycja dziennie</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-brandCyan mb-2">3</div>
-            <div className="text-xs uppercase tracking-widest text-gray-500">Trasy w Warszawie</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-brandMagenta mb-2">GPS</div>
-            <div className="text-xs uppercase tracking-widest text-gray-500">Monitoring w czasie rzeczywistym</div>
-          </div>
-          <div className="border border-brandCyan/20 py-4 px-2">
-            <div className="text-3xl font-bold text-brandCyan mb-2">od 1 600 zł</div>
-            <div className="text-xs uppercase tracking-widest text-gray-500">Cena netto / dzień</div>
-          </div>
+          <RevealOnScroll>
+            <div>
+              <div className="text-4xl font-bold text-brandCyan mb-2">
+                <AnimatedCounter value={18} suffix=" m²" />
+              </div>
+              <div className="text-xs uppercase tracking-widest text-gray-500">Powierzchnia ekranów</div>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={100}>
+            <div>
+              <div className="text-4xl font-bold text-brandMagenta mb-2">
+                <AnimatedCounter value={15} suffix="h" />
+              </div>
+              <div className="text-xs uppercase tracking-widest text-gray-500">Ekspozycja dziennie</div>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={200}>
+            <div>
+              <div className="text-4xl font-bold text-brandCyan mb-2">
+                <AnimatedCounter value={3} />
+              </div>
+              <div className="text-xs uppercase tracking-widest text-gray-500">Trasy w Warszawie</div>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={300}>
+            <div>
+              <div className="text-4xl font-bold text-brandMagenta mb-2">
+                <AnimatedCounter value={20} />
+              </div>
+              <div className="text-xs uppercase tracking-widest text-gray-500">Dni kampanijnych / mies.</div>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={400}>
+            <div className="border border-brandCyan/20 py-4 px-2">
+              <div className="text-3xl font-bold text-brandCyan mb-2">
+                od <AnimatedCounter value={1600} suffix=" zł" duration={1000} />
+              </div>
+              <div className="text-xs uppercase tracking-widest text-gray-500">Cena netto / dzień</div>
+            </div>
+          </RevealOnScroll>
         </div>
       </section>
 
-      {/* Video — placeholder czeka na materiał od Pawła */}
+      {/* Video */}
       <section className="py-24 px-6 bg-darkBg" id="video">
         <div className="max-w-5xl mx-auto">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-              Obejrzyj nas <span className="text-brandCyan">w akcji</span>
-            </h2>
-            <div className="w-20 h-1 bg-brandMagenta mx-auto" />
-          </div>
+          <RevealOnScroll>
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+                Obejrzyj nas <span className="text-brandCyan">w akcji</span>
+              </h2>
+              <div className="w-20 h-1 bg-brandMagenta mx-auto" />
+            </div>
+          </RevealOnScroll>
           {/* 16:9 video placeholder */}
           <div
             className="relative w-full border border-white/10 bg-black overflow-hidden group cursor-pointer"
             style={{ paddingBottom: "56.25%" }}
           >
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
-              {/* Pulsing play button */}
               <div className="relative">
                 <div
                   className="absolute inset-0 rounded-full bg-brandCyan/20"
@@ -92,9 +117,8 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-              <p className="text-xs uppercase tracking-widest text-gray-500">Materiał wideo — wkrótce</p>
+              <p className="text-xs uppercase tracking-widest text-gray-500">Materiał wideo, wkrótce</p>
             </div>
-            {/* Scan lines overlay */}
             <div className="absolute inset-0 pointer-events-none opacity-20" style={{
               backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.3) 3px, rgba(0,0,0,0.3) 4px)",
             }} />
@@ -105,41 +129,49 @@ export default function Home() {
       {/* Dlaczego to działa */}
       <section className="py-24 px-6 bg-black" id="solutions">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-              Dlaczego <span className="text-brandCyan">to działa?</span>
-            </h2>
-            <div className="w-20 h-1 bg-brandMagenta" />
-          </div>
+          <RevealOnScroll>
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+                Dlaczego <span className="text-brandCyan">to działa?</span>
+              </h2>
+              <div className="w-20 h-1 bg-brandMagenta" />
+            </div>
+          </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group">
-              <div className="text-brandCyan mb-6 group-hover:scale-110 transition-transform">
-                <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                </svg>
+            <RevealOnScroll>
+              <div className="p-8 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group h-full">
+                <div className="text-brandCyan mb-6 group-hover:scale-110 transition-transform">
+                  <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4 uppercase">Maksymalny Zasięg</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">Billboard stoi. My jedziemy. Twoja marka jest tam, gdzie tłum. Nie czeka aż tłum do niej trafi.</p>
               </div>
-              <h3 className="text-xl font-bold mb-4 uppercase">Maksymalny Zasięg</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">Billboard stoi. My jedziemy. Twoja marka jest tam, gdzie tłum — nie czeka aż tłum do niej trafi.</p>
-            </div>
-            <div className="p-8 border border-white/10 bg-white/5 hover:border-brandMagenta/50 transition-all group">
-              <div className="text-brandMagenta mb-6 group-hover:scale-110 transition-transform">
-                <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                  <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                </svg>
+            </RevealOnScroll>
+            <RevealOnScroll delay={150}>
+              <div className="p-8 border border-white/10 bg-white/5 hover:border-brandMagenta/50 transition-all group h-full">
+                <div className="text-brandMagenta mb-6 group-hover:scale-110 transition-transform">
+                  <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                    <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4 uppercase">Efekt &ldquo;Wow&rdquo;</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">18m² świecącego ekranu w środku miasta. Ludzie się odwracają. Robią zdjęcia. Wrzucają na Stories. Twoja marka żyje poza kampanią.</p>
               </div>
-              <h3 className="text-xl font-bold mb-4 uppercase">Efekt &ldquo;Wow&rdquo;</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">18m² świecącego ekranu w środku miasta. Ludzie się odwracają. Robią zdjęcia. Wrzucają na Stories. Twoja marka żyje poza kampanią.</p>
-            </div>
-            <div className="p-8 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group">
-              <div className="text-brandCyan mb-6 group-hover:scale-110 transition-transform">
-                <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                </svg>
+            </RevealOnScroll>
+            <RevealOnScroll delay={300}>
+              <div className="p-8 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group h-full">
+                <div className="text-brandCyan mb-6 group-hover:scale-110 transition-transform">
+                  <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4 uppercase">Mierzalne Wyniki</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">Raport tras i szacowany zasięg. Wiesz dokładnie gdzie była Twoja reklama i kiedy. Bez zgadywania.</p>
               </div>
-              <h3 className="text-xl font-bold mb-4 uppercase">Mierzalne Wyniki</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">GPS na żywo, raport tras, szacowany zasięg. Wiesz dokładnie gdzie była Twoja reklama i kiedy — bez zgadywania.</p>
-            </div>
+            </RevealOnScroll>
           </div>
         </div>
       </section>
@@ -147,69 +179,133 @@ export default function Home() {
       {/* Dla kogo */}
       <section className="py-24 px-6 bg-darkBg" id="dla-kogo">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16 text-right">
-            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-              Dla <span className="text-brandMagenta">kogo?</span>
-            </h2>
-            <div className="w-20 h-1 bg-brandCyan ml-auto" />
-          </div>
+          <RevealOnScroll>
+            <div className="mb-16 text-right">
+              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+                Dla <span className="text-brandMagenta">kogo?</span>
+              </h2>
+              <div className="w-20 h-1 bg-brandCyan ml-auto" />
+            </div>
+          </RevealOnScroll>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { label: "Eventy & Festiwale", desc: "Open'er, Orange Warsaw, gale MMA, koncerty" },
               { label: "FMCG & Retail", desc: "Red Bull, Coca-Cola, kampanie produktowe" },
-              { label: "Domy Mediowe", desc: "GroupM, Publicis, Dentsu — kampanie klientów" },
+              { label: "Domy Mediowe", desc: "GroupM, Publicis, Dentsu, kampanie klientów" },
               { label: "Korporacje", desc: "Launche produktów, eventy employer brandingowe" },
             ].map((item, i) => (
-              <div key={i} className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/30 transition-all">
-                <h4 className="text-sm font-bold uppercase mb-2">{item.label}</h4>
-                <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
-              </div>
+              <RevealOnScroll key={i} delay={i * 100}>
+                <div className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/30 transition-all h-full">
+                  <h4 className="text-sm font-bold uppercase mb-2">{item.label}</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Porównanie */}
+      <section className="py-24 px-6 bg-black">
+        <div className="max-w-4xl mx-auto">
+          <RevealOnScroll>
+            <div className="mb-16 text-center">
+              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+                Dlaczego nie <span className="text-brandMagenta">zwykły billboard?</span>
+              </h2>
+              <div className="w-20 h-1 bg-brandCyan mx-auto" />
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={150}>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="text-left p-4 text-xs uppercase tracking-widest text-gray-600 w-1/3" />
+                    <th className="text-center p-4 text-xs uppercase tracking-widest text-gray-400 w-1/3">
+                      Billboard statyczny
+                    </th>
+                    <th
+                      className="text-center p-4 text-xs uppercase tracking-widest text-brandCyan w-1/3"
+                      style={{ textShadow: "0 0 8px rgba(0,255,229,0.5)" }}
+                    >
+                      DOOH-LOVE
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["Mobilność", "Jeden punkt w mieście", "Jedziemy do Twoich klientów"],
+                    ["Zasięg", "Pasywni widzowie", "Tłum tam, gdzie jest akcja"],
+                    ["Elastyczność", "Kontrakt 1-3 miesiące", "Od 1 dnia kampanii"],
+                    ["Format", "Druk statyczny", "18m² LED, content w ruchu"],
+                    ["Trasy", "1 adres", "3 dedykowane trasy Warszawa"],
+                    ["Efekt viralowy", "Rzadki", "Zdjęcia, Stories, organiczne zasięgi"],
+                  ].map(([feature, billboard, dooh], i) => (
+                    <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="p-4 text-xs uppercase tracking-widest text-gray-500">{feature}</td>
+                      <td className="p-4 text-center text-gray-500">{billboard}</td>
+                      <td className="p-4 text-center text-brandCyan font-medium">{dooh}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* Trasy */}
-      <section className="py-24 px-6 bg-black" id="trasy">
+      <section className="py-24 px-6 bg-darkBg" id="trasy">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-              Nasze <span className="text-brandCyan">Trasy</span>
-            </h2>
-            <div className="w-20 h-1 bg-brandMagenta" />
-          </div>
+          <RevealOnScroll>
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+                Nasze <span className="text-brandCyan">Trasy</span>
+              </h2>
+              <div className="w-20 h-1 bg-brandMagenta" />
+            </div>
+          </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border border-white/10 bg-white/5 p-8 hover:border-brandCyan/50 transition-all">
-              <div className="text-brandCyan text-xs uppercase tracking-widest mb-4">Trasa 01</div>
-              <h3 className="text-xl font-bold uppercase mb-3">Premium / Centrum</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">Rondo Daszyńskiego → PKiN → Marszałkowska → Plac Trzech Krzyży → Elektrownia Powiśle</p>
-              <div className="text-xs text-gray-500 uppercase tracking-wider">08:00 – 23:00</div>
-            </div>
-            <div className="border border-white/10 bg-white/5 p-8 hover:border-brandMagenta/50 transition-all">
-              <div className="text-brandMagenta text-xs uppercase tracking-widest mb-4">Trasa 02</div>
-              <h3 className="text-xl font-bold uppercase mb-3">Max Zasięg</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">Rondo Dmowskiego → Al. Jerozolimskie → Marszałkowska → Rondo ONZ → Jana Pawła II → Puławska</p>
-              <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 07:00–10:00 / 15:30–19:30</div>
-            </div>
-            <div className="border border-white/10 bg-white/5 p-8 hover:border-brandCyan/50 transition-all">
-              <div className="text-brandCyan text-xs uppercase tracking-widest mb-4">Trasa 03</div>
-              <h3 className="text-xl font-bold uppercase mb-3">Noc / Nightlife</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">Plac Zbawiciela → Hala Koszyki → Mazowiecka → Bulwary Wiślane</p>
-              <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 22:00 – 01:00</div>
-            </div>
+            <RevealOnScroll>
+              <div className="border border-white/10 bg-white/5 p-8 hover:border-brandCyan/50 transition-all">
+                <div className="text-brandCyan text-xs uppercase tracking-widest mb-4">Trasa 01</div>
+                <h3 className="text-xl font-bold uppercase mb-3">Premium / Centrum</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">Rondo Daszyńskiego, PKiN, Marszałkowska, Plac Trzech Krzyży, Elektrownia Powiśle</p>
+                <div className="text-xs text-gray-500 uppercase tracking-wider">08:00 – 23:00</div>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={150}>
+              <div className="border border-white/10 bg-white/5 p-8 hover:border-brandMagenta/50 transition-all">
+                <div className="text-brandMagenta text-xs uppercase tracking-widest mb-4">Trasa 02</div>
+                <h3 className="text-xl font-bold uppercase mb-3">Max Zasięg</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">Rondo Dmowskiego, Al. Jerozolimskie, Marszałkowska, Rondo ONZ, Jana Pawła II, Puławska</p>
+                <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 07:00-10:00 / 15:30-19:30</div>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={300}>
+              <div className="border border-white/10 bg-white/5 p-8 hover:border-brandCyan/50 transition-all">
+                <div className="text-brandCyan text-xs uppercase tracking-widest mb-4">Trasa 03</div>
+                <h3 className="text-xl font-bold uppercase mb-3">Noc / Nightlife</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4">Plac Zbawiciela, Hala Koszyki, Mazowiecka, Bulwary Wiślane</p>
+                <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 22:00 – 01:00</div>
+              </div>
+            </RevealOnScroll>
           </div>
         </div>
       </section>
 
-      {/* Galeria kampanii — placeholder czeka na zdjęcia od Pawła */}
+      {/* Galeria kampanii */}
       <section className="py-24 px-6 bg-black" id="galeria">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16 text-right">
-            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-              Kampanie <span className="text-brandMagenta">w akcji</span>
-            </h2>
-            <div className="w-20 h-1 bg-brandCyan ml-auto" />
-          </div>
+          <RevealOnScroll>
+            <div className="mb-16 text-right">
+              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+                Kampanie <span className="text-brandMagenta">w akcji</span>
+              </h2>
+              <div className="w-20 h-1 bg-brandCyan ml-auto" />
+            </div>
+          </RevealOnScroll>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
               { size: "md:col-span-2", aspect: "aspect-[16/9]" },
@@ -235,43 +331,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimoniale — placeholder czeka na opinie od klientów Pawła */}
+      {/* Testimoniale */}
       <section className="py-24 px-6 bg-darkBg" id="opinie">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-              Co mówią <span className="text-brandCyan">klienci?</span>
-            </h2>
-            <div className="w-20 h-1 bg-brandMagenta" />
-          </div>
+          <RevealOnScroll>
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+                Co mówią <span className="text-brandCyan">klienci?</span>
+              </h2>
+              <div className="w-20 h-1 bg-brandMagenta" />
+            </div>
+          </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { name: "Anna K.", role: "Event Manager", company: "Agencja Eventowa" },
               { name: "Marek W.", role: "Brand Manager", company: "FMCG" },
               { name: "Tomasz B.", role: "Media Buyer", company: "Dom Mediowy" },
             ].map((t, i) => (
-              <div key={i} className="border border-white/10 bg-white/5 p-8 relative">
-                <div
-                  className="absolute top-6 left-8 text-5xl leading-none font-serif"
-                  style={{ color: i % 2 === 0 ? "rgba(0,255,229,0.15)" : "rgba(255,0,170,0.15)" }}
-                >
-                  &ldquo;
-                </div>
-                <div className="pt-8">
-                  <p className="text-gray-400 text-sm leading-relaxed italic mb-6">
-                    Opinia klienta — pojawi się wkrótce.
-                  </p>
-                  <div className="flex items-center gap-3 border-t border-white/10 pt-6">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs text-gray-400 font-bold">
-                      {t.name.split(" ").map(n => n[0]).join("")}
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold">{t.name}</div>
-                      <div className="text-[10px] uppercase tracking-widest text-gray-500">{t.role} · {t.company}</div>
+              <RevealOnScroll key={i} delay={i * 150}>
+                <div className="border border-white/10 bg-white/5 p-8 relative">
+                  <div
+                    className="absolute top-6 left-8 text-5xl leading-none font-serif"
+                    style={{ color: i % 2 === 0 ? "rgba(0,255,229,0.15)" : "rgba(255,0,170,0.15)" }}
+                  >
+                    &ldquo;
+                  </div>
+                  <div className="pt-8">
+                    <p className="text-gray-400 text-sm leading-relaxed italic mb-6">
+                      Opinia klienta. Pojawi się wkrótce.
+                    </p>
+                    <div className="flex items-center gap-3 border-t border-white/10 pt-6">
+                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs text-gray-400 font-bold">
+                        {t.name.split(" ").map(n => n[0]).join("")}
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold">{t.name}</div>
+                        <div className="text-[10px] uppercase tracking-widest text-gray-500">{t.role} · {t.company}</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
@@ -280,35 +380,37 @@ export default function Home() {
       {/* Jak startujemy */}
       <section className="py-24 px-6 bg-black overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold uppercase tracking-tight mb-16 text-right">
-            Jak <span className="text-brandMagenta">startujemy?</span>
-          </h2>
+          <RevealOnScroll>
+            <h2 className="text-3xl font-bold uppercase tracking-tight mb-16 text-right">
+              Jak <span className="text-brandMagenta">startujemy?</span>
+            </h2>
+          </RevealOnScroll>
           <div className="relative">
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10 hidden md:block" />
-            <div className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
+            <RevealOnScroll className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
                 <h4 className="text-xl font-bold mb-2 text-brandCyan uppercase">01. Briefing</h4>
                 <p className="text-gray-400">Określamy cel kampanii, docelową grupę odbiorców oraz kluczowe lokalizacje w mieście.</p>
               </div>
               <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">1</div>
               <div className="w-full md:w-[45%] order-3" />
-            </div>
-            <div className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
+            </RevealOnScroll>
+            <RevealOnScroll delay={150} className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-[45%] order-3 md:order-1" />
               <div className="z-10 bg-brandMagenta text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">2</div>
               <div className="w-full md:w-[45%] order-2 md:order-3 mt-6 md:mt-0">
                 <h4 className="text-xl font-bold mb-2 text-brandMagenta uppercase">02. Kreacja i Trasa</h4>
                 <p className="text-gray-400">Dostosowujemy Twoje materiały wideo pod ekrany LED i planujemy optymalną trasę przejazdu ciężarówki.</p>
               </div>
-            </div>
-            <div className="relative flex flex-col md:flex-row items-center justify-between">
+            </RevealOnScroll>
+            <RevealOnScroll delay={300} className="relative flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
                 <h4 className="text-xl font-bold mb-2 text-brandCyan uppercase">03. Emisja</h4>
-                <p className="text-gray-400">Ciężarówka wyjeżdża na ulice. Monitorujesz kampanię w czasie rzeczywistym dzięki naszym systemom GPS.</p>
+                <p className="text-gray-400">Ciężarówka wyjeżdża na ulice. Otrzymasz raport trasy i szacowany zasięg po kampanii.</p>
               </div>
               <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">3</div>
               <div className="w-full md:w-[45%] order-3" />
-            </div>
+            </RevealOnScroll>
           </div>
         </div>
       </section>
@@ -316,12 +418,14 @@ export default function Home() {
       {/* Wycena Online */}
       <section className="py-24 px-6 bg-zinc-900" id="wycena">
         <div className="max-w-3xl mx-auto border border-white/20 p-8 md:p-12">
-          <h2 className="text-2xl font-bold uppercase mb-2 text-center">
-            Wycena <span className="text-brandCyan">Online</span>
-          </h2>
-          <p className="text-center text-xs text-gray-500 uppercase tracking-widest mb-10">
-            Szacunkowy koszt kampanii
-          </p>
+          <RevealOnScroll>
+            <h2 className="text-2xl font-bold uppercase mb-2 text-center">
+              Wycena <span className="text-brandCyan">Online</span>
+            </h2>
+            <p className="text-center text-xs text-gray-500 uppercase tracking-widest mb-10">
+              Szacunkowy koszt kampanii
+            </p>
+          </RevealOnScroll>
           <PriceCalculator />
         </div>
       </section>
@@ -329,18 +433,23 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-24 px-6 bg-darkBg text-center">
         <div className="max-w-3xl mx-auto">
-          {/* Urgency bar */}
-          <div className="inline-flex items-center gap-2 border border-brandMagenta/40 px-4 py-2 mb-8 text-xs uppercase tracking-widest text-brandMagenta">
-            <span className="w-2 h-2 rounded-full bg-brandMagenta animate-pulse inline-block" />
-            Dostępność: kampanie realizujemy w 48h od briefingu
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
-            Zarezerwuj termin<br />
-            <span className="text-brandCyan">zanim zrobi to</span>{" "}
-            <span className="text-brandMagenta">konkurencja.</span>
-          </h2>
-          <p className="text-gray-400 uppercase tracking-widest text-sm mb-10">Jeden klient = jedna trasa. Terminy znikają.</p>
-          <ContactForm />
+          <RevealOnScroll>
+            <div className="inline-flex items-center gap-2 border border-brandMagenta/40 px-4 py-2 mb-8 text-xs uppercase tracking-widest text-brandMagenta">
+              <span className="w-2 h-2 rounded-full bg-brandMagenta animate-pulse inline-block" />
+              Dostępność: kampanie realizujemy szybko od briefingu
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={100}>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
+              Zarezerwuj termin<br />
+              <span className="text-brandCyan">zanim zrobi to</span>{" "}
+              <span className="text-brandMagenta">konkurencja.</span>
+            </h2>
+          </RevealOnScroll>
+          <RevealOnScroll delay={200}>
+            <p className="text-gray-400 uppercase tracking-widest text-sm mb-10">Jeden klient = jedna trasa. Terminy znikają.</p>
+            <ContactForm />
+          </RevealOnScroll>
         </div>
       </section>
 

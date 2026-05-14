@@ -14,6 +14,10 @@
   --color-darkBg: #0a0a0a;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

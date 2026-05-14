@@ -1,24 +1,14 @@
 import HeroSection from "./components/HeroSection";
 import StickyBar from "./components/StickyBar";
 import ContactForm from "./components/ContactForm";
+import NavBar from "./components/NavBar";
+import PriceCalculator from "./components/PriceCalculator";
 
 export default function Home() {
   return (
     <main className="bg-darkBg text-white overflow-x-hidden pb-12">
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="font-bold text-xl tracking-tighter">
-            DOOH<span className="text-brandCyan">-</span>LOVE
-          </div>
-          <button aria-label="Menu" className="p-2 text-white">
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path d="M4 6h16M4 12h16m-7 6h7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-            </svg>
-          </button>
-        </div>
-      </nav>
+      <NavBar />
 
       {/* Hero */}
       <HeroSection />
@@ -317,39 +307,13 @@ export default function Home() {
       {/* Wycena Online */}
       <section className="py-24 px-6 bg-zinc-900" id="wycena">
         <div className="max-w-3xl mx-auto border border-white/20 p-8 md:p-12">
-          <h2 className="text-2xl font-bold uppercase mb-8 text-center">
+          <h2 className="text-2xl font-bold uppercase mb-2 text-center">
             Wycena <span className="text-brandCyan">Online</span>
           </h2>
-          <div className="space-y-6">
-            <div>
-              <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Czas trwania kampanii (dni)</label>
-              <input className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-brandCyan" max="30" min="1" type="range" defaultValue="7" />
-              <div className="flex justify-between text-xs mt-2 text-gray-500">
-                <span>1 dzień</span>
-                <span>30 dni</span>
-              </div>
-            </div>
-            <div>
-              <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Liczba ciężarówek</label>
-              <select className="w-full bg-black border border-white/20 p-3 focus:border-brandCyan outline-none transition-colors">
-                <option>1 Pojazd</option>
-                <option>2 Pojazdy</option>
-                <option>Flota (3+)</option>
-              </select>
-            </div>
-            <div className="pt-6 border-t border-white/10">
-              <div className="flex justify-between items-end mb-6">
-                <span className="text-sm uppercase text-gray-400">Szacowany koszt netto:</span>
-                <span className="text-3xl font-bold text-brandCyan">od 1 600 PLN</span>
-              </div>
-              <button
-                className="w-full bg-white text-black font-bold py-4 uppercase tracking-widest hover:bg-brandMagenta hover:text-white transition-all"
-                type="button"
-              >
-                Zapytaj o szczegóły
-              </button>
-            </div>
-          </div>
+          <p className="text-center text-xs text-gray-500 uppercase tracking-widest mb-10">
+            Szacunkowy koszt kampanii
+          </p>
+          <PriceCalculator />
         </div>
       </section>
 

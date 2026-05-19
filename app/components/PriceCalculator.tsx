@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 const RATES: Record<string, number> = {
-  "1": 1600,
-  "2": 3000,
+  "1": 2000,
+  "2": 4000,
 };
 
 function formatPLN(n: number) {
@@ -50,8 +50,8 @@ export default function PriceCalculator() {
         </label>
         <div className="grid grid-cols-3 gap-3">
           {[
-            { value: "1", label: "1 pojazd", sub: "1 600 PLN/dzień" },
-            { value: "2", label: "2 pojazdy", sub: "3 000 PLN/dzień" },
+            { value: "1", label: "1 pojazd", sub: "2 000 PLN/dzień" },
+            { value: "2", label: "2 pojazdy", sub: "4 000 PLN/dzień" },
             { value: "3+", label: "Flota 3+", sub: "Wycena indyw." },
           ].map((opt) => (
             <button

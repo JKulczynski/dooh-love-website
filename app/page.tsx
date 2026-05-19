@@ -81,7 +81,7 @@ export default function Home() {
           <RevealOnScroll delay={400}>
             <div className="border border-brandCyan/20 py-4 px-2">
               <div className="text-3xl font-bold text-brandCyan mb-2">
-                od <AnimatedCounter value={1600} suffix=" zł" duration={1000} />
+                od <AnimatedCounter value={2000} suffix=" PLN" duration={1000} />
               </div>
               <div className="text-xs uppercase tracking-widest text-gray-500">Cena netto / dzień</div>
             </div>
@@ -270,7 +270,7 @@ export default function Home() {
             <RevealOnScroll>
               <div className="border border-white/10 bg-white/5 p-8 hover:border-brandCyan/50 transition-all">
                 <div className="text-brandCyan text-xs uppercase tracking-widest mb-4">Trasa 01</div>
-                <h3 className="text-xl font-bold uppercase mb-3">Premium / Centrum</h3>
+                <h3 className="text-xl font-bold uppercase mb-3">Centrum Impact</h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">Rondo Daszyńskiego, PKiN, Marszałkowska, Plac Trzech Krzyży, Elektrownia Powiśle</p>
                 <div className="text-xs text-gray-500 uppercase tracking-wider">08:00 – 23:00</div>
               </div>
@@ -278,7 +278,7 @@ export default function Home() {
             <RevealOnScroll delay={150}>
               <div className="border border-white/10 bg-white/5 p-8 hover:border-brandMagenta/50 transition-all">
                 <div className="text-brandMagenta text-xs uppercase tracking-widest mb-4">Trasa 02</div>
-                <h3 className="text-xl font-bold uppercase mb-3">Max Zasięg</h3>
+                <h3 className="text-xl font-bold uppercase mb-3">Business Flow</h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">Rondo Dmowskiego, Al. Jerozolimskie, Marszałkowska, Rondo ONZ, Jana Pawła II, Puławska</p>
                 <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 07:00-10:00 / 15:30-19:30</div>
               </div>
@@ -286,12 +286,49 @@ export default function Home() {
             <RevealOnScroll delay={300}>
               <div className="border border-white/10 bg-white/5 p-8 hover:border-brandCyan/50 transition-all">
                 <div className="text-brandCyan text-xs uppercase tracking-widest mb-4">Trasa 03</div>
-                <h3 className="text-xl font-bold uppercase mb-3">Noc / Nightlife</h3>
+                <h3 className="text-xl font-bold uppercase mb-3">Nightlife</h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-4">Plac Zbawiciela, Hala Koszyki, Mazowiecka, Bulwary Wiślane</p>
                 <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 22:00 – 01:00</div>
               </div>
             </RevealOnScroll>
           </div>
+        </div>
+      </section>
+
+      {/* Logotypy klientów */}
+      <section className="py-20 px-6 bg-black border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <RevealOnScroll>
+            <p className="text-center text-xs uppercase tracking-[0.3em] text-gray-600 mb-10">
+              Zaufali nam
+            </p>
+          </RevealOnScroll>
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <RevealOnScroll key={i} delay={i * 80}>
+                <div className="border border-white/10 bg-white/5 h-16 flex items-center justify-center hover:border-brandCyan/30 transition-all">
+                  <span className="text-[10px] uppercase tracking-widest text-white/20">Logo klienta</span>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+          <RevealOnScroll>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mt-16 border-t border-white/5 pt-16">
+              {[
+                { value: "50+", label: "Kampanii zrealizowanych" },
+                { value: "3M+", label: "Kontaktów dziennie" },
+                { value: "100%", label: "Klientów wraca" },
+                { value: "24h", label: "Czas odpowiedzi" },
+              ].map((stat, i) => (
+                <div key={i}>
+                  <div className={`text-3xl font-bold mb-2 ${i % 2 === 0 ? "text-brandCyan" : "text-brandMagenta"}`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-xs uppercase tracking-widest text-gray-500">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -412,6 +449,52 @@ export default function Home() {
               <div className="w-full md:w-[45%] order-3" />
             </RevealOnScroll>
           </div>
+        </div>
+      </section>
+
+      {/* Content Package */}
+      <section className="py-24 px-6 bg-darkBg border-t border-white/5" id="content-package">
+        <div className="max-w-7xl mx-auto">
+          <RevealOnScroll>
+            <div className="mb-16">
+              <p className="text-xs uppercase tracking-[0.3em] text-brandMagenta mb-3">Dodatkowa usługa</p>
+              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+                Content <span className="text-brandCyan">Package</span>
+              </h2>
+              <div className="w-20 h-1 bg-brandMagenta" />
+              <p className="text-gray-400 text-sm mt-6 max-w-xl">
+                Twoja kampania nie kończy się na ekranie. Tworzymy materiały, które żyją dalej w social media.
+              </p>
+            </div>
+          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: "🎥", label: "Operator na miejscu", desc: "Profesjonalne nagranie kampanii w trakcie emisji" },
+              { icon: "🚁", label: "Dron shots", desc: "Ujęcia z lotu ptaka — truck w tkance miasta nocą" },
+              { icon: "📱", label: "Instagram Reels", desc: "Gotowy Reel pod format 9:16, montaż i kolor" },
+              { icon: "🎬", label: "TikTok Edits", desc: "Wersja pod TikTok z dynamicznym cięciem" },
+              { icon: "🌆", label: "Night City Cinematic", desc: "Materiał kinowy — mokra nawierzchnia, neon, slow motion" },
+              { icon: "⚡", label: "Delivery w 24h", desc: "Wszystkie materiały gotowe dobę po emisji" },
+            ].map((item, i) => (
+              <RevealOnScroll key={i} delay={i * 80}>
+                <div className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/40 transition-all group h-full">
+                  <div className="text-2xl mb-4">{item.icon}</div>
+                  <h4 className="text-sm font-bold uppercase mb-2 group-hover:text-brandCyan transition-colors">{item.label}</h4>
+                  <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+          <RevealOnScroll>
+            <div className="mt-10 text-center">
+              <a
+                href="#wycena"
+                className="inline-flex items-center gap-3 border border-brandMagenta text-brandMagenta font-bold py-4 px-10 uppercase tracking-widest hover:bg-brandMagenta hover:text-black transition-all text-sm"
+              >
+                Zapytaj o Content Package
+              </a>
+            </div>
+          </RevealOnScroll>
         </div>
       </section>
 

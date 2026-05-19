@@ -1,6 +1,7 @@
 import HeroSection from "./components/HeroSection";
 import StickyBar from "./components/StickyBar";
 import ContactForm from "./components/ContactForm";
+import LeadForm from "./components/LeadForm";
 import NavBar from "./components/NavBar";
 import PriceCalculator from "./components/PriceCalculator";
 import Ticker from "./components/Ticker";
@@ -576,6 +577,27 @@ export default function Home() {
             </p>
           </RevealOnScroll>
           <PriceCalculator />
+        </div>
+      </section>
+
+      {/* Wycena Indywidualna */}
+      <section className="py-24 px-6 bg-black border-t border-white/5" id="wycena-indywidualna">
+        <div className="max-w-3xl mx-auto">
+          <RevealOnScroll>
+            <div className="mb-12">
+              <p className="text-xs uppercase tracking-[0.3em] text-brandMagenta mb-3">Duże marki, eventy, launche</p>
+              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+                Wycena <span className="text-brandMagenta">Indywidualna</span>
+              </h2>
+              <div className="w-20 h-1 bg-brandCyan" />
+              <p className="text-gray-400 text-sm mt-6 leading-relaxed">
+                Planujesz galę, launch produktu lub kampanię wymagającą ekstra uwagi? Napisz do nas. Odezwiemy się w ciągu kilku godzin z ofertą skrojoną dokładnie pod Twoje potrzeby.
+              </p>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={100}>
+            <LeadForm />
+          </RevealOnScroll>
         </div>
       </section>
 

@@ -519,6 +519,110 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Przygotowanie projektu - pricing */}
+      <section className="py-24 px-6 bg-black border-t border-white/5" id="projekt">
+        <div className="max-w-7xl mx-auto">
+          <RevealOnScroll>
+            <div className="mb-16 text-center">
+              <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-3">Upsell</p>
+              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
+                Przygotowanie <span className="text-brandCyan">Projektu</span>
+              </h2>
+              <div className="w-20 h-1 bg-brandMagenta mx-auto" />
+              <p className="text-gray-400 text-sm mt-6 max-w-xl mx-auto">
+                Nie masz kreacji? Produkujemy grafikę i animacje na ekrany LED. Wybierz pakiet odpowiedni do skali kampanii.
+              </p>
+            </div>
+          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Essential",
+                price: "2 500",
+                tag: null,
+                color: "border-white/10",
+                accent: "text-gray-300",
+                items: [
+                  "Statyczna grafika na ekrany LED",
+                  "Prosty projekt wizualny",
+                  "Gotowe do emisji w 48h",
+                  "1 wersja kreacji",
+                ],
+              },
+              {
+                name: "Signature",
+                price: "6 000",
+                tag: "Rekomendowany",
+                color: "border-brandCyan",
+                accent: "text-brandCyan",
+                items: [
+                  "Animowana kreacja na ekrany LED",
+                  "Motion graphics i efekty",
+                  "Gotowe do emisji w 48h",
+                  "2 wersje kreacji",
+                  "Adaptacja pod 3 ekrany auta",
+                ],
+              },
+              {
+                name: "Flagship",
+                price: "12 000",
+                tag: null,
+                color: "border-brandMagenta/60",
+                accent: "text-brandMagenta",
+                items: [
+                  "Pełna produkcja wideo i animacji",
+                  "Cinematic night city efekty",
+                  "Gotowe do emisji w 48h",
+                  "Nielimitowane wersje kreacji",
+                  "Adaptacja pod 3 ekrany auta",
+                  "Materiał promocyjny po kampanii",
+                ],
+              },
+            ].map((pkg, i) => (
+              <RevealOnScroll key={i} delay={i * 100}>
+                <div className={`border ${pkg.color} p-8 relative h-full flex flex-col ${pkg.tag ? "bg-brandCyan/5" : "bg-white/5"}`}>
+                  {pkg.tag && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brandCyan text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1">
+                      {pkg.tag}
+                    </div>
+                  )}
+                  <div className="mb-6">
+                    <h3 className={`text-lg font-bold uppercase tracking-widest mb-4 ${pkg.accent}`}>{pkg.name}</h3>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl font-bold text-white">{pkg.price}</span>
+                      <span className="text-xs text-gray-500 uppercase tracking-widest">PLN brutto</span>
+                    </div>
+                  </div>
+                  <ul className="space-y-3 flex-1 mb-8">
+                    {pkg.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-3 text-sm text-gray-400">
+                        <span className={`${pkg.accent} font-bold mt-0.5`}>✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="#wycena-indywidualna"
+                    className={`block text-center py-3 text-xs font-bold uppercase tracking-widest transition-all border ${
+                      pkg.tag
+                        ? "bg-brandCyan text-black border-brandCyan hover:bg-white hover:border-white"
+                        : "border-white/20 text-gray-300 hover:border-white/50"
+                    }`}
+                  >
+                    Wybierz pakiet
+                  </a>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+          <RevealOnScroll>
+            <p className="text-center text-xs text-gray-600 uppercase tracking-widest mt-8">
+              Ceny brutto. Kreacja nie jest wymagana - możesz dostarczyć własne materiały.
+            </p>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* Content Package */}
       <section className="py-24 px-6 bg-darkBg border-t border-white/5" id="content-package">
         <div className="max-w-7xl mx-auto">

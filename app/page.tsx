@@ -126,6 +126,72 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Przyjdź z pomysłem */}
+      <section className="py-24 px-6 bg-darkBg border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <RevealOnScroll>
+            <div className="mb-16 text-center">
+              <p className="text-xs uppercase tracking-[0.3em] text-brandMagenta mb-4">Jak działamy</p>
+              <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tight mb-4">
+                Przyjdź z pomysłem.<br />
+                <span className="text-brandCyan">Wyjdź z kampanią.</span>
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto text-base leading-relaxed mt-6">
+                Nie ograniczamy się do aut LED. Masz galę MMA, launch produktu, event firmowy? Przynieś nam problem. My obudujemy go kompletną kampanią uliczną - od trasy przez kreację, drony i relacje, aż po raport i materiały promocyjne.
+              </p>
+            </div>
+          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-white/10 overflow-hidden">
+            <RevealOnScroll>
+              <div className="p-10 bg-white/5 border-b md:border-b-0 md:border-r border-white/10">
+                <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-8">Ty przynosisz</p>
+                <ul className="space-y-5">
+                  {[
+                    "Markę, event lub produkt do promocji",
+                    "Grupę docelową i cel kampanii",
+                    "Termin i budżet",
+                    "Zaufanie że to ogarniemy",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-4">
+                      <span className="text-brandMagenta font-bold text-lg leading-none mt-0.5">→</span>
+                      <span className="text-gray-300 text-sm leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll delay={150}>
+              <div className="p-10 bg-brandCyan/5">
+                <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-8">My dostarczamy</p>
+                <ul className="space-y-5">
+                  {[
+                    "Trasę skrojoną pod Twoją grupę docelową",
+                    "Kreację na ekrany LED + wizualizacje",
+                    "Drony, foto, Reelsy i TikToki z akcji",
+                    "Raport zasięgu i materiał promocyjny gotowy w 24h",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-4">
+                      <span className="text-brandCyan font-bold text-lg leading-none mt-0.5">✓</span>
+                      <span className="text-gray-300 text-sm leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </RevealOnScroll>
+          </div>
+          <RevealOnScroll delay={200}>
+            <div className="mt-10 text-center">
+              <a
+                href="#wycena"
+                className="inline-flex items-center gap-3 bg-brandCyan text-black font-bold py-4 px-10 uppercase tracking-widest hover:bg-white transition-colors text-sm"
+              >
+                Powiedz nam o swoim pomyśle
+              </a>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* Dlaczego to działa */}
       <section className="py-24 px-6 bg-black" id="solutions">
         <div className="max-w-7xl mx-auto">

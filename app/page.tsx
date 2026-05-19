@@ -7,6 +7,7 @@ import PriceCalculator from "./components/PriceCalculator";
 import Ticker from "./components/Ticker";
 import AnimatedCounter from "./components/AnimatedCounter";
 import RevealOnScroll from "./components/RevealOnScroll";
+import TrailMapWrapper from "./components/TrailMapWrapper";
 
 export default function Home() {
   return (
@@ -335,27 +336,84 @@ export default function Home() {
           </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <RevealOnScroll>
-              <div className="border border-white/10 bg-white/5 p-8 hover:border-brandCyan/50 transition-all">
-                <div className="text-brandCyan text-xs uppercase tracking-widest mb-4">Trasa 01</div>
-                <h3 className="text-xl font-bold uppercase mb-3">Centrum Impact</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">Rondo Daszyńskiego, PKiN, Marszałkowska, Plac Trzech Krzyży, Elektrownia Powiśle</p>
-                <div className="text-xs text-gray-500 uppercase tracking-wider">08:00 – 23:00</div>
+              <div className="border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all overflow-hidden">
+                <TrailMapWrapper
+                  center={[52.231, 21.001]}
+                  coordinates={[
+                    [52.2296, 20.9847],
+                    [52.2319, 21.0067],
+                    [52.2297, 21.0079],
+                    [52.2238, 21.0166],
+                    [52.2244, 21.0438],
+                  ]}
+                  points={[
+                    { pos: [52.2296, 20.9847], label: "Rondo Daszyńskiego" },
+                    { pos: [52.2319, 21.0067], label: "PKiN" },
+                    { pos: [52.2238, 21.0166], label: "Pl. Trzech Krzyży" },
+                    { pos: [52.2244, 21.0438], label: "Elektrownia Powiśle" },
+                  ]}
+                  color="#00FFE5"
+                />
+                <div className="p-6">
+                  <div className="text-brandCyan text-xs uppercase tracking-widest mb-3">Trasa 01</div>
+                  <h3 className="text-xl font-bold uppercase mb-3">Centrum Impact</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-3">Rondo Daszyńskiego, PKiN, Marszałkowska, Plac Trzech Krzyży, Elektrownia Powiśle</p>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider">08:00 – 23:00</div>
+                </div>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={150}>
-              <div className="border border-white/10 bg-white/5 p-8 hover:border-brandMagenta/50 transition-all">
-                <div className="text-brandMagenta text-xs uppercase tracking-widest mb-4">Trasa 02</div>
-                <h3 className="text-xl font-bold uppercase mb-3">Business Flow</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">Rondo Dmowskiego, Al. Jerozolimskie, Marszałkowska, Rondo ONZ, Jana Pawła II, Puławska</p>
-                <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 07:00-10:00 / 15:30-19:30</div>
+              <div className="border border-white/10 bg-white/5 hover:border-brandMagenta/50 transition-all overflow-hidden">
+                <TrailMapWrapper
+                  center={[52.235, 21.003]}
+                  coordinates={[
+                    [52.2307, 21.0122],
+                    [52.2287, 21.0156],
+                    [52.2297, 21.0079],
+                    [52.2342, 20.9853],
+                    [52.2480, 20.9862],
+                    [52.1955, 21.0122],
+                  ]}
+                  points={[
+                    { pos: [52.2307, 21.0122], label: "Rondo Dmowskiego" },
+                    { pos: [52.2342, 20.9853], label: "Rondo ONZ" },
+                    { pos: [52.2480, 20.9862], label: "Jana Pawła II" },
+                    { pos: [52.1955, 21.0122], label: "Puławska" },
+                  ]}
+                  color="#FF00AA"
+                />
+                <div className="p-6">
+                  <div className="text-brandMagenta text-xs uppercase tracking-widest mb-3">Trasa 02</div>
+                  <h3 className="text-xl font-bold uppercase mb-3">Business Flow</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-3">Rondo Dmowskiego, Al. Jerozolimskie, Marszałkowska, Rondo ONZ, Jana Pawła II, Puławska</p>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 07:00–10:00 / 15:30–19:30</div>
+                </div>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={300}>
-              <div className="border border-white/10 bg-white/5 p-8 hover:border-brandCyan/50 transition-all">
-                <div className="text-brandCyan text-xs uppercase tracking-widest mb-4">Trasa 03</div>
-                <h3 className="text-xl font-bold uppercase mb-3">Nightlife</h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">Plac Zbawiciela, Hala Koszyki, Mazowiecka, Bulwary Wiślane</p>
-                <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 22:00 – 01:00</div>
+              <div className="border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all overflow-hidden">
+                <TrailMapWrapper
+                  center={[52.228, 21.020]}
+                  coordinates={[
+                    [52.2208, 21.0166],
+                    [52.2224, 21.0180],
+                    [52.2333, 21.0114],
+                    [52.2420, 21.0380],
+                  ]}
+                  points={[
+                    { pos: [52.2208, 21.0166], label: "Pl. Zbawiciela" },
+                    { pos: [52.2224, 21.0180], label: "Hala Koszyki" },
+                    { pos: [52.2333, 21.0114], label: "Mazowiecka" },
+                    { pos: [52.2420, 21.0380], label: "Bulwary Wiślane" },
+                  ]}
+                  color="#00FFE5"
+                />
+                <div className="p-6">
+                  <div className="text-brandCyan text-xs uppercase tracking-widest mb-3">Trasa 03</div>
+                  <h3 className="text-xl font-bold uppercase mb-3">Nightlife</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-3">Plac Zbawiciela, Hala Koszyki, Mazowiecka, Bulwary Wiślane</p>
+                  <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 22:00 – 01:00</div>
+                </div>
               </div>
             </RevealOnScroll>
           </div>

@@ -338,11 +338,11 @@ export default function Home() {
             <RevealOnScroll>
               <div className="border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all overflow-hidden">
                 <TrailMapWrapper
-                  points={[
-                    { pos: [52.2296, 20.9847], label: "Rondo Daszyńskiego" },
-                    { pos: [52.2317, 21.0067], label: "PKiN" },
-                    { pos: [52.2238, 21.0251], label: "Pl. Trzech Krzyży" },
-                    { pos: [52.2244, 21.0393], label: "Elektrownia Powiśle" },
+                  stops={[
+                    { address: "Rondo Daszyńskiego", label: "Rondo Daszyńskiego" },
+                    { address: "Pałac Kultury i Nauki", label: "PKiN" },
+                    { address: "Plac Trzech Krzyży", label: "Pl. Trzech Krzyży" },
+                    { address: "Elektrownia Powiśle", label: "Elektrownia Powiśle" },
                   ]}
                   color="#00FFE5"
                 />
@@ -357,11 +357,11 @@ export default function Home() {
             <RevealOnScroll delay={150}>
               <div className="border border-white/10 bg-white/5 hover:border-brandMagenta/50 transition-all overflow-hidden">
                 <TrailMapWrapper
-                  points={[
-                    { pos: [52.2285, 21.0050], label: "Rondo Dmowskiego" },
-                    { pos: [52.2353, 20.9840], label: "Rondo ONZ" },
-                    { pos: [52.2433, 20.9876], label: "Jana Pawła II" },
-                    { pos: [52.1955, 21.0122], label: "Puławska" },
+                  stops={[
+                    { address: "Rondo Romana Dmowskiego", label: "Rondo Dmowskiego" },
+                    { address: "Rondo ONZ", label: "Rondo ONZ" },
+                    { address: "Aleja Jana Pawła II 23", label: "Jana Pawła II" },
+                    { address: "Puławska 2", label: "Puławska" },
                   ]}
                   color="#FF00AA"
                 />
@@ -376,11 +376,11 @@ export default function Home() {
             <RevealOnScroll delay={300}>
               <div className="border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all overflow-hidden">
                 <TrailMapWrapper
-                  points={[
-                    { pos: [52.2208, 21.0166], label: "Pl. Zbawiciela" },
-                    { pos: [52.2221, 21.0154], label: "Hala Koszyki" },
-                    { pos: [52.2315, 21.0145], label: "Mazowiecka" },
-                    { pos: [52.2436, 21.0270], label: "Bulwary Wiślane" },
+                  stops={[
+                    { address: "Plac Zbawiciela", label: "Pl. Zbawiciela" },
+                    { address: "Hala Koszyki, Koszykowa 63", label: "Hala Koszyki" },
+                    { address: "Mazowiecka 11", label: "Mazowiecka" },
+                    { address: "Bulwary Wiślane", label: "Bulwary Wiślane" },
                   ]}
                   color="#00FFE5"
                 />

@@ -4,10 +4,13 @@ import dynamic from "next/dynamic";
 
 const TrailMap = dynamic(() => import("./TrailMap"), { ssr: false });
 
-type LatLng = [number, number];
+interface Stop {
+  address: string;
+  label: string;
+}
 
 interface Props {
-  points: { pos: LatLng; label: string }[];
+  stops: Stop[];
   color: string;
 }
 

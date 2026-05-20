@@ -51,21 +51,35 @@ body {
   to   { transform: translateX(-50%); }
 }
 
-.map-tooltip.leaflet-tooltip {
+.gmap-tip {
   background: #0a0a0a;
-  border: 1px solid rgba(255,255,255,0.2);
   color: #fff;
   font-size: 11px;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 4px 8px;
-  border-radius: 0;
-  box-shadow: none;
   white-space: nowrap;
 }
 
-.map-tooltip.leaflet-tooltip::before {
-  border-top-color: rgba(255,255,255,0.2);
+/* Remove Google Maps InfoWindow chrome */
+.gm-style .gm-style-iw-c {
+  background: #0a0a0a !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 0 !important;
+  padding: 4px 8px !important;
+  box-shadow: none !important;
+}
+.gm-style .gm-style-iw-d {
+  overflow: hidden !important;
+}
+.gm-style .gm-style-iw-t::after {
+  background: rgba(255,255,255,0.15) !important;
+  box-shadow: none !important;
+}
+.gm-style .gm-style-iw-tc::after {
+  background: rgba(255,255,255,0.15) !important;
+}
+.gm-style-iw-chr {
+  display: none !important;
 }

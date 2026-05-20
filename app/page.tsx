@@ -8,7 +8,6 @@ import Ticker from "./components/Ticker";
 import AnimatedCounter from "./components/AnimatedCounter";
 import RevealOnScroll from "./components/RevealOnScroll";
 import TrailMapWrapper from "./components/TrailMapWrapper";
-import { TRASA_01_COORDS, TRASA_02_COORDS, TRASA_03_COORDS } from "./data/trasyCoordinates";
 
 export default function Home() {
   return (
@@ -339,13 +338,11 @@ export default function Home() {
             <RevealOnScroll>
               <div className="border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all overflow-hidden">
                 <TrailMapWrapper
-                  center={[52.231, 21.001]}
-                  coordinates={TRASA_01_COORDS}
                   points={[
                     { pos: [52.2296, 20.9847], label: "Rondo Daszyńskiego" },
-                    { pos: [52.2319, 21.0067], label: "PKiN" },
-                    { pos: [52.2238, 21.0166], label: "Pl. Trzech Krzyży" },
-                    { pos: [52.2244, 21.0438], label: "Elektrownia Powiśle" },
+                    { pos: [52.2317, 21.0067], label: "PKiN" },
+                    { pos: [52.2238, 21.0251], label: "Pl. Trzech Krzyży" },
+                    { pos: [52.2244, 21.0393], label: "Elektrownia Powiśle" },
                   ]}
                   color="#00FFE5"
                 />
@@ -360,12 +357,10 @@ export default function Home() {
             <RevealOnScroll delay={150}>
               <div className="border border-white/10 bg-white/5 hover:border-brandMagenta/50 transition-all overflow-hidden">
                 <TrailMapWrapper
-                  center={[52.215, 21.004]}
-                  coordinates={TRASA_02_COORDS}
                   points={[
-                    { pos: [52.2307, 21.0122], label: "Rondo Dmowskiego" },
-                    { pos: [52.2342, 20.9853], label: "Rondo ONZ" },
-                    { pos: [52.2480, 20.9862], label: "Jana Pawła II" },
+                    { pos: [52.2285, 21.0050], label: "Rondo Dmowskiego" },
+                    { pos: [52.2353, 20.9840], label: "Rondo ONZ" },
+                    { pos: [52.2433, 20.9876], label: "Jana Pawła II" },
                     { pos: [52.1955, 21.0122], label: "Puławska" },
                   ]}
                   color="#FF00AA"
@@ -381,13 +376,11 @@ export default function Home() {
             <RevealOnScroll delay={300}>
               <div className="border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all overflow-hidden">
                 <TrailMapWrapper
-                  center={[52.232, 21.025]}
-                  coordinates={TRASA_03_COORDS}
                   points={[
                     { pos: [52.2208, 21.0166], label: "Pl. Zbawiciela" },
-                    { pos: [52.2224, 21.0180], label: "Hala Koszyki" },
-                    { pos: [52.2333, 21.0114], label: "Mazowiecka" },
-                    { pos: [52.2420, 21.0380], label: "Bulwary Wiślane" },
+                    { pos: [52.2221, 21.0154], label: "Hala Koszyki" },
+                    { pos: [52.2315, 21.0145], label: "Mazowiecka" },
+                    { pos: [52.2436, 21.0270], label: "Bulwary Wiślane" },
                   ]}
                   color="#00FFE5"
                 />

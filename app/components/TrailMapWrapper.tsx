@@ -7,8 +7,6 @@ const TrailMap = dynamic(() => import("./TrailMap"), { ssr: false });
 type LatLng = [number, number];
 
 interface Props {
-  center: LatLng;
-  coordinates: LatLng[];
   points: { pos: LatLng; label: string }[];
   color: string;
 }

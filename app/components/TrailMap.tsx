@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { MapContainer, TileLayer, Polyline, CircleMarker, Tooltip } from "react-leaflet";
+import { MapContainer, TileLayer, Polyline, CircleMarker, Tooltip, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 type LatLng = [number, number];
@@ -13,9 +13,20 @@ interface TrailMapProps {
   color: string;
 }
 
+function FitBounds({ coordinates }: { coordinates: LatLng[] }) {
+  const map = useMap();
+  useEffect(() => {
+    if (coordinates.length > 0) {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const L = require("leaflet");
+      map.fitBounds(L.latLngBounds(coordinates), { padding: [16, 16] });
+    }
+  }, [map, coordinates]);
+  return null;
+}
+
 export default function TrailMap({ center, coordinates, points, color }: TrailMapProps) {
   useEffect(() => {
-    // Fix leaflet default icon issue in Next.js
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const L = require("leaflet");
     delete L.Icon.Default.prototype._getIconUrl;
@@ -40,6 +51,7 @@ export default function TrailMap({ center, coordinates, points, color }: TrailMa
         url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
         attribution=""
       />
+      <FitBounds coordinates={coordinates} />
       <Polyline
         positions={coordinates}
         pathOptions={{ color, weight: 3, opacity: 0.9 }}

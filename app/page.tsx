@@ -8,6 +8,7 @@ import Ticker from "./components/Ticker";
 import AnimatedCounter from "./components/AnimatedCounter";
 import RevealOnScroll from "./components/RevealOnScroll";
 import TrailMapWrapper from "./components/TrailMapWrapper";
+import { TRASA_01_COORDS, TRASA_02_COORDS, TRASA_03_COORDS } from "./data/trasyCoordinates";
 
 export default function Home() {
   return (
@@ -339,13 +340,7 @@ export default function Home() {
               <div className="border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all overflow-hidden">
                 <TrailMapWrapper
                   center={[52.231, 21.001]}
-                  coordinates={[
-                    [52.2296, 20.9847],
-                    [52.2319, 21.0067],
-                    [52.2297, 21.0079],
-                    [52.2238, 21.0166],
-                    [52.2244, 21.0438],
-                  ]}
+                  coordinates={TRASA_01_COORDS}
                   points={[
                     { pos: [52.2296, 20.9847], label: "Rondo Daszyńskiego" },
                     { pos: [52.2319, 21.0067], label: "PKiN" },
@@ -365,15 +360,8 @@ export default function Home() {
             <RevealOnScroll delay={150}>
               <div className="border border-white/10 bg-white/5 hover:border-brandMagenta/50 transition-all overflow-hidden">
                 <TrailMapWrapper
-                  center={[52.235, 21.003]}
-                  coordinates={[
-                    [52.2307, 21.0122],
-                    [52.2287, 21.0156],
-                    [52.2297, 21.0079],
-                    [52.2342, 20.9853],
-                    [52.2480, 20.9862],
-                    [52.1955, 21.0122],
-                  ]}
+                  center={[52.215, 21.004]}
+                  coordinates={TRASA_02_COORDS}
                   points={[
                     { pos: [52.2307, 21.0122], label: "Rondo Dmowskiego" },
                     { pos: [52.2342, 20.9853], label: "Rondo ONZ" },
@@ -393,13 +381,8 @@ export default function Home() {
             <RevealOnScroll delay={300}>
               <div className="border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all overflow-hidden">
                 <TrailMapWrapper
-                  center={[52.228, 21.020]}
-                  coordinates={[
-                    [52.2208, 21.0166],
-                    [52.2224, 21.0180],
-                    [52.2333, 21.0114],
-                    [52.2420, 21.0380],
-                  ]}
+                  center={[52.232, 21.025]}
+                  coordinates={TRASA_03_COORDS}
                   points={[
                     { pos: [52.2208, 21.0166], label: "Pl. Zbawiciela" },
                     { pos: [52.2224, 21.0180], label: "Hala Koszyki" },

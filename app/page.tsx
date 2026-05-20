@@ -381,7 +381,7 @@ export default function Home() {
                     { pos: [52.2296, 20.9847], label: "Rondo Daszyńskiego" },
                     { pos: [52.2317, 21.0067], label: "PKiN" },
                     { pos: [52.2237, 21.0252], label: "Pl. Trzech Krzyży" },
-                    { pos: [52.2296, 21.0399], label: "Elektrownia Powiśle" },
+                    { pos: [52.2328, 21.0418], label: "Elektrownia Powiśle" },
                   ]}
                   color="#00FFE5"
                 />

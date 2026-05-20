@@ -262,14 +262,14 @@ export default function Home() {
               {
                 label: "Eventy & Festiwale",
                 tagline: "Twoja reklama jest tam, gdzie tłum.",
-                desc: "Kampania LED przed i podczas eventu — kiedy tysiące ludzi zbiera się w jednym miejscu, jesteś tam z nimi. Nie na billboardzie przy obwodnicy.",
+                desc: "Kampania LED przed i podczas eventu. Kiedy tysiące ludzi zbiera się w jednym miejscu, jesteś tam z nimi. Nie na billboardzie przy obwodnicy.",
                 examples: "Open'er · Orange Warsaw · gale MMA · premiery · konferencje",
                 accent: "brandCyan",
               },
               {
                 label: "FMCG & Retail",
                 tagline: "Widoczność tam, gdzie zapada decyzja.",
-                desc: "Ekran LED przy galeriach, marketach i trasach zakupowych. Twój produkt w ruchu — dokładnie wtedy, gdy klient myśli o zakupie.",
+                desc: "Ekran LED przy galeriach, marketach i trasach zakupowych. Twój produkt w ruchu, dokładnie wtedy gdy klient myśli o zakupie.",
                 examples: "Red Bull · Coca-Cola · Unilever · marki premium · retail chains",
                 accent: "brandMagenta",
               },
@@ -568,7 +568,7 @@ export default function Home() {
               <div className="w-full md:w-[44%] order-2 md:order-1 mt-6 md:mt-0 md:pr-12">
                 <div className="text-xs uppercase tracking-[0.25em] text-brandCyan mb-2">Krok 01</div>
                 <h3 className="text-2xl font-bold mb-3 uppercase">Briefing</h3>
-                <p className="text-gray-400 leading-relaxed">Określamy cel kampanii, grupę docelową i kluczowe lokalizacje. Wybieramy trasę lub projektujemy dedykowaną — 48 godzin od pierwszej rozmowy do planu kampanii.</p>
+                <p className="text-gray-400 leading-relaxed">Określamy cel kampanii, grupę docelową i kluczowe lokalizacje. Wybieramy trasę lub projektujemy dedykowaną. 48 godzin od pierwszej rozmowy do planu kampanii.</p>
               </div>
               <div className="timeline-circle z-10 w-14 h-14 rounded-full border-2 border-brandCyan bg-black flex items-center justify-center font-bold text-brandCyan text-xl order-1 md:order-2" style={{ boxShadow: "0 0 20px #00FFE566" }}>1</div>
               <div className="w-full md:w-[44%] order-3" />
@@ -579,14 +579,14 @@ export default function Home() {
               <div className="w-full md:w-[44%] order-2 md:order-3 mt-6 md:mt-0 md:pl-12">
                 <div className="text-xs uppercase tracking-[0.25em] text-brandMagenta mb-2">Krok 02</div>
                 <h3 className="text-2xl font-bold mb-3 uppercase">Kreacja i Trasa</h3>
-                <p className="text-gray-400 leading-relaxed">Adaptujemy Twoje materiały pod ekrany LED lub produkujemy kreację od zera. Planujemy trasę godzina po godzinie — żeby Twój ekran był zawsze tam, gdzie jest Twój klient.</p>
+                <p className="text-gray-400 leading-relaxed">Adaptujemy Twoje materiały pod ekrany LED lub produkujemy kreację od zera. Planujemy trasę godzina po godzinie, żeby Twój ekran był zawsze tam gdzie jest Twój klient.</p>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={400} className="relative flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-[44%] order-2 md:order-1 mt-6 md:mt-0 md:pr-12">
                 <div className="text-xs uppercase tracking-[0.25em] text-brandCyan mb-2">Krok 03</div>
                 <h3 className="text-2xl font-bold mb-3 uppercase">Emisja i Raport</h3>
-                <p className="text-gray-400 leading-relaxed">Ciężarówka wyjeżdża. Ty dostajesz raport trasy, szacowany zasięg i materiał wideo z akcji — gotowy do publikacji w social media do 24h po kampanii.</p>
+                <p className="text-gray-400 leading-relaxed">Ciężarówka wyjeżdża. Ty dostajesz raport trasy, szacowany zasięg i materiał wideo z akcji. Gotowy do publikacji w social media do 24h po kampanii.</p>
               </div>
               <div className="timeline-circle z-10 w-14 h-14 rounded-full border-2 border-brandCyan bg-black flex items-center justify-center font-bold text-brandCyan text-xl order-1 md:order-2" style={{ boxShadow: "0 0 20px #00FFE566" }}>3</div>
               <div className="w-full md:w-[44%] order-3" />
@@ -716,10 +716,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { icon: "🎥", label: "Operator na miejscu", desc: "Profesjonalne nagranie kampanii w trakcie emisji" },
-              { icon: "🚁", label: "Dron shots", desc: "Ujęcia z lotu ptaka — truck w tkance miasta nocą" },
+              { icon: "🚁", label: "Dron shots", desc: "Ujęcia z lotu ptaka. Truck w tkance miasta nocą." },
               { icon: "📱", label: "Instagram Reels", desc: "Gotowy Reel pod format 9:16, montaż i kolor" },
               { icon: "🎬", label: "TikTok Edits", desc: "Wersja pod TikTok z dynamicznym cięciem" },
-              { icon: "🌆", label: "Night City Cinematic", desc: "Materiał kinowy — mokra nawierzchnia, neon, slow motion" },
+              { icon: "🌆", label: "Night City Cinematic", desc: "Materiał kinowy: mokra nawierzchnia, neon, slow motion." },
               { icon: "⚡", label: "Delivery w 24h", desc: "Wszystkie materiały gotowe dobę po emisji" },
             ].map((item, i) => (
               <RevealOnScroll key={i} delay={i * 80}>

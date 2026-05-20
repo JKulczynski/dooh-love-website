@@ -21,7 +21,7 @@ export default function PriceCalculator() {
 
   return (
     <div className="space-y-8">
-      {/* Slider — dni */}
+      {/* Slider dni */}
       <div>
         <div className="flex justify-between items-baseline mb-2">
           <label htmlFor="calc-days" className="text-xs uppercase tracking-widest text-gray-400">

@@ -63,8 +63,8 @@ export default function TrailMap({ center, coordinates, points, color }: TrailMa
           radius={5}
           pathOptions={{ color, fillColor: color, fillOpacity: 1, weight: 2 }}
         >
-          <Tooltip permanent={false} direction="top">
-            <span style={{ fontSize: "11px", background: "transparent", color: "#fff" }}>{p.label}</span>
+          <Tooltip permanent={false} direction="top" className="map-tooltip">
+            <span>{p.label}</span>
           </Tooltip>
         </CircleMarker>
       ))}

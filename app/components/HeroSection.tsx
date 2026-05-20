@@ -9,7 +9,7 @@ export default function HeroSection() {
         <div
           className="absolute inset-[-5%]"
           style={{
-            backgroundImage: "url('/hero-bg-right.png')",
+            backgroundImage: "url('/hero-bg-right2.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             animation: "kenBurns 18s ease-in-out infinite alternate",

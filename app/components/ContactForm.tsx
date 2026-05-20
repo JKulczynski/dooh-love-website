@@ -27,9 +27,11 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4 text-left max-w-md mx-auto">
       <div>
         <input
+          id="contact-name"
           type="text"
           required
           placeholder="Imię / Firma"
+          aria-label="Imię lub firma"
           value={form.name}
           onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
           className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm"
@@ -37,9 +39,11 @@ export default function ContactForm() {
       </div>
       <div>
         <input
+          id="contact-contact"
           type="text"
           required
           placeholder="Telefon lub e-mail"
+          aria-label="Telefon lub e-mail"
           value={form.contact}
           onChange={e => setForm(f => ({ ...f, contact: e.target.value }))}
           className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm"
@@ -47,7 +51,9 @@ export default function ContactForm() {
       </div>
       <div>
         <textarea
+          id="contact-message"
           placeholder="Krótki brief (opcjonalnie)"
+          aria-label="Krótki brief"
           rows={3}
           value={form.message}
           onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
@@ -61,7 +67,7 @@ export default function ContactForm() {
       >
         Zarezerwuj w 48h
       </button>
-      <p className="text-center text-xs text-gray-600 uppercase tracking-widest">
+      <p className="text-center text-xs text-gray-500 uppercase tracking-widest">
         Briefing → kampania w 48 godzin
       </p>
     </form>

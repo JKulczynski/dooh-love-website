@@ -264,7 +264,7 @@ export default function Home() {
             ].map((item, i) => (
               <RevealOnScroll key={i} delay={i * 100}>
                 <div className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/30 transition-all h-full">
-                  <h4 className="text-sm font-bold uppercase mb-2">{item.label}</h4>
+                  <h3 className="text-sm font-bold uppercase mb-2">{item.label}</h3>
                   <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               </RevealOnScroll>
@@ -289,7 +289,7 @@ export default function Home() {
               <table className="w-full text-sm border-collapse">
                 <thead>
                   <tr className="border-b border-white/10">
-                    <th className="text-left p-4 text-xs uppercase tracking-widest text-gray-600 w-1/3" />
+                    <th className="text-left p-4 text-xs uppercase tracking-widest text-gray-500 w-1/3" />
                     <th className="text-center p-4 text-xs uppercase tracking-widest text-gray-400 w-1/3">
                       Billboard statyczny
                     </th>
@@ -424,7 +424,7 @@ export default function Home() {
       <section className="py-20 px-6 bg-black border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll>
-            <p className="text-center text-xs uppercase tracking-[0.3em] text-gray-600 mb-10">
+            <p className="text-center text-xs uppercase tracking-[0.3em] text-gray-500 mb-10">
               Zaufali nam
             </p>
           </RevealOnScroll>
@@ -551,7 +551,7 @@ export default function Home() {
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10 hidden md:block" />
             <RevealOnScroll className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
-                <h4 className="text-xl font-bold mb-2 text-brandCyan uppercase">01. Briefing</h4>
+                <h3 className="text-xl font-bold mb-2 text-brandCyan uppercase">01. Briefing</h3>
                 <p className="text-gray-400">Określamy cel kampanii, docelową grupę odbiorców oraz kluczowe lokalizacje w mieście.</p>
               </div>
               <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">1</div>
@@ -561,13 +561,13 @@ export default function Home() {
               <div className="w-full md:w-[45%] order-3 md:order-1" />
               <div className="z-10 bg-brandMagenta text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">2</div>
               <div className="w-full md:w-[45%] order-2 md:order-3 mt-6 md:mt-0">
-                <h4 className="text-xl font-bold mb-2 text-brandMagenta uppercase">02. Kreacja i Trasa</h4>
+                <h3 className="text-xl font-bold mb-2 text-brandMagenta uppercase">02. Kreacja i Trasa</h3>
                 <p className="text-gray-400">Dostosowujemy Twoje materiały wideo pod ekrany LED i planujemy optymalną trasę przejazdu ciężarówki.</p>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={300} className="relative flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
-                <h4 className="text-xl font-bold mb-2 text-brandCyan uppercase">03. Emisja</h4>
+                <h3 className="text-xl font-bold mb-2 text-brandCyan uppercase">03. Emisja</h3>
                 <p className="text-gray-400">Ciężarówka wyjeżdża na ulice. Otrzymasz raport trasy i szacowany zasięg po kampanii.</p>
               </div>
               <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">3</div>
@@ -582,7 +582,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll>
             <div className="mb-16 text-center">
-              <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-3">Upsell</p>
               <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
                 Przygotowanie <span className="text-brandCyan">Projektu</span>
               </h2>
@@ -674,7 +673,7 @@ export default function Home() {
             ))}
           </div>
           <RevealOnScroll>
-            <p className="text-center text-xs text-gray-600 uppercase tracking-widest mt-8">
+            <p className="text-center text-xs text-gray-500 uppercase tracking-widest mt-8">
               Ceny brutto. Kreacja nie jest wymagana - możesz dostarczyć własne materiały.
             </p>
           </RevealOnScroll>
@@ -708,7 +707,7 @@ export default function Home() {
               <RevealOnScroll key={i} delay={i * 80}>
                 <div className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/40 transition-all group h-full">
                   <div className="text-2xl mb-4">{item.icon}</div>
-                  <h4 className="text-sm font-bold uppercase mb-2 group-hover:text-brandCyan transition-colors">{item.label}</h4>
+                  <h3 className="text-sm font-bold uppercase mb-2 group-hover:text-brandCyan transition-colors">{item.label}</h3>
                   <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               </RevealOnScroll>
@@ -833,12 +832,12 @@ export default function Home() {
                     WhatsApp
                   </a>
                 </li>
-                <li className="text-gray-600">Warszawa, PL</li>
+                <li className="text-gray-500">Warszawa, PL</li>
               </ul>
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest text-gray-600 flex justify-between">
+        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest text-gray-500 flex justify-between">
           <span>© 2025 DOOH-LOVE</span>
           <span>Created for Urban Frontier</span>
         </div>

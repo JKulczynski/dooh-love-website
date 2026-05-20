@@ -65,8 +65,9 @@ export default function LeadForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Firma / Marka *</label>
+          <label htmlFor="lead-firma" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Firma / Marka *</label>
           <input
+            id="lead-firma"
             type="text"
             required
             placeholder="np. KSW, Red Bull, marka własna"
@@ -76,8 +77,9 @@ export default function LeadForm() {
           />
         </div>
         <div>
-          <label className="block text-xs uppercase tracking-widest text-gray-500 mb-2">E-mail *</label>
+          <label htmlFor="lead-email" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">E-mail *</label>
           <input
+            id="lead-email"
             type="email"
             required
             placeholder="twoj@email.pl"
@@ -90,8 +92,9 @@ export default function LeadForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Trasa / Miejsce *</label>
+          <label htmlFor="lead-trasa" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Trasa / Miejsce *</label>
           <select
+            id="lead-trasa"
             required
             value={form.trasa}
             onChange={e => setForm(f => ({ ...f, trasa: e.target.value }))}
@@ -104,8 +107,9 @@ export default function LeadForm() {
           </select>
         </div>
         <div>
-          <label className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Termin kampanii *</label>
+          <label htmlFor="lead-termin" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Termin kampanii *</label>
           <input
+            id="lead-termin"
             type="text"
             required
             placeholder="np. 15-20 czerwca 2026"
@@ -117,13 +121,14 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label className="block text-xs uppercase tracking-widest text-gray-500 mb-3">Ilość aut</label>
-        <div className="grid grid-cols-3 gap-3">
+        <label className="block text-xs uppercase tracking-widest text-gray-500 mb-3" id="ilosc-label">Ilość aut</label>
+        <div className="grid grid-cols-3 gap-3" role="group" aria-labelledby="ilosc-label">
           {["1", "2", "3+"].map(v => (
             <button
               key={v}
               type="button"
               onClick={() => setForm(f => ({ ...f, ilosc: v }))}
+              aria-pressed={form.ilosc === v}
               className={`border p-3 text-sm font-bold uppercase tracking-widest transition-all ${
                 form.ilosc === v
                   ? "border-brandCyan bg-brandCyan/5 text-brandCyan"
@@ -137,12 +142,13 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label className="block text-xs uppercase tracking-widest text-gray-500 mb-3">Dodatkowe aktywności (opcjonalnie)</label>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <label className="block text-xs uppercase tracking-widest text-gray-500 mb-3" id="aktywnosci-label">Dodatkowe aktywności (opcjonalnie)</label>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3" role="group" aria-labelledby="aktywnosci-label">
           {AKTYWNOSCI.map(item => (
             <button
               key={item}
               type="button"
+              aria-pressed={form.aktywnosci.includes(item)}
               onClick={() => toggleAktywnosc(item)}
               className={`border p-3 text-left text-xs uppercase tracking-wider transition-all ${
                 form.aktywnosci.includes(item)
@@ -163,7 +169,7 @@ export default function LeadForm() {
       >
         Wyślij zapytanie o wycenę
       </button>
-      <p className="text-center text-xs text-gray-600 uppercase tracking-widest">
+      <p className="text-center text-xs text-gray-500 uppercase tracking-widest">
         Odpowiadamy w ciągu kilku godzin z ofertą skrojoną pod Ciebie.
       </p>
     </form>

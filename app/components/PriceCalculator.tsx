@@ -24,20 +24,22 @@ export default function PriceCalculator() {
       {/* Slider — dni */}
       <div>
         <div className="flex justify-between items-baseline mb-2">
-          <label className="text-xs uppercase tracking-widest text-gray-400">
+          <label htmlFor="calc-days" className="text-xs uppercase tracking-widest text-gray-400">
             Czas trwania kampanii
           </label>
-          <span className="text-brandCyan font-bold text-lg">{days} {days === 1 ? "dzień" : days < 5 ? "dni" : "dni"}</span>
+          <span className="text-brandCyan font-bold text-lg" aria-live="polite">{days} {days === 1 ? "dzień" : days < 5 ? "dni" : "dni"}</span>
         </div>
         <input
+          id="calc-days"
           type="range"
           min={1}
           max={30}
           value={days}
+          aria-valuetext={`${days} ${days === 1 ? "dzień" : "dni"}`}
           onChange={(e) => setDays(Number(e.target.value))}
           className="w-full h-1.5 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-brandCyan"
         />
-        <div className="flex justify-between text-xs mt-2 text-gray-600">
+        <div className="flex justify-between text-xs mt-2 text-gray-500">
           <span>1 dzień</span>
           <span>30 dni</span>
         </div>
@@ -45,10 +47,10 @@ export default function PriceCalculator() {
 
       {/* Pojazdy */}
       <div>
-        <label className="block text-xs uppercase tracking-widest text-gray-400 mb-3">
+        <label className="block text-xs uppercase tracking-widest text-gray-400 mb-3" id="calc-vehicles-label">
           Liczba pojazdów
         </label>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-3" role="group" aria-labelledby="calc-vehicles-label">
           {[
             { value: "1", label: "1 pojazd", sub: "2 000 PLN/dzień" },
             { value: "2", label: "2 pojazdy", sub: "4 000 PLN/dzień" },
@@ -57,6 +59,7 @@ export default function PriceCalculator() {
             <button
               key={opt.value}
               type="button"
+              aria-pressed={vehicles === opt.value}
               onClick={() => setVehicles(opt.value)}
               className={`border p-3 text-left transition-all ${
                 vehicles === opt.value
@@ -97,7 +100,7 @@ export default function PriceCalculator() {
         >
           Zapytaj o szczegóły
         </a>
-        <p className="text-center text-xs text-gray-600 uppercase tracking-widest mt-3">
+        <p className="text-center text-xs text-gray-500 uppercase tracking-widest mt-3">
           Dokładna cena po briefingu. Odpowiadamy szybko.
         </p>
       </div>

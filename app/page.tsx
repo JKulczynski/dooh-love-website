@@ -28,13 +28,13 @@ export default function Home() {
             Mobilna reklama LED · Warszawa
           </p>
           <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight mb-5">
-            <span className="text-white">18m² ekranu.</span>{" "}
-            <span className="text-brandCyan">15 godzin.</span>{" "}
-            <span className="text-white">Centrum Warszawy.</span>
+            <span className="text-white">Billboard stoi.</span>{" "}
+            <span className="text-brandCyan">My jedziemy.</span>
           </h1>
           <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            Nie czekaj aż klienci trafią na Twój billboard. Jedź do nich.
-            Twoja marka tam, gdzie tłum. Każdego dnia.
+            18m² ekranu LED jedzie tam, gdzie jest Twoja grupa docelowa.
+            Centrum Warszawy, 15 godzin dziennie, 3 dedykowane trasy.
+            Twoja marka tam, gdzie dzieje się miasto.
           </p>
           <a
             href="#wycena"
@@ -139,7 +139,9 @@ export default function Home() {
                 <span className="text-brandCyan">Wyjdź z kampanią.</span>
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto text-base leading-relaxed mt-6">
-                Nie ograniczamy się do aut LED. Masz galę MMA, launch produktu, event firmowy? Przynieś nam problem. My obudujemy go kompletną kampanią uliczną - od trasy przez kreację, drony i relacje, aż po raport i materiały promocyjne.
+                Masz galę, launch albo event? Przynieś nam termin i cel.
+                My wyjeżdżamy na miasto z Twoją marką i wracamy z trasą, kreacją
+                oraz materiałem do social media gotowym jeszcze tego samego wieczoru.
               </p>
             </div>
           </RevealOnScroll>
@@ -152,7 +154,7 @@ export default function Home() {
                     "Markę, event lub produkt do promocji",
                     "Grupę docelową i cel kampanii",
                     "Termin i budżet",
-                    "Zaufanie że to ogarniemy",
+                    "Zielone światło do działania",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-4">
                       <span className="text-brandMagenta font-bold text-lg leading-none mt-0.5">→</span>
@@ -248,24 +250,60 @@ export default function Home() {
       <section className="py-24 px-6 bg-darkBg" id="dla-kogo">
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll>
-            <div className="mb-16 text-right">
+            <div className="mb-16">
               <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
                 Dla <span className="text-brandMagenta">kogo?</span>
               </h2>
-              <div className="w-20 h-1 bg-brandCyan ml-auto" />
+              <div className="w-20 h-1 bg-brandCyan" />
             </div>
           </RevealOnScroll>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { label: "Eventy & Festiwale", desc: "Open'er, Orange Warsaw, gale MMA, koncerty" },
-              { label: "FMCG & Retail", desc: "Red Bull, Coca-Cola, kampanie produktowe" },
-              { label: "Domy Mediowe", desc: "GroupM, Publicis, Dentsu, kampanie klientów" },
-              { label: "Korporacje", desc: "Launche produktów, eventy employer brandingowe" },
+              {
+                label: "Eventy & Festiwale",
+                tagline: "Twoja reklama jest tam, gdzie tłum.",
+                desc: "Kampania LED przed i podczas eventu — kiedy tysiące ludzi zbiera się w jednym miejscu, jesteś tam z nimi. Nie na billboardzie przy obwodnicy.",
+                examples: "Open'er · Orange Warsaw · gale MMA · premiery · konferencje",
+                accent: "brandCyan",
+              },
+              {
+                label: "FMCG & Retail",
+                tagline: "Widoczność tam, gdzie zapada decyzja.",
+                desc: "Ekran LED przy galeriach, marketach i trasach zakupowych. Twój produkt w ruchu — dokładnie wtedy, gdy klient myśli o zakupie.",
+                examples: "Red Bull · Coca-Cola · Unilever · marki premium · retail chains",
+                accent: "brandMagenta",
+              },
+              {
+                label: "Domy Mediowe & Agencje",
+                tagline: "Mobilne DOOH do każdego media-mix.",
+                desc: "Prosty booking, pełna dokumentacja tras, szybki raport zasięgu. Uzupełnienie kampanii OOH bez długich negocjacji i wielomiesięcznych kontraktów.",
+                examples: "GroupM · Publicis · Dentsu · IPG · OMG · agencje niezależne",
+                accent: "brandCyan",
+              },
+              {
+                label: "Korporacje & Marki własne",
+                tagline: "Launch, roadshow albo employer branding.",
+                desc: "18m² LED w centrum Warszawy przez cały dzień robi więcej niż tydzień w social media. Twoja marka widoczna tam, gdzie są decydenci i pracownicy.",
+                examples: "Technologia · Finanse · Deweloperzy · Automotive · B2B premium",
+                accent: "brandMagenta",
+              },
             ].map((item, i) => (
               <RevealOnScroll key={i} delay={i * 100}>
-                <div className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/30 transition-all h-full">
-                  <h3 className="text-sm font-bold uppercase mb-2">{item.label}</h3>
-                  <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                <div className={`border border-white/10 bg-white/5 p-8 hover:border-${item.accent}/40 transition-all h-full group`}>
+                  <div className={`text-xs uppercase tracking-[0.25em] text-${item.accent} mb-3 font-medium`}>
+                    {item.label}
+                  </div>
+                  <h3 className="text-xl font-bold uppercase mb-3 leading-tight">
+                    {item.tagline}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                    {item.desc}
+                  </p>
+                  <div className="border-t border-white/10 pt-4">
+                    <p className="text-[10px] uppercase tracking-widest text-gray-600">
+                      {item.examples}
+                    </p>
+                  </div>
                 </div>
               </RevealOnScroll>
             ))}
@@ -279,7 +317,8 @@ export default function Home() {
           <RevealOnScroll>
             <div className="mb-16 text-center">
               <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-                Dlaczego nie <span className="text-brandMagenta">zwykły billboard?</span>
+                Twoi klienci się ruszają.<br />
+                <span className="text-brandMagenta">Twój billboard nie.</span>
               </h2>
               <div className="w-20 h-1 bg-brandCyan mx-auto" />
             </div>
@@ -524,30 +563,33 @@ export default function Home() {
             </h2>
           </RevealOnScroll>
           <div className="relative">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/10 hidden md:block" />
-            <RevealOnScroll className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
-              <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
-                <h3 className="text-xl font-bold mb-2 text-brandCyan uppercase">01. Briefing</h3>
-                <p className="text-gray-400">Określamy cel kampanii, docelową grupę odbiorców oraz kluczowe lokalizacje w mieście.</p>
+            <div className="timeline-line absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brandCyan via-brandMagenta to-brandCyan hidden md:block" />
+            <RevealOnScroll className="relative mb-16 md:mb-28 flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-[44%] order-2 md:order-1 mt-6 md:mt-0 md:pr-12">
+                <div className="text-xs uppercase tracking-[0.25em] text-brandCyan mb-2">Krok 01</div>
+                <h3 className="text-2xl font-bold mb-3 uppercase">Briefing</h3>
+                <p className="text-gray-400 leading-relaxed">Określamy cel kampanii, grupę docelową i kluczowe lokalizacje. Wybieramy trasę lub projektujemy dedykowaną — 48 godzin od pierwszej rozmowy do planu kampanii.</p>
               </div>
-              <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">1</div>
-              <div className="w-full md:w-[45%] order-3" />
+              <div className="timeline-circle z-10 w-14 h-14 rounded-full border-2 border-brandCyan bg-black flex items-center justify-center font-bold text-brandCyan text-xl order-1 md:order-2" style={{ boxShadow: "0 0 20px #00FFE566" }}>1</div>
+              <div className="w-full md:w-[44%] order-3" />
             </RevealOnScroll>
-            <RevealOnScroll delay={150} className="relative mb-12 md:mb-24 flex flex-col md:flex-row items-center justify-between">
-              <div className="w-full md:w-[45%] order-3 md:order-1" />
-              <div className="z-10 bg-brandMagenta text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">2</div>
-              <div className="w-full md:w-[45%] order-2 md:order-3 mt-6 md:mt-0">
-                <h3 className="text-xl font-bold mb-2 text-brandMagenta uppercase">02. Kreacja i Trasa</h3>
-                <p className="text-gray-400">Dostosowujemy Twoje materiały wideo pod ekrany LED i planujemy optymalną trasę przejazdu ciężarówki.</p>
+            <RevealOnScroll delay={200} className="relative mb-16 md:mb-28 flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-[44%] order-3 md:order-1" />
+              <div className="timeline-circle z-10 w-14 h-14 rounded-full border-2 border-brandMagenta bg-black flex items-center justify-center font-bold text-brandMagenta text-xl order-1 md:order-2" style={{ boxShadow: "0 0 20px #FF00AA66" }}>2</div>
+              <div className="w-full md:w-[44%] order-2 md:order-3 mt-6 md:mt-0 md:pl-12">
+                <div className="text-xs uppercase tracking-[0.25em] text-brandMagenta mb-2">Krok 02</div>
+                <h3 className="text-2xl font-bold mb-3 uppercase">Kreacja i Trasa</h3>
+                <p className="text-gray-400 leading-relaxed">Adaptujemy Twoje materiały pod ekrany LED lub produkujemy kreację od zera. Planujemy trasę godzina po godzinie — żeby Twój ekran był zawsze tam, gdzie jest Twój klient.</p>
               </div>
             </RevealOnScroll>
-            <RevealOnScroll delay={300} className="relative flex flex-col md:flex-row items-center justify-between">
-              <div className="w-full md:w-[45%] order-2 md:order-1 mt-6 md:mt-0">
-                <h3 className="text-xl font-bold mb-2 text-brandCyan uppercase">03. Emisja</h3>
-                <p className="text-gray-400">Ciężarówka wyjeżdża na ulice. Otrzymasz raport trasy i szacowany zasięg po kampanii.</p>
+            <RevealOnScroll delay={400} className="relative flex flex-col md:flex-row items-center justify-between">
+              <div className="w-full md:w-[44%] order-2 md:order-1 mt-6 md:mt-0 md:pr-12">
+                <div className="text-xs uppercase tracking-[0.25em] text-brandCyan mb-2">Krok 03</div>
+                <h3 className="text-2xl font-bold mb-3 uppercase">Emisja i Raport</h3>
+                <p className="text-gray-400 leading-relaxed">Ciężarówka wyjeżdża. Ty dostajesz raport trasy, szacowany zasięg i materiał wideo z akcji — gotowy do publikacji w social media do 24h po kampanii.</p>
               </div>
-              <div className="z-10 bg-brandCyan text-black w-10 h-10 rounded-full flex items-center justify-center font-bold order-1 md:order-2">3</div>
-              <div className="w-full md:w-[45%] order-3" />
+              <div className="timeline-circle z-10 w-14 h-14 rounded-full border-2 border-brandCyan bg-black flex items-center justify-center font-bold text-brandCyan text-xl order-1 md:order-2" style={{ boxShadow: "0 0 20px #00FFE566" }}>3</div>
+              <div className="w-full md:w-[44%] order-3" />
             </RevealOnScroll>
           </div>
         </div>

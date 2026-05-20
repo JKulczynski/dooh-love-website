@@ -432,7 +432,7 @@ export default function Home() {
             {Array.from({ length: 6 }).map((_, i) => (
               <RevealOnScroll key={i} delay={i * 80}>
                 <div className="border border-white/10 bg-white/5 h-16 flex items-center justify-center hover:border-brandCyan/30 transition-all">
-                  <span className="text-[10px] uppercase tracking-widest text-white/20">Logo klienta</span>
+                  <span className="text-[10px] uppercase tracking-widest text-white/20" aria-hidden="true">Logo klienta</span>
                 </div>
               </RevealOnScroll>
             ))}
@@ -485,7 +485,7 @@ export default function Home() {
                     <path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
                     <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
                   </svg>
-                  <span className="text-[10px] uppercase tracking-widest text-white/20">Zdjęcie kampanii</span>
+                  <span className="text-[10px] uppercase tracking-widest text-white/20" aria-hidden="true">Zdjęcie kampanii</span>
                 </div>
               </div>
             ))}
@@ -798,7 +798,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 gap-12">
             <div className="space-y-4">
-              <h5 className="text-xs font-bold uppercase tracking-widest text-gray-400">Nawigacja</h5>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400">Nawigacja</h3>
               <ul className="text-sm space-y-2 text-gray-500">
                 <li><a className="hover:text-brandCyan transition-colors" href="#">Start</a></li>
                 <li><a className="hover:text-brandCyan transition-colors" href="#solutions">Dlaczego to działa</a></li>
@@ -807,7 +807,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="space-y-4">
-              <h5 className="text-xs font-bold uppercase tracking-widest text-gray-400">Kontakt</h5>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400">Kontakt</h3>
               <ul className="text-sm space-y-3 text-gray-500">
                 <li>
                   <a href="mailto:hello@dooh-love.pl" className="hover:text-brandCyan transition-colors">

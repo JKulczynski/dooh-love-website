@@ -23,7 +23,7 @@ const DARK_STYLE: google.maps.MapTypeStyle[] = [
 ];
 
 interface Stop {
-  address: string;
+  pos: [number, number];
   label: string;
 }
 
@@ -43,48 +43,41 @@ export default function TrailMap({ stops, color }: TrailMapProps) {
       const { Map } = await importLibrary("maps") as google.maps.MapsLibrary;
       if (cancelled || !mapRef.current) return;
 
+      const bounds = new google.maps.LatLngBounds();
+      stops.forEach((s) => bounds.extend({ lat: s.pos[0], lng: s.pos[1] }));
+
       const map = new Map(mapRef.current, {
-        center: { lat: 52.23, lng: 21.01 },
-        zoom: 12,
+        center: bounds.getCenter(),
+        zoom: 13,
         disableDefaultUI: true,
         styles: DARK_STYLE,
         backgroundColor: "#0a0a0a",
       });
 
-      const geocoder = new google.maps.Geocoder();
-      const bounds = new google.maps.LatLngBounds();
+      map.fitBounds(bounds, 32);
 
       stops.forEach((stop) => {
-        geocoder.geocode({ address: stop.address + ", Warszawa, Polska" }, (results, status) => {
-          if (cancelled || status !== "OK" || !results?.[0]) return;
-
-          const pos = results[0].geometry.location;
-          bounds.extend(pos);
-
-          const marker = new google.maps.Marker({
-            position: pos,
-            map,
-            title: stop.label,
-            icon: {
-              path: google.maps.SymbolPath.CIRCLE,
-              scale: 8,
-              fillColor: color,
-              fillOpacity: 1,
-              strokeColor: "#0a0a0a",
-              strokeWeight: 2,
-            },
-          });
-
-          const infoWindow = new google.maps.InfoWindow({
-            content: `<div class="gmap-tip">${stop.label}</div>`,
-            disableAutoPan: true,
-          });
-
-          marker.addListener("mouseover", () => infoWindow.open({ map, anchor: marker }));
-          marker.addListener("mouseout", () => infoWindow.close());
-
-          map.fitBounds(bounds, 24);
+        const marker = new google.maps.Marker({
+          position: { lat: stop.pos[0], lng: stop.pos[1] },
+          map,
+          title: stop.label,
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 8,
+            fillColor: color,
+            fillOpacity: 1,
+            strokeColor: "#0a0a0a",
+            strokeWeight: 2,
+          },
         });
+
+        const infoWindow = new google.maps.InfoWindow({
+          content: `<div class="gmap-tip">${stop.label}</div>`,
+          disableAutoPan: true,
+        });
+
+        marker.addListener("mouseover", () => infoWindow.open({ map, anchor: marker }));
+        marker.addListener("mouseout", () => infoWindow.close());
       });
     })();
 

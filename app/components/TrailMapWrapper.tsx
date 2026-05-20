@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 const TrailMap = dynamic(() => import("./TrailMap"), { ssr: false });
 
 interface Stop {
-  address: string;
+  pos: [number, number];
   label: string;
 }
 

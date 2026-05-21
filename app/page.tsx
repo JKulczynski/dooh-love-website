@@ -409,6 +409,22 @@ export default function Home() {
       </section>
 
 
+      {/* Logotypy klientów — ukryte, czeka na realne loga */}
+      <section className="hidden py-20 px-6 bg-black border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-center text-xs uppercase tracking-[0.3em] text-gray-500 mb-10">
+            Zaufali nam
+          </p>
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="border border-white/10 bg-white/5 h-16 flex items-center justify-center">
+                <span className="text-[10px] uppercase tracking-widest text-white/20" aria-hidden="true">Logo klienta</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Galeria kampanii */}
       <section className="py-24 px-6 bg-black" id="galeria">
         <div className="max-w-7xl mx-auto">

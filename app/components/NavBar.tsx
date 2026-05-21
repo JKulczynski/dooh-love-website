@@ -47,7 +47,7 @@ export default function NavBar() {
           ))}
           <a
             href="#wycena"
-            className="relative overflow-hidden text-xs font-bold uppercase tracking-widest py-2 px-5 transition-all hover:brightness-125"
+            className="relative overflow-hidden text-xs font-bold uppercase tracking-widest py-2 px-5 rounded-lg transition-all hover:brightness-125"
             style={{
               background: "#050505",
               border: "1px solid rgba(0,255,229,0.65)",
@@ -117,7 +117,7 @@ export default function NavBar() {
           <a
             href="#wycena"
             onClick={() => setOpen(false)}
-            className="relative overflow-hidden mt-2 text-sm font-bold uppercase tracking-widest py-3 px-5 text-center transition-all"
+            className="relative overflow-hidden mt-2 text-sm font-bold uppercase tracking-widest py-3 px-5 rounded-lg text-center transition-all"
             style={{
               background: "#050505",
               border: "1px solid rgba(0,255,229,0.65)",

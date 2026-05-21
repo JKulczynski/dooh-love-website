@@ -61,7 +61,7 @@ export default function PriceCalculator() {
               type="button"
               aria-pressed={vehicles === opt.value}
               onClick={() => setVehicles(opt.value)}
-              className={`border p-3 text-left transition-all ${
+              className={`border rounded-lg p-3 text-left transition-all ${
                 vehicles === opt.value
                   ? "border-brandCyan bg-brandCyan/5"
                   : "border-white/10 bg-white/5 hover:border-white/30"
@@ -96,7 +96,7 @@ export default function PriceCalculator() {
 
         <a
           href="#wycena-kontakt"
-          className="block w-full bg-white text-black font-bold py-4 uppercase tracking-widest hover:bg-brandMagenta hover:text-white transition-all text-center text-sm"
+          className="block w-full bg-white text-black font-bold py-4 rounded-lg uppercase tracking-widest hover:bg-brandMagenta hover:text-white transition-all text-center text-sm"
         >
           Zapytaj o szczegóły
         </a>

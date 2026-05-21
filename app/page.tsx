@@ -310,57 +310,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Porównanie */}
-      <section className="py-24 px-6 bg-black">
-        <div className="max-w-4xl mx-auto">
-          <RevealOnScroll>
-            <div className="mb-16 text-center">
-              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-                Twoi klienci się ruszają.<br />
-                <span className="text-brandMagenta">Twój billboard nie.</span>
-              </h2>
-              <div className="w-20 h-1 bg-brandCyan mx-auto" />
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={150}>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="text-left p-4 text-xs uppercase tracking-widest text-gray-500 w-1/3" />
-                    <th className="text-center p-4 text-xs uppercase tracking-widest text-gray-400 w-1/3">
-                      Billboard statyczny
-                    </th>
-                    <th
-                      className="text-center p-4 text-xs uppercase tracking-widest text-brandCyan w-1/3"
-                      style={{ textShadow: "0 0 8px rgba(0,255,229,0.5)" }}
-                    >
-                      DOOH-LOVE
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    ["Mobilność", "Jeden punkt w mieście", "Jedziemy do Twoich klientów"],
-                    ["Zasięg", "Pasywni widzowie", "Tłum tam, gdzie jest akcja"],
-                    ["Elastyczność", "Kontrakt 1-3 miesiące", "Od 1 dnia kampanii"],
-                    ["Format", "Druk statyczny", "18m² LED, content w ruchu"],
-                    ["Trasy", "1 adres", "3 dedykowane trasy Warszawa"],
-                    ["Efekt viralowy", "Rzadki", "Zdjęcia, Stories, organiczne zasięgi"],
-                  ].map(([feature, billboard, dooh], i) => (
-                    <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                      <td className="p-4 text-xs uppercase tracking-widest text-gray-500">{feature}</td>
-                      <td className="p-4 text-center text-gray-500">{billboard}</td>
-                      <td className="p-4 text-center text-brandCyan font-medium">{dooh}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
-
       {/* Trasy */}
       <section className="py-24 px-6 bg-darkBg" id="trasy">
         <div className="max-w-7xl mx-auto">
@@ -370,11 +319,21 @@ export default function Home() {
                 Nasze <span className="text-brandCyan">Trasy</span>
               </h2>
               <div className="w-20 h-1 bg-brandMagenta" />
+              <p className="text-gray-500 text-sm mt-4">2 trasy dzienne &middot; 1 trasa nocna &middot; Centrum Warszawy</p>
             </div>
           </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <RevealOnScroll>
-              <div className="border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all overflow-hidden">
+              <div className="border border-brandCyan/30 bg-white/5 hover:border-brandCyan/60 transition-all overflow-hidden">
+                <div className="flex items-center justify-between px-6 pt-5 pb-1">
+                  <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-black bg-brandCyan px-2.5 py-1">
+                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
+                    </svg>
+                    Dzienny
+                  </span>
+                  <span className="text-xs font-bold text-brandCyan tracking-wider">08:00 &ndash; 23:00</span>
+                </div>
                 <TrailMapWrapper
                   stops={[
                     { pos: [52.2296, 20.9847], label: "Rondo Daszyńskiego" },
@@ -385,15 +344,23 @@ export default function Home() {
                   color="#00FFE5"
                 />
                 <div className="p-6">
-                  <div className="text-brandCyan text-xs uppercase tracking-widest mb-3">Trasa 01</div>
+                  <div className="text-brandCyan text-xs uppercase tracking-widest mb-2">Trasa 01</div>
                   <h3 className="text-xl font-bold uppercase mb-3">Centrum Impact</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-3">Rondo Daszyńskiego, PKiN, Marszałkowska, Plac Trzech Krzyży, Elektrownia Powiśle</p>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">08:00 – 23:00</div>
+                  <p className="text-gray-400 text-sm leading-relaxed">Rondo Daszyńskiego, PKiN, Marszałkowska, Plac Trzech Krzyży, Elektrownia Powiśle</p>
                 </div>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={150}>
-              <div className="border border-white/10 bg-white/5 hover:border-brandMagenta/50 transition-all overflow-hidden">
+              <div className="border border-brandMagenta/30 bg-white/5 hover:border-brandMagenta/60 transition-all overflow-hidden">
+                <div className="flex items-center justify-between px-6 pt-5 pb-1">
+                  <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-black bg-brandMagenta px-2.5 py-1">
+                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
+                    </svg>
+                    Dzienny
+                  </span>
+                  <span className="text-xs font-bold text-brandMagenta tracking-wider">Peak: 07:00&ndash;10:00 / 15:30&ndash;19:30</span>
+                </div>
                 <TrailMapWrapper
                   stops={[
                     { pos: [52.2285, 21.0044], label: "Rondo Dmowskiego" },
@@ -404,15 +371,23 @@ export default function Home() {
                   color="#FF00AA"
                 />
                 <div className="p-6">
-                  <div className="text-brandMagenta text-xs uppercase tracking-widest mb-3">Trasa 02</div>
+                  <div className="text-brandMagenta text-xs uppercase tracking-widest mb-2">Trasa 02</div>
                   <h3 className="text-xl font-bold uppercase mb-3">Business Flow</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-3">Rondo Dmowskiego, Al. Jerozolimskie, Marszałkowska, Rondo ONZ, Jana Pawła II, Puławska</p>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 07:00–10:00 / 15:30–19:30</div>
+                  <p className="text-gray-400 text-sm leading-relaxed">Rondo Dmowskiego, Al. Jerozolimskie, Marszałkowska, Rondo ONZ, Jana Pawła II, Puławska</p>
                 </div>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={300}>
-              <div className="border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all overflow-hidden">
+              <div className="border border-white/20 bg-black/60 hover:border-white/40 transition-all overflow-hidden">
+                <div className="flex items-center justify-between px-6 pt-5 pb-1">
+                  <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-white bg-white/10 border border-white/20 px-2.5 py-1">
+                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                    </svg>
+                    Nocny
+                  </span>
+                  <span className="text-xs font-bold text-white/50 tracking-wider">22:00 &ndash; 01:00</span>
+                </div>
                 <TrailMapWrapper
                   stops={[
                     { pos: [52.2209, 21.0176], label: "Pl. Zbawiciela" },
@@ -423,10 +398,9 @@ export default function Home() {
                   color="#00FFE5"
                 />
                 <div className="p-6">
-                  <div className="text-brandCyan text-xs uppercase tracking-widest mb-3">Trasa 03</div>
+                  <div className="text-brandCyan text-xs uppercase tracking-widest mb-2">Trasa 03</div>
                   <h3 className="text-xl font-bold uppercase mb-3">Nightlife</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-3">Plac Zbawiciela, Hala Koszyki, Mazowiecka, Bulwary Wiślane</p>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">Peak: 22:00 – 01:00</div>
+                  <p className="text-gray-400 text-sm leading-relaxed">Plac Zbawiciela, Hala Koszyki, Mazowiecka, Bulwary Wiślane</p>
                 </div>
               </div>
             </RevealOnScroll>
@@ -434,42 +408,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Logotypy klientów */}
-      <section className="py-20 px-6 bg-black border-t border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <RevealOnScroll>
-            <p className="text-center text-xs uppercase tracking-[0.3em] text-gray-500 mb-10">
-              Zaufali nam
-            </p>
-          </RevealOnScroll>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <RevealOnScroll key={i} delay={i * 80}>
-                <div className="border border-white/10 bg-white/5 h-16 flex items-center justify-center hover:border-brandCyan/30 transition-all">
-                  <span className="text-[10px] uppercase tracking-widest text-white/20" aria-hidden="true">Logo klienta</span>
-                </div>
-              </RevealOnScroll>
-            ))}
-          </div>
-          <RevealOnScroll>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mt-16 border-t border-white/5 pt-16">
-              {[
-                { value: "50+", label: "Kampanii zrealizowanych" },
-                { value: "3M+", label: "Kontaktów dziennie" },
-                { value: "100%", label: "Klientów wraca" },
-                { value: "24h", label: "Czas odpowiedzi" },
-              ].map((stat, i) => (
-                <div key={i}>
-                  <div className={`text-3xl font-bold mb-2 ${i % 2 === 0 ? "text-brandCyan" : "text-brandMagenta"}`}>
-                    {stat.value}
-                  </div>
-                  <div className="text-xs uppercase tracking-widest text-gray-500">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
 
       {/* Galeria kampanii */}
       <section className="py-24 px-6 bg-black" id="galeria">
@@ -618,7 +556,7 @@ export default function Home() {
                     <h3 className={`text-lg font-bold uppercase tracking-widest mb-4 ${pkg.accent}`}>{pkg.name}</h3>
                     <div className="flex items-baseline gap-2">
                       <span className="text-3xl font-bold text-white">{pkg.price}</span>
-                      <span className="text-xs text-gray-500 uppercase tracking-widest">PLN brutto</span>
+                      <span className="text-xs text-gray-500 uppercase tracking-widest">PLN netto</span>
                     </div>
                   </div>
                   <ul className="space-y-3 flex-1 mb-8">

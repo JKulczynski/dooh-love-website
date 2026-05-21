@@ -20,11 +20,13 @@ export default function LeadForm() {
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({
     email: "",
+    telefon: "",
     trasa: "",
     termin: "",
     ilosc: "1",
     aktywnosci: [] as string[],
     firma: "",
+    notatka: "",
   });
 
   function toggleAktywnosc(item: string) {
@@ -42,10 +44,12 @@ export default function LeadForm() {
     const body = [
       `Firma / Marka: ${form.firma}`,
       `Email: ${form.email}`,
+      `Telefon: ${form.telefon}`,
       `Trasa / Miejsce: ${form.trasa}`,
       `Termin: ${form.termin}`,
       `Ilość aut: ${form.ilosc}`,
       `Dodatkowe aktywności: ${aktywnosci}`,
+      `Notatka: ${form.notatka || "Brak"}`,
     ].join("\n");
     window.location.href = `mailto:hello@dooh-love.pl?subject=Wycena indywidualna - ${form.firma}&body=${encodeURIComponent(body)}`;
     setSent(true);
@@ -88,6 +92,19 @@ export default function LeadForm() {
             className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm"
           />
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="lead-telefon" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Telefon *</label>
+        <input
+          id="lead-telefon"
+          type="tel"
+          required
+          placeholder="+48 500 000 000"
+          value={form.telefon}
+          onChange={e => setForm(f => ({ ...f, telefon: e.target.value }))}
+          className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm"
+        />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -162,9 +179,21 @@ export default function LeadForm() {
         </div>
       </div>
 
+      <div>
+        <label htmlFor="lead-notatka" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Notatka (opcjonalnie)</label>
+        <textarea
+          id="lead-notatka"
+          placeholder="np. potrzebuję hostessy, dodatkowego oświetlenia, konkretnej lokalizacji..."
+          rows={3}
+          value={form.notatka}
+          onChange={e => setForm(f => ({ ...f, notatka: e.target.value }))}
+          className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm resize-none"
+        />
+      </div>
+
       <button
         type="submit"
-        className="w-full bg-brandMagenta text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors text-sm"
+        className="w-full bg-brandMagenta text-black font-bold py-4 rounded-lg uppercase tracking-widest hover:bg-white transition-colors text-sm"
         style={{ boxShadow: "0 0 20px rgba(255,0,170,0.25)" }}
       >
         Wyślij zapytanie o wycenę

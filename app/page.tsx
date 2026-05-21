@@ -1,6 +1,5 @@
 import HeroSection from "./components/HeroSection";
 import StickyBar from "./components/StickyBar";
-import ContactForm from "./components/ContactForm";
 import LeadForm from "./components/LeadForm";
 import NavBar from "./components/NavBar";
 import PriceCalculator from "./components/PriceCalculator";
@@ -38,7 +37,7 @@ export default function Home() {
           </p>
           <a
             href="#wycena"
-            className="inline-flex items-center gap-3 bg-brandCyan text-black font-bold py-4 px-8 uppercase tracking-widest hover:bg-white transition-colors text-sm"
+            className="inline-flex items-center gap-3 bg-brandCyan text-black font-bold py-4 px-8 rounded-lg uppercase tracking-widest hover:bg-white transition-colors text-sm"
           >
             Sprawdź wycenę
           </a>
@@ -187,7 +186,7 @@ export default function Home() {
             <div className="mt-10 text-center">
               <a
                 href="#wycena"
-                className="inline-flex items-center gap-3 bg-brandCyan text-black font-bold py-4 px-10 uppercase tracking-widest hover:bg-white transition-colors text-sm"
+                className="inline-flex items-center gap-3 bg-brandCyan text-black font-bold py-4 px-10 rounded-lg uppercase tracking-widest hover:bg-white transition-colors text-sm"
               >
                 Powiedz nam o swoim pomyśle
               </a>
@@ -508,52 +507,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimoniale */}
-      <section className="py-24 px-6 bg-darkBg" id="opinie">
-        <div className="max-w-7xl mx-auto">
-          <RevealOnScroll>
-            <div className="mb-16">
-              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-                Co mówią <span className="text-brandCyan">klienci?</span>
-              </h2>
-              <div className="w-20 h-1 bg-brandMagenta" />
-            </div>
-          </RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { name: "Anna K.", role: "Event Manager", company: "Agencja Eventowa" },
-              { name: "Marek W.", role: "Brand Manager", company: "FMCG" },
-              { name: "Tomasz B.", role: "Media Buyer", company: "Dom Mediowy" },
-            ].map((t, i) => (
-              <RevealOnScroll key={i} delay={i * 150}>
-                <div className="border border-white/10 bg-white/5 p-8 relative">
-                  <div
-                    className="absolute top-6 left-8 text-5xl leading-none font-serif"
-                    style={{ color: i % 2 === 0 ? "rgba(0,255,229,0.15)" : "rgba(255,0,170,0.15)" }}
-                  >
-                    &ldquo;
-                  </div>
-                  <div className="pt-8">
-                    <p className="text-gray-400 text-sm leading-relaxed italic mb-6">
-                      Opinia klienta. Pojawi się wkrótce.
-                    </p>
-                    <div className="flex items-center gap-3 border-t border-white/10 pt-6">
-                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-xs text-gray-400 font-bold">
-                        {t.name.split(" ").map(n => n[0]).join("")}
-                      </div>
-                      <div>
-                        <div className="text-sm font-bold">{t.name}</div>
-                        <div className="text-[10px] uppercase tracking-widest text-gray-500">{t.role} · {t.company}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </RevealOnScroll>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Jak startujemy */}
       <section className="py-24 px-6 bg-black overflow-hidden">
         <div className="max-w-7xl mx-auto">
@@ -678,7 +631,7 @@ export default function Home() {
                   </ul>
                   <a
                     href="#wycena-indywidualna"
-                    className={`block text-center py-3 text-xs font-bold uppercase tracking-widest transition-all border ${
+                    className={`block text-center py-3 text-xs font-bold uppercase tracking-widest transition-all border rounded-lg ${
                       pkg.tag
                         ? "bg-brandCyan text-black border-brandCyan hover:bg-white hover:border-white"
                         : "border-white/20 text-gray-300 hover:border-white/50"
@@ -735,7 +688,7 @@ export default function Home() {
             <div className="mt-10 text-center">
               <a
                 href="#wycena"
-                className="inline-flex items-center gap-3 border border-brandMagenta text-brandMagenta font-bold py-4 px-10 uppercase tracking-widest hover:bg-brandMagenta hover:text-black transition-all text-sm"
+                className="inline-flex items-center gap-3 border border-brandMagenta text-brandMagenta font-bold py-4 px-10 rounded-lg uppercase tracking-widest hover:bg-brandMagenta hover:text-black transition-all text-sm"
               >
                 Zapytaj o Content Package
               </a>
@@ -776,29 +729,6 @@ export default function Home() {
           </RevealOnScroll>
           <RevealOnScroll delay={100}>
             <LeadForm />
-          </RevealOnScroll>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-24 px-6 bg-darkBg text-center">
-        <div className="max-w-3xl mx-auto">
-          <RevealOnScroll>
-            <div className="inline-flex items-center gap-2 border border-brandMagenta/40 px-4 py-2 mb-8 text-xs uppercase tracking-widest text-brandMagenta">
-              <span className="w-2 h-2 rounded-full bg-brandMagenta animate-pulse inline-block" />
-              Dostępność: kampanie realizujemy szybko od briefingu
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={100}>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
-              Zarezerwuj termin<br />
-              <span className="text-brandCyan">zanim zrobi to</span>{" "}
-              <span className="text-brandMagenta">konkurencja.</span>
-            </h2>
-          </RevealOnScroll>
-          <RevealOnScroll delay={200}>
-            <p className="text-gray-400 uppercase tracking-widest text-sm mb-10">Jeden klient = jedna trasa. Terminy znikają.</p>
-            <ContactForm />
           </RevealOnScroll>
         </div>
       </section>

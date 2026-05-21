@@ -11,7 +11,7 @@ export default function StickyBar() {
       </span>
       <a
         href="#wycena"
-        className="bg-black text-brandCyan font-bold text-xs uppercase tracking-widest py-2 px-5 hover:bg-white hover:text-black transition-colors"
+        className="bg-black text-brandCyan font-bold text-xs uppercase tracking-widest py-2 px-5 rounded-lg hover:bg-white hover:text-black transition-colors"
       >
         Sprawdź cenę
       </a>

@@ -16,8 +16,9 @@
 ### Do zrobienia
 
 #### Hero i design
-- [ ] Hero: animacja (Paweł ma pomysł — do omówienia)
-- [ ] Hero: LED w kształcie L + samochód wyjeżdżający w 3D (wizja Pawła + Piotra)
+- [ ] Hero: video background z Gemini Veo — iterować aż gotowe, potem pobrać i wrzucić
+  - Baza gotowa (iteracja 2/3): DOOH LOVE 3D na Marszałkowskiej, bus, drony, billboard
+  - Do poprawy w prompcie: logo stabilne (nie zmienia się w trakcie), ciężarówka poprawny wjazd, billboard bez duplikatów ("Mobile LED, Drony, Mapping" — bez powtórzeń)
 - [ ] Strona jako technologiczny popis — efektowna, wodotryski, wysoko konwertująca
 - [ ] Minimalizm: mało tekstu, więcej efektów wizualnych (Paweł: "idziemy w minimalizm")
 - [ ] Pokazać szerszy zakres od początku: nie tylko samochód — przyczepa z ekranem, pokaz dronów, mapping

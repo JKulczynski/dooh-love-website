@@ -2,62 +2,58 @@
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-end pt-16 pb-16 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-end pb-20 overflow-hidden">
 
-      {/* Gemini render jako tło */}
+      {/* Pixel art background */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-[-5%] hero-bg"
+          className="absolute inset-[-4%] hero-bg"
           style={{
-            backgroundImage: "url('/hero-bg-right2.png')",
+            backgroundImage: "url('/hero-pixel.jpg')",
             backgroundSize: "cover",
-            animation: "kenBurns 18s ease-in-out infinite alternate",
+            animation: "kenBurns 22s ease-in-out infinite alternate",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50" />
+        {/* Gradient: bottom fade to black */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/30" />
+        {/* Gradient: top fade to black (nav area) */}
+        <div className="absolute top-0 left-0 right-0" style={{
+          height: "20%",
+          background: "linear-gradient(to bottom, rgba(2,2,8,1) 0%, rgba(2,2,8,0.7) 50%, transparent 100%)",
+        }} />
       </div>
 
       {/* Scan lines */}
       <div className="absolute inset-0 pointer-events-none z-10" style={{
-        backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.13) 3px, rgba(0,0,0,0.13) 4px)",
-        animation: "scanLines 8s linear infinite",
+        backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.10) 3px, rgba(0,0,0,0.10) 4px)",
+        animation: "scanLines 10s linear infinite",
       }} />
 
-      {/* Glow pulse:cyan left */}
+      {/* Cyan glow pulse */}
       <div className="absolute inset-0 pointer-events-none z-10" style={{
-        background: "radial-gradient(ellipse 60% 80% at 15% 50%, rgba(0,255,229,0.08) 0%, transparent 70%)",
-        animation: "glowPulse 4s ease-in-out infinite",
+        background: "radial-gradient(ellipse 55% 70% at 20% 55%, rgba(0,255,229,0.07) 0%, transparent 70%)",
+        animation: "glowPulse 5s ease-in-out infinite",
       }} />
 
-      {/* Glow pulse:magenta right */}
+      {/* Magenta glow pulse */}
       <div className="absolute inset-0 pointer-events-none z-10" style={{
-        background: "radial-gradient(ellipse 50% 70% at 80% 55%, rgba(255,0,170,0.07) 0%, transparent 70%)",
-        animation: "glowPulse 4s ease-in-out infinite 2s",
+        background: "radial-gradient(ellipse 45% 60% at 75% 60%, rgba(255,0,170,0.06) 0%, transparent 70%)",
+        animation: "glowPulse 5s ease-in-out infinite 2.5s",
       }} />
 
-      {/* Gradient top:przykrywa baked-in nav */}
-      <div className="absolute top-0 left-0 right-0 pointer-events-none z-20" style={{
-        height: "22%",
-        background: "linear-gradient(to bottom, rgba(5,5,5,1) 0%, rgba(5,5,5,0.9) 55%, transparent 100%)",
-      }} />
+      {/* Content */}
+      <div className="relative z-30 w-full flex flex-col items-center gap-6 px-6">
+        {/* Tagline */}
+        <p className="text-xs uppercase tracking-[0.3em] text-brandCyan font-light"
+          style={{ textShadow: "0 0 12px #00FFE5" }}>
+          Mobilna Reklama LED · Warszawa
+        </p>
 
-      {/* Gradient bottom:cienki, tylko pod przycisk */}
-      <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-20" style={{
-        height: "18%",
-        background: "linear-gradient(to top, rgba(5,5,5,0.85) 0%, transparent 100%)",
-      }} />
-
-      {/* LED flicker:delikatne migotanie ekranu trucka */}
-      <div className="absolute inset-0 pointer-events-none z-10" style={{
-        animation: "ledFlicker 6s linear infinite",
-      }} />
-
-      {/* CTA only:truck speaks for itself */}
-      <div className="relative z-30 w-full flex justify-center px-6">
+        {/* CTA */}
         <a
           href="#wycena"
-          className="w-full max-w-xs sm:w-auto inline-block bg-brandCyan text-black font-bold py-4 px-10 uppercase tracking-widest hover:bg-white transition-colors duration-300 text-center text-sm sm:text-base"
-          style={{ boxShadow: "0 0 24px rgba(0,255,229,0.35)" }}
+          className="inline-block bg-brandCyan text-black font-bold py-4 px-10 uppercase tracking-widest hover:bg-white transition-colors duration-300 text-sm rounded-lg w-full max-w-xs sm:w-auto text-center"
+          style={{ boxShadow: "0 0 24px rgba(0,255,229,0.4), 0 0 60px rgba(0,255,229,0.15)" }}
         >
           Zarezerwuj w 48h
         </a>
@@ -65,24 +61,16 @@ export default function HeroSection() {
 
       <style>{`
         @keyframes kenBurns {
-          from { transform: scale(1); }
-          to   { transform: scale(1.06); }
+          from { transform: scale(1) translate(0, 0); }
+          to   { transform: scale(1.07) translate(-1%, 1%); }
         }
         @keyframes scanLines {
           from { background-position: 0 0; }
           to   { background-position: 0 100px; }
         }
         @keyframes glowPulse {
-          0%, 100% { opacity: 0.6; }
+          0%, 100% { opacity: 0.5; }
           50%       { opacity: 1; }
-        }
-        @keyframes ledFlicker {
-          0%, 17%, 19%, 21%, 52%, 56%, 100% { opacity: 0; }
-          18%  { opacity: 0.04; }
-          20%  { opacity: 0.02; }
-          53%  { opacity: 0.05; }
-          54%  { opacity: 0.01; }
-          55%  { opacity: 0.04; }
         }
       `}</style>
     </section>

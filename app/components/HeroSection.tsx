@@ -7,15 +7,14 @@ export default function HeroSection() {
       {/* Gemini render jako tło */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-[-5%]"
+          className="absolute inset-[-5%] hero-bg"
           style={{
             backgroundImage: "url('/hero-bg-right2.png')",
             backgroundSize: "cover",
-            backgroundPosition: "center",
             animation: "kenBurns 18s ease-in-out infinite alternate",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/50" />
       </div>
 
       {/* Scan lines */}
@@ -54,10 +53,10 @@ export default function HeroSection() {
       }} />
 
       {/* CTA only:truck speaks for itself */}
-      <div className="relative z-30 w-full flex justify-center">
+      <div className="relative z-30 w-full flex justify-center px-6">
         <a
           href="#wycena"
-          className="inline-block bg-brandCyan text-black font-bold py-4 px-10 uppercase tracking-widest hover:bg-white transition-colors duration-300"
+          className="w-full max-w-xs sm:w-auto inline-block bg-brandCyan text-black font-bold py-4 px-10 uppercase tracking-widest hover:bg-white transition-colors duration-300 text-center text-sm sm:text-base"
           style={{ boxShadow: "0 0 24px rgba(0,255,229,0.35)" }}
         >
           Zarezerwuj w 48h

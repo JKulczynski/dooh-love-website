@@ -64,6 +64,16 @@ body {
   transition: box-shadow 0.3s ease;
 }
 
+.hero-bg {
+  background-position: 60% center;
+}
+
+@media (min-width: 768px) {
+  .hero-bg {
+    background-position: center;
+  }
+}
+
 .gmap-tip {
   background: #0a0a0a;
   color: #fff;

@@ -599,7 +599,7 @@ export default function Home() {
           </div>
           <RevealOnScroll>
             <p className="text-center text-xs text-gray-500 uppercase tracking-widest mt-8">
-              Ceny brutto. Kreacja nie jest wymagana - możesz dostarczyć własne materiały.
+              Ceny netto. Kreacja nie jest wymagana - możesz dostarczyć własne materiały.
             </p>
           </RevealOnScroll>
         </div>

@@ -739,9 +739,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest text-gray-500 flex justify-between">
+        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest text-gray-500 flex flex-col md:flex-row justify-between gap-3">
           <span>© 2025 DOOH-LOVE</span>
-          <span>Created for Urban Frontier</span>
+          <div className="flex gap-6">
+            <a href="/polityka-prywatnosci" className="hover:text-brandCyan transition-colors">Polityka prywatności</a>
+            <a href="/regulamin" className="hover:text-brandCyan transition-colors">Regulamin</a>
+          </div>
         </div>
       </footer>
 

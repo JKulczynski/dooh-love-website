@@ -4,18 +4,27 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-end pb-20 overflow-hidden">
 
-      {/* Pixel art background */}
+      {/* Video background */}
       <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+        {/* Fallback: static image if video fails */}
         <div
-          className="absolute inset-[-4%] hero-bg"
+          className="absolute inset-0 hero-bg -z-10"
           style={{
             backgroundImage: "url('/hero-pixel.jpg')",
             backgroundSize: "cover",
-            animation: "kenBurns 22s ease-in-out infinite alternate",
           }}
         />
         {/* Gradient: bottom fade to black */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40" />
         {/* Gradient: top fade to black (nav area) */}
         <div className="absolute top-0 left-0 right-0" style={{
           height: "20%",
@@ -60,10 +69,6 @@ export default function HeroSection() {
       </div>
 
       <style>{`
-        @keyframes kenBurns {
-          from { transform: scale(1) translate(0, 0); }
-          to   { transform: scale(1.07) translate(-1%, 1%); }
-        }
         @keyframes scanLines {
           from { background-position: 0 0; }
           to   { background-position: 0 100px; }

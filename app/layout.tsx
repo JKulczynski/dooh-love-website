@@ -40,6 +40,92 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": `${siteUrl}/#business`,
+      name: "DOOH-LOVE",
+      description: "Mobilna reklama LED w Warszawie. 18m² ekranu LED na ciężarówce jeździ przez centrum miasta 15 godzin dziennie po 3 dedykowanych trasach.",
+      url: siteUrl,
+      telephone: "+48500600700",
+      email: "hello@dooh-love.pl",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Warszawa",
+        addressCountry: "PL",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Warszawa",
+      },
+      priceRange: "od 3 500 PLN netto/dzień",
+      openingHours: "Mo-Fr 08:00-23:00",
+      sameAs: [siteUrl],
+    },
+    {
+      "@type": "Service",
+      "@id": `${siteUrl}/#service`,
+      name: "Mobilna reklama LED DOOH",
+      provider: { "@id": `${siteUrl}/#business` },
+      description: "Emisja reklam na ekranach LED zamontowanych na ciężarówce poruszającej się po centrum Warszawy. Dostępne trasy: Centrum Impact, Business Flow, Nightlife. Kampania gotowa w 48h od briefingu.",
+      areaServed: {
+        "@type": "City",
+        name: "Warszawa",
+      },
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "PLN",
+        price: "3500",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "3500",
+          priceCurrency: "PLN",
+          unitText: "dzień",
+        },
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Czym jest DOOH-LOVE?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "DOOH-LOVE to mobilna reklama LED w Warszawie. 18m² ekranu LED zamontowany na ciężarówce jedzie przez centrum miasta po 3 dedykowanych trasach, 15 godzin dziennie.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Ile kosztuje kampania reklamowa LED?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Kampania mobilnej reklamy LED zaczyna się od 3 500 PLN netto za dzień emisji. Dokładna wycena zależy od wybranej trasy, liczby pojazdów i czasu trwania kampanii.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Jak szybko można uruchomić kampanię LED?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Kampanię można uruchomić w 48 godzin od briefingu. Możemy adaptować dostarczone materiały lub wyprodukować kreację od zera.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Jakie trasy są dostępne w Warszawie?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Dostępne są 3 trasy: Centrum Impact (Rondo Daszyńskiego, PKiN, Marszałkowska, Plac Trzech Krzyży), Business Flow (Al. Jerozolimskie, Rondo ONZ, Jana Pawła II) oraz Nightlife (Plac Zbawiciela, Hala Koszyki, Bulwary Wiślane).",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,6 +136,12 @@ export default function RootLayout({
       lang="pl"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

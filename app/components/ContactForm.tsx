@@ -37,7 +37,7 @@ export default function ContactForm() {
           aria-label="Imię lub firma"
           value={form.name}
           onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm"
+          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm rounded-lg"
         />
       </div>
       <div>
@@ -49,7 +49,7 @@ export default function ContactForm() {
           aria-label="Telefon lub e-mail"
           value={form.contact}
           onChange={e => setForm(f => ({ ...f, contact: e.target.value }))}
-          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm"
+          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm rounded-lg"
         />
       </div>
       <div>
@@ -65,7 +65,7 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="w-full bg-brandCyan text-black font-bold py-4 uppercase tracking-widest hover:bg-white transition-colors text-sm"
+        className="w-full bg-brandCyan text-black font-bold py-4 rounded-lg uppercase tracking-widest hover:bg-white transition-colors text-sm"
         style={{ boxShadow: "0 0 20px rgba(0,255,229,0.25)" }}
       >
         Zarezerwuj w 48h

@@ -198,7 +198,9 @@ export default function Home() {
       {/* Dlaczego to działa */}
       <section className="relative py-24 px-6 bg-black" id="solutions">
         <LedGrid />
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none z-10" />
+        <div className="relative z-20 max-w-7xl mx-auto">
           <RevealOnScroll>
             <div className="mb-16">
               <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
@@ -478,7 +480,9 @@ export default function Home() {
       {/* Jak startujemy */}
       <section className="relative py-24 px-6 bg-black overflow-hidden">
         <LedGrid />
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
+        <div className="relative z-20 max-w-7xl mx-auto">
           <RevealOnScroll>
             <h2 className="text-3xl font-bold uppercase tracking-tight mb-16 text-right">
               Jak <span className="text-brandMagenta">startujemy?</span>

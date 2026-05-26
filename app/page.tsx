@@ -1,12 +1,11 @@
 import HeroSection from "./components/HeroSection";
 import StickyBar from "./components/StickyBar";
-import LeadForm from "./components/LeadForm";
 import NavBar from "./components/NavBar";
-import PriceCalculator from "./components/PriceCalculator";
 import Ticker from "./components/Ticker";
 import AnimatedCounter from "./components/AnimatedCounter";
 import RevealOnScroll from "./components/RevealOnScroll";
 import TrailMapWrapper from "./components/TrailMapWrapper";
+import WycenaSection from "./components/WycenaSection";
 
 export default function Home() {
   return (
@@ -210,8 +209,11 @@ export default function Home() {
             <RevealOnScroll>
               <div className="p-8 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group h-full">
                 <div className="text-brandCyan mb-6 group-hover:scale-110 transition-transform">
-                  <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  <svg className="h-10 w-10" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="12" width="2" height="3"/>
+                    <rect x="5" y="9" width="2" height="6"/>
+                    <rect x="9" y="6" width="2" height="9"/>
+                    <rect x="13" y="3" width="2" height="12"/>
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-4 uppercase">Maksymalny Zasięg</h3>
@@ -221,9 +223,16 @@ export default function Home() {
             <RevealOnScroll delay={150}>
               <div className="p-8 border border-white/10 bg-white/5 hover:border-brandMagenta/50 transition-all group h-full">
                 <div className="text-brandMagenta mb-6 group-hover:scale-110 transition-transform">
-                  <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                    <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  <svg className="h-10 w-10" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="3" width="6" height="1"/>
+                    <rect x="3" y="4" width="2" height="1"/>
+                    <rect x="11" y="4" width="2" height="1"/>
+                    <rect x="2" y="5" width="1" height="4"/>
+                    <rect x="13" y="5" width="1" height="4"/>
+                    <rect x="3" y="9" width="2" height="1"/>
+                    <rect x="11" y="9" width="2" height="1"/>
+                    <rect x="5" y="10" width="6" height="1"/>
+                    <rect x="7" y="6" width="2" height="2"/>
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-4 uppercase">Efekt &ldquo;Wow&rdquo;</h3>
@@ -233,8 +242,11 @@ export default function Home() {
             <RevealOnScroll delay={300}>
               <div className="p-8 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group h-full">
                 <div className="text-brandCyan mb-6 group-hover:scale-110 transition-transform">
-                  <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  <svg className="h-10 w-10" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="9" width="3" height="6"/>
+                    <rect x="6" y="3" width="3" height="12"/>
+                    <rect x="11" y="6" width="3" height="9"/>
+                    <rect x="0" y="15" width="16" height="1"/>
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-4 uppercase">Mierzalne Wyniki</h3>
@@ -571,6 +583,7 @@ export default function Home() {
                   <div className="mb-6">
                     <h3 className={`text-lg font-bold uppercase tracking-widest mb-4 ${pkg.accent}`}>{pkg.name}</h3>
                     <div className="flex items-baseline gap-2">
+                      <span className="text-xs text-gray-400 uppercase tracking-widest">od</span>
                       <span className="text-3xl font-bold text-white">{pkg.price}</span>
                       <span className="text-xs text-gray-400 uppercase tracking-widest">PLN netto</span>
                     </div>
@@ -584,7 +597,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <a
-                    href="#wycena-indywidualna"
+                    href="#wycena"
                     className={`block text-center py-3 text-xs font-bold uppercase tracking-widest transition-all border rounded-lg ${
                       pkg.tag
                         ? "bg-brandCyan text-black border-brandCyan hover:bg-white hover:border-white"
@@ -651,41 +664,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Wycena Online */}
-      <section className="py-24 px-6 bg-zinc-900" id="wycena">
-        <div className="max-w-3xl mx-auto border border-white/20 p-8 md:p-12">
-          <RevealOnScroll>
-            <h2 className="text-2xl font-bold uppercase mb-2 text-center">
-              Wycena <span className="text-brandCyan">Online</span>
-            </h2>
-            <p className="text-center text-xs text-gray-400 uppercase tracking-widest mb-10">
-              Szacunkowy koszt kampanii
-            </p>
-          </RevealOnScroll>
-          <PriceCalculator />
-        </div>
-      </section>
-
-      {/* Wycena Indywidualna */}
-      <section className="py-24 px-6 bg-black border-t border-white/5" id="wycena-indywidualna">
-        <div className="max-w-3xl mx-auto">
-          <RevealOnScroll>
-            <div className="mb-12">
-              <p className="text-xs uppercase tracking-[0.3em] text-brandMagenta mb-3">Duże marki, eventy, launche</p>
-              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-                Wycena <span className="text-brandMagenta">Indywidualna</span>
-              </h2>
-              <div className="w-20 h-1 bg-brandCyan" />
-              <p className="text-gray-400 text-sm mt-6 leading-relaxed">
-                Planujesz galę, launch produktu lub kampanię wymagającą ekstra uwagi? Napisz do nas. Odezwiemy się w ciągu kilku godzin z ofertą skrojoną dokładnie pod Twoje potrzeby.
-              </p>
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={100}>
-            <LeadForm />
-          </RevealOnScroll>
-        </div>
-      </section>
+      <WycenaSection />
 
       {/* Footer */}
       <footer className="bg-black py-20 px-6 border-t border-white/5">

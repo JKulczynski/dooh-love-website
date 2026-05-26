@@ -11,7 +11,11 @@ function formatPLN(n: number) {
   return n.toLocaleString("pl-PL") + " PLN";
 }
 
-export default function PriceCalculator() {
+interface PriceCalculatorProps {
+  onRequestQuote?: () => void;
+}
+
+export default function PriceCalculator({ onRequestQuote }: PriceCalculatorProps) {
   const [days, setDays] = useState(3);
   const [vehicles, setVehicles] = useState("1");
 
@@ -94,12 +98,22 @@ export default function PriceCalculator() {
           </>
         )}
 
-        <a
-          href="#wycena-kontakt"
-          className="block w-full bg-white text-black font-bold py-4 rounded-lg uppercase tracking-widest hover:bg-brandMagenta hover:text-white transition-all text-center text-sm"
-        >
-          Zapytaj o szczegóły
-        </a>
+        {onRequestQuote ? (
+          <button
+            type="button"
+            onClick={onRequestQuote}
+            className="block w-full bg-white text-black font-bold py-4 rounded-lg uppercase tracking-widest hover:bg-brandMagenta hover:text-white transition-all text-center text-sm"
+          >
+            Chcę tę konfigurację →
+          </button>
+        ) : (
+          <a
+            href="#wycena"
+            className="block w-full bg-white text-black font-bold py-4 rounded-lg uppercase tracking-widest hover:bg-brandMagenta hover:text-white transition-all text-center text-sm"
+          >
+            Zapytaj o szczegóły
+          </a>
+        )}
         <p className="text-center text-xs text-gray-400 uppercase tracking-widest mt-3">
           Dokładna cena po briefingu. Odpowiadamy szybko.
         </p>

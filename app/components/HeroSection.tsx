@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -17,13 +18,17 @@ export default function HeroSection() {
           <track kind="captions" srcLang="pl" label="Polski" default />
         </video>
         {/* Fallback: static image if video fails */}
-        <div
-          className="absolute inset-0 hero-bg -z-10"
-          style={{
-            backgroundImage: "url('/hero-pixel.jpg')",
-            backgroundSize: "cover",
-          }}
-        />
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/hero-pixel.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover object-[60%_center] md:object-center"
+            quality={75}
+            aria-hidden="true"
+          />
+        </div>
         {/* Gradient: bottom fade to black */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40" />
         {/* Gradient: top fade to black (nav area) */}

@@ -141,7 +141,7 @@ export default function Regulamin() {
               </p>
             </div>
 
-            <p className="text-xs text-gray-600 pt-4 border-t border-white/5">
+            <p className="text-xs text-gray-400 pt-4 border-t border-white/5">
               Ostatnia aktualizacja: maj 2025
             </p>
           </div>
@@ -149,7 +149,7 @@ export default function Regulamin() {
           <div className="mt-12">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gray-500 hover:text-brandCyan transition-colors"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gray-400 hover:text-brandCyan transition-colors"
             >
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M10 19l-7-7m0 0l7-7m-7 7h18" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />

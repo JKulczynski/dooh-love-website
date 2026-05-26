@@ -299,7 +299,7 @@ export default function Home() {
                     {item.desc}
                   </p>
                   <div className="border-t border-white/10 pt-4">
-                    <p className="text-[10px] uppercase tracking-widest text-gray-600">
+                    <p className="text-[10px] uppercase tracking-widest text-gray-400">
                       {item.examples}
                     </p>
                   </div>

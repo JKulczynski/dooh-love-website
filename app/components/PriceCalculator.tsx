@@ -39,7 +39,7 @@ export default function PriceCalculator() {
           onChange={(e) => setDays(Number(e.target.value))}
           className="w-full h-1.5 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-brandCyan"
         />
-        <div className="flex justify-between text-xs mt-2 text-gray-500">
+        <div className="flex justify-between text-xs mt-2 text-gray-400">
           <span>1 dzień</span>
           <span>30 dni</span>
         </div>
@@ -68,7 +68,7 @@ export default function PriceCalculator() {
               }`}
             >
               <div className="text-sm font-bold uppercase mb-1">{opt.label}</div>
-              <div className="text-[10px] text-gray-500 uppercase tracking-wider">{opt.sub}</div>
+              <div className="text-[10px] text-gray-400 uppercase tracking-wider">{opt.sub}</div>
             </button>
           ))}
         </div>
@@ -84,7 +84,7 @@ export default function PriceCalculator() {
         ) : (
           <>
             <div className="flex justify-between items-baseline mb-1">
-              <span className="text-xs uppercase text-gray-500">Stawka dzienna:</span>
+              <span className="text-xs uppercase text-gray-400">Stawka dzienna:</span>
               <span className="text-sm text-gray-300">{formatPLN(ratePerDay)} netto</span>
             </div>
             <div className="flex justify-between items-end mb-6">
@@ -100,7 +100,7 @@ export default function PriceCalculator() {
         >
           Zapytaj o szczegóły
         </a>
-        <p className="text-center text-xs text-gray-500 uppercase tracking-widest mt-3">
+        <p className="text-center text-xs text-gray-400 uppercase tracking-widest mt-3">
           Dokładna cena po briefingu. Odpowiadamy szybko.
         </p>
       </div>

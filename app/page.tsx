@@ -46,13 +46,13 @@ export default function Home() {
 
       {/* Social Proof */}
       <section className="py-20 px-6 bg-black border-t border-white/5">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center [&>*:last-child]:col-span-2 [&>*:last-child]:md:col-span-1">
           <RevealOnScroll>
             <div>
               <div className="text-4xl font-bold text-brandCyan mb-2">
                 <AnimatedCounter value={18} suffix=" m²" />
               </div>
-              <div className="text-xs uppercase tracking-widest text-gray-500">Powierzchnia ekranów</div>
+              <div className="text-xs uppercase tracking-widest text-gray-400">Powierzchnia ekranów</div>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={100}>
@@ -60,7 +60,7 @@ export default function Home() {
               <div className="text-4xl font-bold text-brandMagenta mb-2">
                 <AnimatedCounter value={15} suffix="h" />
               </div>
-              <div className="text-xs uppercase tracking-widest text-gray-500">Ekspozycja dziennie</div>
+              <div className="text-xs uppercase tracking-widest text-gray-400">Ekspozycja dziennie</div>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={200}>
@@ -68,7 +68,7 @@ export default function Home() {
               <div className="text-4xl font-bold text-brandCyan mb-2">
                 <AnimatedCounter value={3} />
               </div>
-              <div className="text-xs uppercase tracking-widest text-gray-500">Trasy w Warszawie</div>
+              <div className="text-xs uppercase tracking-widest text-gray-400">Trasy w Warszawie</div>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={300}>
@@ -76,7 +76,7 @@ export default function Home() {
               <div className="text-4xl font-bold text-brandMagenta mb-2">
                 <AnimatedCounter value={20} />
               </div>
-              <div className="text-xs uppercase tracking-widest text-gray-500">Dni kampanijnych / mies.</div>
+              <div className="text-xs uppercase tracking-widest text-gray-400">Dni kampanijnych / mies.</div>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={400}>
@@ -84,7 +84,7 @@ export default function Home() {
               <div className="text-3xl font-bold text-brandCyan mb-2">
                 od <AnimatedCounter value={2000} suffix=" PLN" duration={1000} />
               </div>
-              <div className="text-xs uppercase tracking-widest text-gray-500">Cena netto / dzień</div>
+              <div className="text-xs uppercase tracking-widest text-gray-400">Cena netto / dzień</div>
             </div>
           </RevealOnScroll>
         </div>
@@ -118,7 +118,7 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-              <p className="text-xs uppercase tracking-widest text-gray-500">Materiał wideo, wkrótce</p>
+              <p className="text-xs uppercase tracking-widest text-gray-400">Materiał wideo, wkrótce</p>
             </div>
             <div className="absolute inset-0 pointer-events-none opacity-20" style={{
               backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.3) 3px, rgba(0,0,0,0.3) 4px)",
@@ -147,7 +147,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-white/10 overflow-hidden">
             <RevealOnScroll>
               <div className="p-10 bg-white/5 border-b md:border-b-0 md:border-r border-white/10">
-                <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-8">Ty przynosisz</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-8">Ty przynosisz</p>
                 <ul className="space-y-5">
                   {[
                     "Markę, event lub produkt do promocji",
@@ -319,7 +319,7 @@ export default function Home() {
                 Nasze <span className="text-brandCyan">Trasy</span>
               </h2>
               <div className="w-20 h-1 bg-brandMagenta" />
-              <p className="text-gray-500 text-sm mt-4">2 trasy dzienne &middot; 1 trasa nocna &middot; Centrum Warszawy</p>
+              <p className="text-gray-400 text-sm mt-4">2 trasy dzienne &middot; 1 trasa nocna &middot; Centrum Warszawy</p>
             </div>
           </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -412,7 +412,7 @@ export default function Home() {
       {/* Logotypy klientów — ukryte, czeka na realne loga */}
       <section className="hidden py-20 px-6 bg-black border-t border-white/5">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-xs uppercase tracking-[0.3em] text-gray-500 mb-10">
+          <p className="text-center text-xs uppercase tracking-[0.3em] text-gray-400 mb-10">
             Zaufali nam
           </p>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
@@ -572,7 +572,7 @@ export default function Home() {
                     <h3 className={`text-lg font-bold uppercase tracking-widest mb-4 ${pkg.accent}`}>{pkg.name}</h3>
                     <div className="flex items-baseline gap-2">
                       <span className="text-3xl font-bold text-white">{pkg.price}</span>
-                      <span className="text-xs text-gray-500 uppercase tracking-widest">PLN netto</span>
+                      <span className="text-xs text-gray-400 uppercase tracking-widest">PLN netto</span>
                     </div>
                   </div>
                   <ul className="space-y-3 flex-1 mb-8">
@@ -598,7 +598,7 @@ export default function Home() {
             ))}
           </div>
           <RevealOnScroll>
-            <p className="text-center text-xs text-gray-500 uppercase tracking-widest mt-8">
+            <p className="text-center text-xs text-gray-400 uppercase tracking-widest mt-8">
               Ceny netto. Kreacja nie jest wymagana - możesz dostarczyć własne materiały.
             </p>
           </RevealOnScroll>
@@ -633,7 +633,7 @@ export default function Home() {
                 <div className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/40 transition-all group h-full">
                   <div className="text-2xl mb-4">{item.icon}</div>
                   <h3 className="text-sm font-bold uppercase mb-2 group-hover:text-brandCyan transition-colors">{item.label}</h3>
-                  <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                  <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               </RevealOnScroll>
             ))}
@@ -658,7 +658,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold uppercase mb-2 text-center">
               Wycena <span className="text-brandCyan">Online</span>
             </h2>
-            <p className="text-center text-xs text-gray-500 uppercase tracking-widest mb-10">
+            <p className="text-center text-xs text-gray-400 uppercase tracking-widest mb-10">
               Szacunkowy koszt kampanii
             </p>
           </RevealOnScroll>
@@ -694,14 +694,14 @@ export default function Home() {
             <div className="font-bold text-2xl tracking-tighter">
               DOOH<span className="text-brandCyan">-</span>LOVE
             </div>
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-400 text-sm">
               Rewolucjonizujemy miejską reklamę. Wykorzystujemy najnowocześniejsze ekrany LED mobilne, by Twoja marka zawsze była tam, gdzie dzieje się akcja.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-12">
             <div className="space-y-4">
               <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400">Nawigacja</h3>
-              <ul className="text-sm space-y-2 text-gray-500">
+              <ul className="text-sm space-y-2 text-gray-400">
                 <li><a className="hover:text-brandCyan transition-colors" href="#">Start</a></li>
                 <li><a className="hover:text-brandCyan transition-colors" href="#solutions">Dlaczego to działa</a></li>
                 <li><a className="hover:text-brandCyan transition-colors" href="#trasy">Trasy</a></li>
@@ -710,7 +710,7 @@ export default function Home() {
             </div>
             <div className="space-y-4">
               <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400">Kontakt</h3>
-              <ul className="text-sm space-y-3 text-gray-500">
+              <ul className="text-sm space-y-3 text-gray-400">
                 <li>
                   <a href="mailto:hello@dooh-love.pl" className="hover:text-brandCyan transition-colors">
                     hello@dooh-love.pl
@@ -734,13 +734,13 @@ export default function Home() {
                     WhatsApp
                   </a>
                 </li>
-                <li className="text-gray-500">Warszawa, PL</li>
+                <li className="text-gray-400">Warszawa, PL</li>
               </ul>
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest text-gray-500 flex flex-col md:flex-row justify-between gap-3">
-          <span>© 2025 DOOH-LOVE</span>
+        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest text-gray-400 flex flex-col md:flex-row justify-between gap-3">
+          <span>© 2026 DOOH-LOVE</span>
           <div className="flex gap-6">
             <a href="/polityka-prywatnosci" className="hover:text-brandCyan transition-colors">Polityka prywatności</a>
             <a href="/regulamin" className="hover:text-brandCyan transition-colors">Regulamin</a>

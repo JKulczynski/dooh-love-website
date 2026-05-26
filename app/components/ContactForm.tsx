@@ -70,7 +70,7 @@ export default function ContactForm() {
       >
         Zarezerwuj w 48h
       </button>
-      <p className="text-center text-xs text-gray-500 uppercase tracking-widest">
+      <p className="text-center text-xs text-gray-400 uppercase tracking-widest">
         Briefing → kampania w 48 godzin
       </p>
     </form>

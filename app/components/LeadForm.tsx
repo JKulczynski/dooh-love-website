@@ -62,7 +62,7 @@ export default function LeadForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="lead-firma" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Firma / Marka *</label>
+          <label htmlFor="lead-firma" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Firma / Marka *</label>
           <input
             id="lead-firma"
             type="text"
@@ -74,7 +74,7 @@ export default function LeadForm() {
           />
         </div>
         <div>
-          <label htmlFor="lead-email" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">E-mail *</label>
+          <label htmlFor="lead-email" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">E-mail *</label>
           <input
             id="lead-email"
             type="email"
@@ -88,7 +88,7 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label htmlFor="lead-telefon" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Telefon *</label>
+        <label htmlFor="lead-telefon" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Telefon *</label>
         <input
           id="lead-telefon"
           type="tel"
@@ -104,7 +104,7 @@ export default function LeadForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="lead-trasa" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Trasa / Miejsce *</label>
+          <label htmlFor="lead-trasa" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Trasa / Miejsce *</label>
           <select
             id="lead-trasa"
             required
@@ -119,7 +119,7 @@ export default function LeadForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="lead-termin" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Start kampanii *</label>
+          <label htmlFor="lead-termin" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Start kampanii *</label>
           <input
             id="lead-termin"
             type="date"
@@ -133,7 +133,7 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label className="block text-xs uppercase tracking-widest text-gray-500 mb-3" id="ilosc-label">Ilość aut</label>
+        <label className="block text-xs uppercase tracking-widest text-gray-400 mb-3" id="ilosc-label">Ilość aut</label>
         <div className="grid grid-cols-3 gap-3" role="group" aria-labelledby="ilosc-label">
           {["1", "2", "3+"].map(v => (
             <button
@@ -154,7 +154,7 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label className="block text-xs uppercase tracking-widest text-gray-500 mb-3" id="aktywnosci-label">Dodatkowe aktywności (opcjonalnie)</label>
+        <label className="block text-xs uppercase tracking-widest text-gray-400 mb-3" id="aktywnosci-label">Dodatkowe aktywności (opcjonalnie)</label>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3" role="group" aria-labelledby="aktywnosci-label">
           {AKTYWNOSCI.map(item => (
             <button
@@ -165,7 +165,7 @@ export default function LeadForm() {
               className={`border p-3 text-left text-xs uppercase tracking-wider transition-all ${
                 form.aktywnosci.includes(item)
                   ? "border-brandMagenta bg-brandMagenta/5 text-brandMagenta"
-                  : "border-white/10 text-gray-500 hover:border-white/30"
+                  : "border-white/10 text-gray-400 hover:border-white/30"
               }`}
             >
               {form.aktywnosci.includes(item) ? "✓ " : ""}{item}
@@ -175,7 +175,7 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label htmlFor="lead-notatka" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Notatka (opcjonalnie)</label>
+        <label htmlFor="lead-notatka" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Notatka (opcjonalnie)</label>
         <textarea
           id="lead-notatka"
           placeholder="np. potrzebuję hostessy, dodatkowego oświetlenia, konkretnej lokalizacji..."
@@ -193,7 +193,7 @@ export default function LeadForm() {
       >
         Wyślij zapytanie o wycenę
       </button>
-      <p className="text-center text-xs text-gray-500 uppercase tracking-widest">
+      <p className="text-center text-xs text-gray-400 uppercase tracking-widest">
         Odpowiadamy w ciągu kilku godzin z ofertą skrojoną pod Ciebie.
       </p>
     </form>

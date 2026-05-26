@@ -14,6 +14,7 @@ export default function HeroSection() {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/hero.mp4" type="video/mp4" />
+          <track kind="captions" srcLang="pl" label="Polski" default />
         </video>
         {/* Fallback: static image if video fails */}
         <div

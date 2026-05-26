@@ -148,8 +148,8 @@ export default function Home() {
           </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-white/10 overflow-hidden">
             <RevealOnScroll>
-              <div className="p-10 bg-white/5 border-b md:border-b-0 md:border-r border-white/10">
-                <p className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-8">Ty przynosisz</p>
+              <div className="p-10 bg-brandMagenta/5 border-b md:border-b-0 md:border-r border-white/10">
+                <p className="text-xs uppercase tracking-[0.3em] text-brandMagenta mb-8">Ty przynosisz</p>
                 <ul className="space-y-5">
                   {[
                     "Markę, event lub produkt do promocji",

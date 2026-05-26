@@ -6,10 +6,13 @@ export default function ContactForm() {
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ name: "", contact: "", message: "" });
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const body = `Imię/Firma: ${form.name}\nKontakt: ${form.contact}\nWiadomość: ${form.message}`;
-    window.location.href = `mailto:hello@dooh-love.pl?subject=Zapytanie o kampanię DOOH-LOVE&body=${encodeURIComponent(body)}`;
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "contact", ...form }),
+    });
     setSent(true);
   }
 

@@ -38,20 +38,13 @@ export default function LeadForm() {
     }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const aktywnosci = form.aktywnosci.length > 0 ? form.aktywnosci.join(", ") : "Brak";
-    const body = [
-      `Firma / Marka: ${form.firma}`,
-      `Email: ${form.email}`,
-      `Telefon: ${form.telefon}`,
-      `Trasa / Miejsce: ${form.trasa}`,
-      `Termin: ${form.termin}`,
-      `Ilość aut: ${form.ilosc}`,
-      `Dodatkowe aktywności: ${aktywnosci}`,
-      `Notatka: ${form.notatka || "Brak"}`,
-    ].join("\n");
-    window.location.href = `mailto:hello@dooh-love.pl?subject=Wycena indywidualna - ${form.firma}&body=${encodeURIComponent(body)}`;
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "lead", ...form }),
+    });
     setSent(true);
   }
 
@@ -101,6 +94,8 @@ export default function LeadForm() {
           type="tel"
           required
           placeholder="+48 500 000 000"
+          pattern="[\d\s\+\-]{9,15}"
+          title="Podaj prawidłowy numer telefonu (min. 9 cyfr)"
           value={form.telefon}
           onChange={e => setForm(f => ({ ...f, telefon: e.target.value }))}
           className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm"
@@ -124,15 +119,15 @@ export default function LeadForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="lead-termin" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Termin kampanii *</label>
+          <label htmlFor="lead-termin" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Start kampanii *</label>
           <input
             id="lead-termin"
-            type="text"
+            type="date"
             required
-            placeholder="np. 15-20 czerwca 2026"
+            min={new Date().toISOString().split("T")[0]}
             value={form.termin}
             onChange={e => setForm(f => ({ ...f, termin: e.target.value }))}
-            className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm"
+            className="w-full bg-black border border-white/20 p-3 text-white focus:border-brandCyan outline-none transition-colors text-sm"
           />
         </div>
       </div>

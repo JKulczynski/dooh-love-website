@@ -6,6 +6,7 @@ import AnimatedCounter from "./components/AnimatedCounter";
 import RevealOnScroll from "./components/RevealOnScroll";
 import TrailMapWrapper from "./components/TrailMapWrapper";
 import WycenaSection from "./components/WycenaSection";
+import LedGrid from "./components/LedGrid";
 
 export default function Home() {
   return (
@@ -195,8 +196,9 @@ export default function Home() {
       </section>
 
       {/* Dlaczego to działa */}
-      <section className="py-24 px-6 bg-black" id="solutions">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-24 px-6 bg-black" id="solutions">
+        <LedGrid />
+        <div className="relative z-10 max-w-7xl mx-auto">
           <RevealOnScroll>
             <div className="mb-16">
               <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
@@ -474,8 +476,9 @@ export default function Home() {
       </section>
 
       {/* Jak startujemy */}
-      <section className="py-24 px-6 bg-black overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-24 px-6 bg-black overflow-hidden">
+        <LedGrid />
+        <div className="relative z-10 max-w-7xl mx-auto">
           <RevealOnScroll>
             <h2 className="text-3xl font-bold uppercase tracking-tight mb-16 text-right">
               Jak <span className="text-brandMagenta">startujemy?</span>

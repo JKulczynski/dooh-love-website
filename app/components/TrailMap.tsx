@@ -40,7 +40,7 @@ export default function TrailMap({ stops, color }: TrailMapProps) {
     let cancelled = false;
 
     (async () => {
-      const { Map } = await importLibrary("maps") as google.maps.MapsLibrary;
+      const { Map, Polyline } = await importLibrary("maps") as google.maps.MapsLibrary;
       if (cancelled || !mapRef.current) return;
 
       const bounds = new google.maps.LatLngBounds();
@@ -56,6 +56,27 @@ export default function TrailMap({ stops, color }: TrailMapProps) {
 
       map.fitBounds(bounds, 32);
 
+      const path = [
+        ...stops.map((s) => ({ lat: s.pos[0], lng: s.pos[1] })),
+        { lat: stops[0].pos[0], lng: stops[0].pos[1] },
+      ];
+
+      new Polyline({
+        path,
+        strokeColor: color,
+        strokeOpacity: 0.18,
+        strokeWeight: 12,
+        map,
+      });
+
+      new Polyline({
+        path,
+        strokeColor: color,
+        strokeOpacity: 0.85,
+        strokeWeight: 3,
+        map,
+      });
+
       stops.forEach((stop) => {
         const marker = new google.maps.Marker({
           position: { lat: stop.pos[0], lng: stop.pos[1] },
@@ -63,7 +84,7 @@ export default function TrailMap({ stops, color }: TrailMapProps) {
           title: stop.label,
           icon: {
             path: google.maps.SymbolPath.CIRCLE,
-            scale: 8,
+            scale: 6,
             fillColor: color,
             fillOpacity: 1,
             strokeColor: "#0a0a0a",

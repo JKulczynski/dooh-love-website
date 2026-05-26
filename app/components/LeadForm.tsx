@@ -70,7 +70,7 @@ export default function LeadForm() {
             placeholder="np. KSW, Red Bull, marka własna"
             value={form.firma}
             onChange={e => setForm(f => ({ ...f, firma: e.target.value }))}
-            className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm"
+            className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm"
           />
         </div>
         <div>
@@ -82,7 +82,7 @@ export default function LeadForm() {
             placeholder="twoj@email.pl"
             value={form.email}
             onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-            className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm"
+            className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm"
           />
         </div>
       </div>
@@ -98,7 +98,7 @@ export default function LeadForm() {
           title="Podaj prawidłowy numer telefonu (min. 9 cyfr)"
           value={form.telefon}
           onChange={e => setForm(f => ({ ...f, telefon: e.target.value }))}
-          className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm"
+          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm"
         />
       </div>
 
@@ -182,7 +182,7 @@ export default function LeadForm() {
           rows={3}
           value={form.notatka}
           onChange={e => setForm(f => ({ ...f, notatka: e.target.value }))}
-          className="w-full bg-black border border-white/20 p-3 text-white placeholder-gray-600 focus:border-brandCyan outline-none transition-colors text-sm resize-none"
+          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm resize-none"
         />
       </div>
 

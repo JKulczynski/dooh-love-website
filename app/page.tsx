@@ -91,7 +91,7 @@ export default function Home() {
       </section>
 
       {/* Video */}
-      <section className="py-24 px-6 bg-darkBg" id="video">
+      <section className="hidden py-24 px-6 bg-darkBg" id="video">
         <div className="max-w-5xl mx-auto">
           <RevealOnScroll>
             <div className="mb-12 text-center">
@@ -426,7 +426,7 @@ export default function Home() {
       </section>
 
       {/* Galeria kampanii */}
-      <section className="py-24 px-6 bg-black" id="galeria">
+      <section className="hidden py-24 px-6 bg-black" id="galeria">
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll>
             <div className="mb-16 text-right">

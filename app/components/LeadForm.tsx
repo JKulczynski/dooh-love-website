@@ -122,12 +122,15 @@ export default function LeadForm() {
           <label htmlFor="lead-termin" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Start kampanii *</label>
           <input
             id="lead-termin"
-            type="date"
+            type="text"
             required
-            min={new Date().toISOString().split("T")[0]}
+            placeholder="DD.MM.RRRR"
+            pattern="\d{2}\.\d{2}\.\d{4}"
+            title="Podaj datę w formacie DD.MM.RRRR"
+            inputMode="numeric"
             value={form.termin}
             onChange={e => setForm(f => ({ ...f, termin: e.target.value }))}
-            className="w-full bg-black border border-white/20 p-3 text-white focus:border-brandCyan outline-none transition-colors text-sm"
+            className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm"
           />
         </div>
       </div>

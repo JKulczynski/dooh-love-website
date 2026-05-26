@@ -21,7 +21,7 @@ export default function Home() {
       <Ticker />
 
       {/* Intro */}
-      <section className="py-16 px-6 bg-black border-t border-white/5 text-center">
+      <section className="py-10 px-6 bg-black border-t border-white/5 text-center">
         <div className="max-w-2xl mx-auto">
           <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-5 font-light">
             Mobilna reklama LED · Warszawa
@@ -45,7 +45,7 @@ export default function Home() {
       </section>
 
       {/* Social Proof */}
-      <section className="py-20 px-6 bg-black border-t border-white/5">
+      <section className="py-12 px-6 bg-black border-t border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center [&>*:last-child]:col-span-2 [&>*:last-child]:md:col-span-1">
           <RevealOnScroll>
             <div>

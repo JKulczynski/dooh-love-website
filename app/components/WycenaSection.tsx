@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import PriceCalculator from "./PriceCalculator";
+import CampaignPlanner from "./CampaignPlanner";
 import LeadForm from "./LeadForm";
 
 export default function WycenaSection() {
@@ -38,12 +38,12 @@ export default function WycenaSection() {
           {/* Step 01 */}
           <div className="p-8 md:p-12">
             <h2 className="text-2xl font-bold uppercase mb-2 text-center">
-              Wycena <span className="text-brandCyan">Online</span>
+              Zaplanuj <span className="text-brandCyan">kampanię</span>
             </h2>
             <p className="text-center text-xs text-gray-400 uppercase tracking-widest mb-10">
-              Szacunkowy koszt kampanii
+              Podaj cel i budżet — my dobieramy pakiet
             </p>
-            <PriceCalculator onRequestQuote={handleRequestQuote} />
+            <CampaignPlanner onRequestQuote={handleRequestQuote} />
           </div>
 
           {/* Step 02 — reveals after clicking CTA */}

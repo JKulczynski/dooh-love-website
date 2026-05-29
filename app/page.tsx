@@ -1,4 +1,5 @@
 import HeroSection from "./components/HeroSection";
+import AdVisualizer from "./components/AdVisualizer";
 import StickyBar from "./components/StickyBar";
 import NavBar from "./components/NavBar";
 import Ticker from "./components/Ticker";
@@ -266,6 +267,36 @@ export default function Home() {
       </section>
       </PixelReveal>
 
+      {/* Ad Visualizer */}
+      <section className="py-20 px-6 bg-black border-t border-white/5">
+        <div className="max-w-5xl mx-auto">
+          <RevealOnScroll>
+            <div className="mb-10 text-center">
+              <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-3">Zreszta sprawdz sam</p>
+              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4">
+                Jak Twoja marka <span className="text-brandCyan">wygląda na ekranie?</span>
+              </h2>
+              <p className="text-gray-400 text-sm max-w-xl mx-auto">
+                Wgraj logo lub kreację — zobaczysz jak wygląda na 18m² ekranu LED jadącego przez centrum Warszawy.
+              </p>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={100}>
+            <AdVisualizer />
+          </RevealOnScroll>
+          <RevealOnScroll delay={200}>
+            <div className="mt-8 text-center">
+              <a href="#wycena" className="inline-flex items-center gap-3 bg-brandCyan text-black font-bold py-4 px-10 rounded-lg uppercase tracking-widest hover:bg-white transition-colors text-sm">
+                Chce tak wygladac na ulicach Warszawy
+              </a>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
+      {/* Campaign Planner */}
+      <WycenaSection />
+
       {/* Dla kogo */}
       <section className="py-24 px-6 bg-darkBg" id="dla-kogo">
         <div className="max-w-7xl mx-auto">
@@ -483,50 +514,28 @@ export default function Home() {
       </section>
 
       {/* Jak startujemy */}
-      <PixelReveal>
-      <section className="relative py-24 px-6 bg-black overflow-hidden">
-        <LedGrid />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent pointer-events-none z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
-        <div className="relative z-20 max-w-7xl mx-auto">
+      <section className="py-16 px-6 bg-black border-t border-white/5">
+        <div className="max-w-5xl mx-auto">
           <RevealOnScroll>
-            <h2 className="text-3xl font-bold uppercase tracking-tight mb-16 text-right">
-              Jak <span className="text-brandMagenta">startujemy?</span>
-            </h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-10 text-center">Jak to dziala</p>
           </RevealOnScroll>
-          <div className="relative">
-            <div className="timeline-line absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brandCyan via-brandMagenta to-brandCyan hidden md:block" />
-            <RevealOnScroll className="relative mb-16 md:mb-28 flex flex-col md:flex-row items-center justify-between">
-              <div className="w-full md:w-[44%] order-2 md:order-1 mt-6 md:mt-0 md:pr-12">
-                <div className="text-xs uppercase tracking-[0.25em] text-brandCyan mb-2">Krok 01</div>
-                <h3 className="text-2xl font-bold mb-3 uppercase">Briefing</h3>
-                <p className="text-gray-400 leading-relaxed">Określamy cel kampanii, grupę docelową i kluczowe lokalizacje. Wybieramy trasę lub projektujemy dedykowaną. 48 godzin od pierwszej rozmowy do planu kampanii.</p>
-              </div>
-              <div className="timeline-circle z-10 w-14 h-14 rounded-full border-2 border-brandCyan bg-black flex items-center justify-center font-bold text-brandCyan text-xl order-1 md:order-2" style={{ boxShadow: "0 0 20px #00FFE566" }}>1</div>
-              <div className="w-full md:w-[44%] order-3" />
-            </RevealOnScroll>
-            <RevealOnScroll delay={200} className="relative mb-16 md:mb-28 flex flex-col md:flex-row items-center justify-between">
-              <div className="w-full md:w-[44%] order-3 md:order-1" />
-              <div className="timeline-circle z-10 w-14 h-14 rounded-full border-2 border-brandMagenta bg-black flex items-center justify-center font-bold text-brandMagenta text-xl order-1 md:order-2" style={{ boxShadow: "0 0 20px #FF00AA66" }}>2</div>
-              <div className="w-full md:w-[44%] order-2 md:order-3 mt-6 md:mt-0 md:pl-12">
-                <div className="text-xs uppercase tracking-[0.25em] text-brandMagenta mb-2">Krok 02</div>
-                <h3 className="text-2xl font-bold mb-3 uppercase">Kreacja i Trasa</h3>
-                <p className="text-gray-400 leading-relaxed">Adaptujemy Twoje materiały pod ekrany LED lub produkujemy kreację od zera. Planujemy trasę godzina po godzinie, żeby Twój ekran był zawsze tam gdzie jest Twój klient.</p>
-              </div>
-            </RevealOnScroll>
-            <RevealOnScroll delay={400} className="relative flex flex-col md:flex-row items-center justify-between">
-              <div className="w-full md:w-[44%] order-2 md:order-1 mt-6 md:mt-0 md:pr-12">
-                <div className="text-xs uppercase tracking-[0.25em] text-brandCyan mb-2">Krok 03</div>
-                <h3 className="text-2xl font-bold mb-3 uppercase">Emisja i Raport</h3>
-                <p className="text-gray-400 leading-relaxed">Ciężarówka wyjeżdża. Ty dostajesz raport trasy, szacowany zasięg i materiał wideo z akcji. Gotowy do publikacji w social media do 24h po kampanii.</p>
-              </div>
-              <div className="timeline-circle z-10 w-14 h-14 rounded-full border-2 border-brandCyan bg-black flex items-center justify-center font-bold text-brandCyan text-xl order-1 md:order-2" style={{ boxShadow: "0 0 20px #00FFE566" }}>3</div>
-              <div className="w-full md:w-[44%] order-3" />
-            </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
+            {[
+              { n: "01", color: "text-brandCyan", title: "Briefing", desc: "Mówisz nam o celu, evencie i budżecie. Dobieramy trasę i termin." },
+              { n: "02", color: "text-brandMagenta", title: "Kreacja i Trasa", desc: "Adaptujemy Twoje materiały lub produkujemy kreację. Planujemy trasę godzina po godzinie." },
+              { n: "03", color: "text-brandCyan", title: "Emisja i Raport", desc: "Ciężarówka wyjeżdża. Dostajesz raport zasięgu i materiał wideo do 24h po kampanii." },
+            ].map((step, i) => (
+              <RevealOnScroll key={i} delay={i * 100}>
+                <div className="bg-black p-8 h-full">
+                  <div className={`text-4xl font-bold ${step.color} mb-4 opacity-40`}>{step.n}</div>
+                  <h3 className="text-lg font-bold uppercase mb-3">{step.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </RevealOnScroll>
+            ))}
           </div>
         </div>
       </section>
-      </PixelReveal>
 
       {/* Przygotowanie projektu - pricing */}
       <section className="py-24 px-6 bg-black border-t border-white/5" id="projekt">
@@ -678,7 +687,34 @@ export default function Home() {
         </div>
       </section>
 
-      <WycenaSection />
+      {/* Calendly */}
+      <section className="py-20 px-6 bg-black border-t border-white/5" id="rozmowa">
+        <div className="max-w-3xl mx-auto text-center">
+          <RevealOnScroll>
+            <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-4">Wolisz pogadac?</p>
+            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4">
+              30 minut. <span className="text-brandCyan">Gotowy plan kampanii.</span>
+            </h2>
+            <p className="text-gray-400 text-sm max-w-xl mx-auto mb-10">
+              Powiedz nam o swoim evencie lub produkcie. Wyjdziesz z gotowym planem tras, budzetem i terminami.
+            </p>
+          </RevealOnScroll>
+          <RevealOnScroll delay={100}>
+            <div className="border border-white/10 bg-white/5 overflow-hidden">
+              <iframe
+                src="https://calendly.com/dooh-love/30min?hide_gdpr_banner=1&primary_color=00ffe5&text_color=ffffff&background_color=0a0a0a"
+                width="100%"
+                height="650"
+                frameBorder="0"
+                title="Umow rozmowe"
+              />
+            </div>
+            <p className="text-[10px] uppercase tracking-widest text-gray-600 mt-4">
+              Link Calendly do ustawienia przez Pawla — dooh-love/30min
+            </p>
+          </RevealOnScroll>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-black py-20 px-6 border-t border-white/5">

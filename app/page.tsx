@@ -359,7 +359,7 @@ export default function Home() {
             ].map((step, i) => (
               <RevealOnScroll key={i} delay={i * 100}>
                 <div className="bg-black p-8 h-full">
-                  <div className={`text-4xl font-bold ${step.color} mb-4 opacity-40`}>{step.n}</div>
+                  <div className={`text-5xl font-bold ${step.color} mb-4`}>{step.n}</div>
                   <h3 className="text-lg font-bold uppercase mb-3">{step.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
                 </div>

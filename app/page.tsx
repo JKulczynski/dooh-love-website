@@ -5,7 +5,6 @@ import NavBar from "./components/NavBar";
 import Ticker from "./components/Ticker";
 import AnimatedCounter from "./components/AnimatedCounter";
 import RevealOnScroll from "./components/RevealOnScroll";
-import TrailMapWrapper from "./components/TrailMapWrapper";
 import WycenaSection from "./components/WycenaSection";
 import LedGrid from "./components/LedGrid";
 import PixelReveal from "./components/PixelReveal";
@@ -29,11 +28,11 @@ export default function Home() {
             Mobilna reklama LED · Warszawa
           </p>
           <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight mb-5">
-            <span className="text-white">Billboard stoi.</span>{" "}
-            <span className="text-brandCyan">My jedziemy.</span>
+            <span className="text-white">Całe miasto</span>{" "}
+            <span className="text-brandCyan">jest Twoim ekranem.</span>
           </h1>
           <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            18m² ekranu LED jedzie tam, gdzie jest Twoja grupa docelowa.
+            18m² ekranu LED (jeden samochód) jedzie tam, gdzie jest Twoja grupa docelowa.
             Centrum Warszawy, 15 godzin dziennie, 3 dedykowane trasy.
             Twoja marka tam, gdzie dzieje się miasto.
           </p>
@@ -48,13 +47,13 @@ export default function Home() {
 
       {/* Social Proof */}
       <section className="py-12 px-6 bg-black border-t border-white/5">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 text-center [&>*:last-child]:col-span-2 [&>*:last-child]:md:col-span-1">
+        <div className="max-w-7xl mx-auto grid grid-cols-3 gap-8 text-center">
           <RevealOnScroll>
             <div>
               <div className="text-4xl font-bold text-brandCyan mb-2">
                 <AnimatedCounter value={18} suffix=" m²" />
               </div>
-              <div className="text-xs uppercase tracking-widest text-gray-400">Powierzchnia ekranów</div>
+              <div className="text-xs uppercase tracking-widest text-gray-400">Powierzchnia ekranu (jeden samochód)</div>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={100}>
@@ -71,22 +70,6 @@ export default function Home() {
                 <AnimatedCounter value={3} />
               </div>
               <div className="text-xs uppercase tracking-widest text-gray-400">Trasy w Warszawie</div>
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={300}>
-            <div>
-              <div className="text-4xl font-bold text-brandMagenta mb-2">
-                <AnimatedCounter value={20} />
-              </div>
-              <div className="text-xs uppercase tracking-widest text-gray-400">Dni kampanijnych / mies.</div>
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={400}>
-            <div className="border border-brandCyan/20 py-4 px-2">
-              <div className="text-3xl font-bold text-brandCyan mb-2">
-                od <AnimatedCounter value={2000} suffix=" PLN" duration={1000} />
-              </div>
-              <div className="text-xs uppercase tracking-widest text-gray-400">Cena netto / dzień</div>
             </div>
           </RevealOnScroll>
         </div>
@@ -150,7 +133,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-white/10 overflow-hidden">
             <RevealOnScroll>
               <div className="p-10 bg-brandMagenta/5 border-b md:border-b-0 md:border-r border-white/10">
-                <p className="text-xs uppercase tracking-[0.3em] text-brandMagenta mb-8">Ty przynosisz</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-brandMagenta mb-8">Potrzeby kampanii</p>
                 <ul className="space-y-5">
                   {[
                     "Markę, event lub produkt do promocji",
@@ -209,59 +192,27 @@ export default function Home() {
           <RevealOnScroll>
             <div className="mb-16">
               <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-                Dlaczego <span className="text-brandCyan">to działa?</span>
+                Tak <span className="text-brandCyan">to działa</span>
               </h2>
               <div className="w-20 h-1 bg-brandMagenta" />
             </div>
           </RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <RevealOnScroll>
-              <div className="p-8 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group h-full">
-                <div className="text-brandCyan mb-6 group-hover:scale-110 transition-transform">
-                  <svg className="h-10 w-10" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="1" y="12" width="2" height="3"/>
-                    <rect x="5" y="9" width="2" height="6"/>
-                    <rect x="9" y="6" width="2" height="9"/>
-                    <rect x="13" y="3" width="2" height="12"/>
-                  </svg>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {[
+              { icon: "📍", color: "text-brandCyan", title: "Mobilność", desc: "Reklama podąża za odbiorcą, a nie czeka, aż odbiorca trafi na nią." },
+              { icon: "🔄", color: "text-brandMagenta", title: "Elastyczność", desc: "Zmiana trasy, lokalizacji lub kreacji nawet w trakcie kampanii." },
+              { icon: "⚡", color: "text-brandCyan", title: "Szybkość", desc: "Od briefu do startu kampanii w rekordowym czasie." },
+              { icon: "👁️", color: "text-brandMagenta", title: "Widoczność", desc: "Ekrany LED gwarantują doskonałą ekspozycję zarówno w dzień, jak i po zmroku." },
+              { icon: "🎯", color: "text-brandCyan", title: "Precyzja", desc: "Docieramy dokładnie tam, gdzie znajdują się Twoi klienci." },
+            ].map((item, i) => (
+              <RevealOnScroll key={i} delay={i * 100}>
+                <div className="p-6 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group h-full">
+                  <div className={`text-2xl mb-5 ${item.color} group-hover:scale-110 transition-transform`}>{item.icon}</div>
+                  <h3 className="text-lg font-bold mb-3 uppercase">{item.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-4 uppercase">Maksymalny Zasięg</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">Billboard stoi. My jedziemy. Twoja marka jest tam, gdzie tłum. Nie czeka aż tłum do niej trafi.</p>
-              </div>
-            </RevealOnScroll>
-            <RevealOnScroll delay={150}>
-              <div className="p-8 border border-white/10 bg-white/5 hover:border-brandMagenta/50 transition-all group h-full">
-                <div className="text-brandMagenta mb-6 group-hover:scale-110 transition-transform">
-                  <svg className="h-10 w-10" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="5" y="3" width="6" height="1"/>
-                    <rect x="3" y="4" width="2" height="1"/>
-                    <rect x="11" y="4" width="2" height="1"/>
-                    <rect x="2" y="5" width="1" height="4"/>
-                    <rect x="13" y="5" width="1" height="4"/>
-                    <rect x="3" y="9" width="2" height="1"/>
-                    <rect x="11" y="9" width="2" height="1"/>
-                    <rect x="5" y="10" width="6" height="1"/>
-                    <rect x="7" y="6" width="2" height="2"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-4 uppercase">Efekt &ldquo;Wow&rdquo;</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">18m² świecącego ekranu w środku miasta. Ludzie się odwracają. Robią zdjęcia. Wrzucają na Stories. Twoja marka żyje poza kampanią.</p>
-              </div>
-            </RevealOnScroll>
-            <RevealOnScroll delay={300}>
-              <div className="p-8 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group h-full">
-                <div className="text-brandCyan mb-6 group-hover:scale-110 transition-transform">
-                  <svg className="h-10 w-10" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="1" y="9" width="3" height="6"/>
-                    <rect x="6" y="3" width="3" height="12"/>
-                    <rect x="11" y="6" width="3" height="9"/>
-                    <rect x="0" y="15" width="16" height="1"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-4 uppercase">Mierzalne Wyniki</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">Raport tras i szacowany zasięg. Wiesz dokładnie gdzie była Twoja reklama i kiedy. Bez zgadywania.</p>
-              </div>
-            </RevealOnScroll>
+              </RevealOnScroll>
+            ))}
           </div>
         </div>
       </section>
@@ -277,7 +228,7 @@ export default function Home() {
                 Jak Twoja marka <span className="text-brandCyan">wygląda na ekranie?</span>
               </h2>
               <p className="text-gray-400 text-sm max-w-xl mx-auto">
-                Wgraj logo lub kreację — zobaczysz jak wygląda na 18m² ekranu LED jadącego przez centrum Warszawy.
+                Wgraj logo lub kreację — zobaczysz jak wygląda na 18m² ekranu LED (jeden samochód) jadącego przez centrum Warszawy.
               </p>
             </div>
           </RevealOnScroll>
@@ -334,7 +285,7 @@ export default function Home() {
               {
                 label: "Korporacje & Marki własne",
                 tagline: "Launch, roadshow albo employer branding.",
-                desc: "18m² LED w centrum Warszawy przez cały dzień robi więcej niż tydzień w social media. Twoja marka widoczna tam, gdzie są decydenci i pracownicy.",
+                desc: "18m² LED (jeden samochód) w centrum Warszawy przez cały dzień robi więcej niż tydzień w social media. Twoja marka widoczna tam, gdzie są decydenci i pracownicy.",
                 examples: "Technologia · Finanse · Deweloperzy · Automotive · B2B premium",
                 accent: "brandMagenta",
               },
@@ -361,105 +312,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Trasy */}
-      <section className="py-24 px-6 bg-darkBg" id="trasy">
-        <div className="max-w-7xl mx-auto">
-          <RevealOnScroll>
-            <div className="mb-16">
-              <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-                Nasze <span className="text-brandCyan">Trasy</span>
-              </h2>
-              <div className="w-20 h-1 bg-brandMagenta" />
-              <p className="text-gray-400 text-sm mt-4">2 trasy dzienne &middot; 1 trasa nocna &middot; Centrum Warszawy</p>
-            </div>
-          </RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <RevealOnScroll>
-              <div className="border border-brandCyan/30 bg-white/5 hover:border-brandCyan/60 transition-all overflow-hidden">
-                <div className="flex items-center justify-between px-6 pt-5 pb-1">
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-black bg-brandCyan px-2.5 py-1">
-                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
-                    </svg>
-                    Dzienny
-                  </span>
-                  <span className="text-xs font-bold text-brandCyan tracking-wider">08:00 &ndash; 23:00</span>
-                </div>
-                <TrailMapWrapper
-                  stops={[
-                    { pos: [52.2296, 20.9847], label: "Rondo Daszyńskiego" },
-                    { pos: [52.2317, 21.0067], label: "PKiN" },
-                    { pos: [52.2237, 21.0252], label: "Pl. Trzech Krzyży" },
-                    { pos: [52.2328, 21.0418], label: "Elektrownia Powiśle" },
-                  ]}
-                  color="#00FFE5"
-                />
-                <div className="p-6">
-                  <div className="text-brandCyan text-xs uppercase tracking-widest mb-2">Trasa 01</div>
-                  <h3 className="text-xl font-bold uppercase mb-3">Centrum Impact</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">Rondo Daszyńskiego, PKiN, Marszałkowska, Plac Trzech Krzyży, Elektrownia Powiśle</p>
-                </div>
-              </div>
-            </RevealOnScroll>
-            <RevealOnScroll delay={150}>
-              <div className="border border-brandMagenta/30 bg-white/5 hover:border-brandMagenta/60 transition-all overflow-hidden">
-                <div className="flex items-center justify-between px-6 pt-5 pb-1">
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-black bg-brandMagenta px-2.5 py-1">
-                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
-                    </svg>
-                    Dzienny
-                  </span>
-                  <span className="text-xs font-bold text-brandMagenta tracking-wider">Peak: 07:00&ndash;10:00 / 15:30&ndash;19:30</span>
-                </div>
-                <TrailMapWrapper
-                  stops={[
-                    { pos: [52.2285, 21.0044], label: "Rondo Dmowskiego" },
-                    { pos: [52.2353, 20.9841], label: "Rondo ONZ" },
-                    { pos: [52.2485, 20.9867], label: "Jana Pawła II" },
-                    { pos: [52.2101, 21.0150], label: "Puławska" },
-                  ]}
-                  color="#FF00AA"
-                />
-                <div className="p-6">
-                  <div className="text-brandMagenta text-xs uppercase tracking-widest mb-2">Trasa 02</div>
-                  <h3 className="text-xl font-bold uppercase mb-3">Business Flow</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">Rondo Dmowskiego, Al. Jerozolimskie, Marszałkowska, Rondo ONZ, Jana Pawła II, Puławska</p>
-                </div>
-              </div>
-            </RevealOnScroll>
-            <RevealOnScroll delay={300}>
-              <div className="border border-white/20 bg-black/60 hover:border-white/40 transition-all overflow-hidden">
-                <div className="flex items-center justify-between px-6 pt-5 pb-1">
-                  <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-white bg-white/10 border border-white/20 px-2.5 py-1">
-                    <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                    </svg>
-                    Nocny
-                  </span>
-                  <span className="text-xs font-bold text-white/50 tracking-wider">22:00 &ndash; 01:00</span>
-                </div>
-                <TrailMapWrapper
-                  stops={[
-                    { pos: [52.2209, 21.0176], label: "Pl. Zbawiciela" },
-                    { pos: [52.2221, 21.0152], label: "Hala Koszyki" },
-                    { pos: [52.2316, 21.0143], label: "Mazowiecka" },
-                    { pos: [52.2436, 21.0270], label: "Bulwary Wiślane" },
-                  ]}
-                  color="#00FFE5"
-                />
-                <div className="p-6">
-                  <div className="text-brandCyan text-xs uppercase tracking-widest mb-2">Trasa 03</div>
-                  <h3 className="text-xl font-bold uppercase mb-3">Nightlife</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">Plac Zbawiciela, Hala Koszyki, Mazowiecka, Bulwary Wiślane</p>
-                </div>
-              </div>
-            </RevealOnScroll>
-          </div>
-        </div>
-      </section>
-
 
       {/* Logotypy klientów — ukryte, czeka na realne loga */}
       <section className="hidden py-20 px-6 bg-black border-t border-white/5">
@@ -517,7 +369,7 @@ export default function Home() {
       <section className="py-16 px-6 bg-black border-t border-white/5">
         <div className="max-w-5xl mx-auto">
           <RevealOnScroll>
-            <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-10 text-center">Jak to dziala</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-10 text-center">To jest proste</p>
           </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
             {[
@@ -569,7 +421,8 @@ export default function Home() {
               {
                 name: "Signature",
                 price: "6 000",
-                tag: "Rekomendowany",
+                originalPrice: "9 000",
+                tag: "Promocja",
                 color: "border-brandCyan",
                 accent: "text-brandCyan",
                 items: [
@@ -605,13 +458,16 @@ export default function Home() {
                   )}
                   <div className="mb-6">
                     <h3 className={`text-lg font-bold uppercase tracking-widest mb-4 ${pkg.accent}`}>{pkg.name}</h3>
-                    <div className="flex items-baseline gap-2">
+                    <div className="flex items-baseline gap-2 flex-wrap">
                       <span className="text-xs text-gray-400 uppercase tracking-widest">od</span>
+                      {pkg.originalPrice && (
+                        <span className="text-lg font-bold text-gray-500 line-through">{pkg.originalPrice}</span>
+                      )}
                       <span className="text-3xl font-bold text-white">{pkg.price}</span>
                       <span className="text-xs text-gray-400 uppercase tracking-widest">PLN netto</span>
                     </div>
                   </div>
-                  <ul className="space-y-3 flex-1 mb-8">
+                  <ul className="space-y-3 flex-1">
                     {pkg.items.map((item, j) => (
                       <li key={j} className="flex items-start gap-3 text-sm text-gray-400">
                         <span className={`${pkg.accent} font-bold mt-0.5`}>✓</span>
@@ -619,16 +475,6 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href="#wycena"
-                    className={`block text-center py-3 text-xs font-bold uppercase tracking-widest transition-all border rounded-lg ${
-                      pkg.tag
-                        ? "bg-brandCyan text-black border-brandCyan hover:bg-white hover:border-white"
-                        : "border-white/20 text-gray-300 hover:border-white/50"
-                    }`}
-                  >
-                    Wybierz pakiet
-                  </a>
                 </div>
               </RevealOnScroll>
             ))}
@@ -732,8 +578,7 @@ export default function Home() {
               <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400">Nawigacja</h3>
               <ul className="text-sm space-y-2 text-gray-400">
                 <li><a className="hover:text-brandCyan transition-colors" href="#">Start</a></li>
-                <li><a className="hover:text-brandCyan transition-colors" href="#solutions">Dlaczego to działa</a></li>
-                <li><a className="hover:text-brandCyan transition-colors" href="#trasy">Trasy</a></li>
+                <li><a className="hover:text-brandCyan transition-colors" href="#solutions">Tak to działa</a></li>
                 <li><a className="hover:text-brandCyan transition-colors" href="#dla-kogo">Dla kogo</a></li>
               </ul>
             </div>

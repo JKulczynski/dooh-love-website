@@ -37,7 +37,7 @@ export default function ContactForm() {
           aria-label="Imię lub firma"
           value={form.name}
           onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm rounded-lg"
+          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan transition-colors text-sm rounded-lg"
         />
       </div>
       <div>
@@ -49,7 +49,7 @@ export default function ContactForm() {
           aria-label="Telefon lub e-mail"
           value={form.contact}
           onChange={e => setForm(f => ({ ...f, contact: e.target.value }))}
-          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm rounded-lg"
+          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan transition-colors text-sm rounded-lg"
         />
       </div>
       <div>
@@ -60,7 +60,7 @@ export default function ContactForm() {
           rows={3}
           value={form.message}
           onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm resize-none"
+          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan transition-colors text-sm resize-none"
         />
       </div>
       <button

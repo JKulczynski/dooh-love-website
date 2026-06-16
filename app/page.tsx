@@ -26,7 +26,7 @@ export default function Home() {
           <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-5 font-light">
             Mobilna reklama LED · Warszawa
           </p>
-          <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight mb-5">
+          <h1 className="text-[clamp(1.875rem,5vw+1rem,3.5rem)] font-bold uppercase tracking-tight leading-tight mb-5" style={{ textWrap: "balance" } as React.CSSProperties}>
             <span className="text-white">Całe miasto</span>{" "}
             <span className="text-brandCyan">jest Twoim ekranem.</span>
           </h1>
@@ -198,14 +198,16 @@ export default function Home() {
           </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {[
-              { icon: "📍", color: "text-brandCyan", title: "Mobilność", desc: "Reklama podąża za odbiorcą, a nie czeka, aż odbiorca trafi na nią." },
-              { icon: "🔄", color: "text-brandMagenta", title: "Elastyczność", desc: "Zmiana trasy, lokalizacji lub kreacji nawet w trakcie kampanii." },
-              { icon: "⚡", color: "text-brandCyan", title: "Szybkość", desc: "Od briefu do startu kampanii w rekordowym czasie." },
-              { icon: "👁️", color: "text-brandMagenta", title: "Widoczność", desc: "Ekrany LED gwarantują doskonałą ekspozycję zarówno w dzień, jak i po zmroku." },
-              { icon: "🎯", color: "text-brandCyan", title: "Precyzja", desc: "Docieramy dokładnie tam, gdzie znajdują się Twoi klienci." },
+              { icon: "📍", color: "text-brandCyan", border: "hover:border-brandCyan/50", title: "Mobilność", desc: "Reklama podąża za odbiorcą, a nie czeka, aż odbiorca trafi na nią.", dominant: false },
+              { icon: "🔄", color: "text-brandMagenta", border: "hover:border-brandMagenta/50", title: "Elastyczność", desc: "Zmiana trasy, lokalizacji lub kreacji nawet w trakcie kampanii.", dominant: false },
+              { icon: "⚡", color: "text-brandAmber", border: "border-brandAmber/40", title: "Szybkość", desc: "Od briefu do startu kampanii w rekordowym czasie.", dominant: true },
+              { icon: "👁️", color: "text-brandMagenta", border: "hover:border-brandMagenta/50", title: "Widoczność", desc: "Ekrany LED gwarantują doskonałą ekspozycję zarówno w dzień, jak i po zmroku.", dominant: false },
+              { icon: "🎯", color: "text-brandCyan", border: "hover:border-brandCyan/50", title: "Precyzja", desc: "Docieramy dokładnie tam, gdzie znajdują się Twoi klienci.", dominant: false },
             ].map((item, i) => (
               <RevealOnScroll key={i} delay={i * 100}>
-                <div className="p-6 border border-white/10 bg-white/5 hover:border-brandCyan/50 transition-all group h-full">
+                <div className={`p-6 border transition-all group h-full ${
+                  item.dominant ? `${item.border} bg-brandAmber/5 md:-translate-y-2` : `border-white/10 bg-white/5 ${item.border}`
+                }`}>
                   <div className={`text-2xl mb-5 ${item.color} group-hover:scale-110 transition-transform`}>{item.icon}</div>
                   <h3 className="text-lg font-bold mb-3 uppercase">{item.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
@@ -231,53 +233,59 @@ export default function Home() {
               <div className="w-20 h-1 bg-brandCyan" />
             </div>
           </RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Hero segment - Eventy & Festiwale, dominanta sekcji */}
+          <RevealOnScroll>
+            <div className="border border-brandAmber/30 bg-brandAmber/5 p-8 md:p-10 mb-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-center">
+              <div>
+                <div className="text-xs uppercase tracking-[0.25em] text-brandAmber mb-3 font-medium">
+                  Eventy &amp; Festiwale
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold uppercase mb-3 leading-tight">
+                  Twoja reklama jest tam, gdzie tłum.
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed max-w-xl">
+                  Kampania LED przed i podczas eventu. Kiedy tysiące ludzi zbiera się w jednym miejscu, jesteś tam z nimi. Nie na billboardzie przy obwodnicy.
+                </p>
+              </div>
+              <p className="text-[10px] uppercase tracking-widest text-gray-400 md:text-right md:max-w-[180px]">
+                Open&apos;er · Orange Warsaw · gale MMA · premiery · konferencje
+              </p>
+            </div>
+          </RevealOnScroll>
+
+          {/* Pozostałe segmenty - mniejsze, w rzędzie */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
-                label: "Eventy & Festiwale",
-                tagline: "Twoja reklama jest tam, gdzie tłum.",
-                desc: "Kampania LED przed i podczas eventu. Kiedy tysiące ludzi zbiera się w jednym miejscu, jesteś tam z nimi. Nie na billboardzie przy obwodnicy.",
-                examples: "Open'er · Orange Warsaw · gale MMA · premiery · konferencje",
-                accent: "brandCyan",
-              },
               {
                 label: "FMCG & Retail",
                 tagline: "Widoczność tam, gdzie zapada decyzja.",
-                desc: "Ekran LED przy galeriach, marketach i trasach zakupowych. Twój produkt w ruchu, dokładnie wtedy gdy klient myśli o zakupie.",
-                examples: "Red Bull · Coca-Cola · Unilever · marki premium · retail chains",
+                examples: "Red Bull · Coca-Cola · Unilever · retail chains",
                 accent: "brandMagenta",
               },
               {
                 label: "Domy Mediowe & Agencje",
                 tagline: "Mobilne DOOH do każdego media-mix.",
-                desc: "Prosty booking, pełna dokumentacja tras, szybki raport zasięgu. Uzupełnienie kampanii OOH bez długich negocjacji i wielomiesięcznych kontraktów.",
-                examples: "GroupM · Publicis · Dentsu · IPG · OMG · agencje niezależne",
+                examples: "GroupM · Publicis · Dentsu · IPG · OMG",
                 accent: "brandCyan",
               },
               {
                 label: "Korporacje & Marki własne",
                 tagline: "Launch, roadshow albo employer branding.",
-                desc: "18m² LED (jeden samochód) w centrum Warszawy przez cały dzień robi więcej niż tydzień w social media. Twoja marka widoczna tam, gdzie są decydenci i pracownicy.",
-                examples: "Technologia · Finanse · Deweloperzy · Automotive · B2B premium",
+                examples: "Technologia · Finanse · Deweloperzy · B2B premium",
                 accent: "brandMagenta",
               },
             ].map((item, i) => (
               <RevealOnScroll key={i} delay={i * 100}>
-                <div className={`border border-white/10 bg-white/5 p-8 hover:border-${item.accent}/40 transition-all h-full group`}>
+                <div className={`border border-white/10 bg-white/5 p-6 hover:border-${item.accent}/40 transition-all h-full group`}>
                   <div className={`text-xs uppercase tracking-[0.25em] text-${item.accent} mb-3 font-medium`}>
                     {item.label}
                   </div>
-                  <h3 className="text-xl font-bold uppercase mb-3 leading-tight">
+                  <h3 className="text-base font-bold uppercase mb-4 leading-tight">
                     {item.tagline}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-5">
-                    {item.desc}
+                  <p className="text-[10px] uppercase tracking-widest text-gray-400 border-t border-white/10 pt-3">
+                    {item.examples}
                   </p>
-                  <div className="border-t border-white/10 pt-4">
-                    <p className="text-[10px] uppercase tracking-widest text-gray-400">
-                      {item.examples}
-                    </p>
-                  </div>
                 </div>
               </RevealOnScroll>
             ))}

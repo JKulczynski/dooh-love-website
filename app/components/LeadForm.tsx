@@ -19,6 +19,7 @@ const USLUGI = [
 
 export default function LeadForm() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [form, setForm] = useState({
     email: "",
     telefon: "",
@@ -40,12 +41,18 @@ export default function LeadForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ type: "lead", ...form }),
-    });
-    setSent(true);
+    if (sending) return;
+    setSending(true);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "lead", ...form }),
+      });
+      setSent(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   if (sent) {
@@ -76,7 +83,7 @@ export default function LeadForm() {
               placeholder="twoj@email.pl"
               value={form.email}
               onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm rounded-lg"
+              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan transition-colors text-sm rounded-lg"
             />
           </div>
           <div>
@@ -90,7 +97,7 @@ export default function LeadForm() {
               title="Podaj prawidłowy numer telefonu (min. 9 cyfr)"
               value={form.telefon}
               onChange={e => setForm(f => ({ ...f, telefon: e.target.value }))}
-              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm rounded-lg"
+              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan transition-colors text-sm rounded-lg"
             />
           </div>
         </div>
@@ -108,7 +115,7 @@ export default function LeadForm() {
               placeholder="np. Warszawa, Centrum"
               value={form.lokalizacja}
               onChange={e => setForm(f => ({ ...f, lokalizacja: e.target.value }))}
-              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm rounded-lg"
+              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan transition-colors text-sm rounded-lg"
             />
           </div>
           <div>
@@ -119,7 +126,7 @@ export default function LeadForm() {
               placeholder="np. lipiec 2026"
               value={form.termin}
               onChange={e => setForm(f => ({ ...f, termin: e.target.value }))}
-              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm rounded-lg"
+              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan transition-colors text-sm rounded-lg"
             />
           </div>
           <div>
@@ -130,7 +137,7 @@ export default function LeadForm() {
               placeholder="np. 5 dni, 8h dziennie"
               value={form.dni}
               onChange={e => setForm(f => ({ ...f, dni: e.target.value }))}
-              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm rounded-lg"
+              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan transition-colors text-sm rounded-lg"
             />
           </div>
           <div>
@@ -141,7 +148,7 @@ export default function LeadForm() {
               placeholder="np. 1"
               value={form.pojazdy}
               onChange={e => setForm(f => ({ ...f, pojazdy: e.target.value }))}
-              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm rounded-lg"
+              className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan transition-colors text-sm rounded-lg"
             />
           </div>
         </div>
@@ -196,7 +203,7 @@ export default function LeadForm() {
           rows={4}
           value={form.notatka}
           onChange={e => setForm(f => ({ ...f, notatka: e.target.value }))}
-          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan outline-none transition-colors text-sm resize-none rounded-lg"
+          className="w-full bg-black border border-white/20 p-3 text-white placeholder-[#767676] focus:border-brandCyan transition-colors text-sm resize-none rounded-lg"
         />
       </div>
 
@@ -208,10 +215,11 @@ export default function LeadForm() {
 
       <button
         type="submit"
-        className="w-full bg-brandMagenta text-black font-bold py-4 rounded-lg uppercase tracking-widest hover:bg-white transition-colors text-sm"
+        disabled={sending}
+        className="w-full bg-brandMagenta text-black font-bold py-4 rounded-lg uppercase tracking-widest hover:bg-white transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
         style={{ boxShadow: "0 0 20px rgba(255,0,170,0.25)" }}
       >
-        Wyślij zapytanie
+        {sending ? "Wysyłanie..." : "Wyślij zapytanie"}
       </button>
       <p className="text-center text-xs text-gray-400 uppercase tracking-widest">
         Odpowiemy w przeciągu 24h. Sprawa pilna? Zachęcamy do kontaktu telefonicznego.

@@ -245,7 +245,7 @@ export default function Home() {
                   Twoja reklama jest tam, gdzie tłum.
                 </h3>
                 <p className="text-muted300 text-sm leading-relaxed max-w-xl">
-                  Kampania LED przed i podczas eventu. Kiedy tysiące ludzi zbiera się w jednym miejscu, jesteś tam z nimi. Nie na billboardzie przy obwodnicy.
+                  Mobilna kampania zsynchronizowana z Twoim wydarzeniem. Bądź w samym środku tłumu i zgarnij całą uwagę. Zostaw nudne billboardy na obwodnicy dla swojej konkurencji.
                 </p>
               </div>
               <p className="text-[10px] uppercase tracking-widest text-muted400 md:text-right md:max-w-[180px] md:pt-1">

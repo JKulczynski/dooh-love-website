@@ -235,7 +235,7 @@ export default function Home() {
           </RevealOnScroll>
           {/* Hero segment - Eventy & Festiwale, dominanta sekcji */}
           <RevealOnScroll>
-            <div className="border border-brandAmber/30 bg-brandAmber/5 p-8 md:p-10 mb-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-center">
+            <div className="border border-brandAmber/30 bg-brandAmber/5 p-8 md:p-10 mb-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:items-start">
               <div>
                 <div className="text-xs uppercase tracking-[0.25em] text-brandAmber mb-3 font-medium">
                   Eventy &amp; Festiwale
@@ -247,8 +247,8 @@ export default function Home() {
                   Kampania LED przed i podczas eventu. Kiedy tysiące ludzi zbiera się w jednym miejscu, jesteś tam z nimi. Nie na billboardzie przy obwodnicy.
                 </p>
               </div>
-              <p className="text-[10px] uppercase tracking-widest text-gray-400 md:text-right md:max-w-[180px]">
-                Open&apos;er · Orange Warsaw · gale MMA · premiery · konferencje
+              <p className="text-[10px] uppercase tracking-widest text-gray-400 md:text-right md:max-w-[180px] md:pt-1">
+                Festiwale muzyczne · gale sportowe · premiery · konferencje
               </p>
             </div>
           </RevealOnScroll>
@@ -259,31 +259,31 @@ export default function Home() {
               {
                 label: "FMCG & Retail",
                 tagline: "Widoczność tam, gdzie zapada decyzja.",
-                examples: "Red Bull · Coca-Cola · Unilever · retail chains",
+                examples: "Napoje i marki spożywcze · sieci handlowe · marki premium",
                 accent: "brandMagenta",
               },
               {
                 label: "Domy Mediowe & Agencje",
                 tagline: "Mobilne DOOH do każdego media-mix.",
-                examples: "GroupM · Publicis · Dentsu · IPG · OMG",
+                examples: "Domy mediowe · agencje reklamowe · sieci agencyjne",
                 accent: "brandCyan",
               },
               {
                 label: "Korporacje & Marki własne",
                 tagline: "Launch, roadshow albo employer branding.",
-                examples: "Technologia · Finanse · Deweloperzy · B2B premium",
+                examples: "Technologia · finanse · deweloperzy · B2B premium",
                 accent: "brandMagenta",
               },
             ].map((item, i) => (
               <RevealOnScroll key={i} delay={i * 100}>
-                <div className={`border border-white/10 bg-white/5 p-6 hover:border-${item.accent}/40 transition-all h-full group`}>
+                <div className={`flex flex-col border border-white/10 bg-white/5 p-6 hover:border-${item.accent}/40 transition-all h-full group`}>
                   <div className={`text-xs uppercase tracking-[0.25em] text-${item.accent} mb-3 font-medium`}>
                     {item.label}
                   </div>
                   <h3 className="text-base font-bold uppercase mb-4 leading-tight">
                     {item.tagline}
                   </h3>
-                  <p className="text-[10px] uppercase tracking-widest text-gray-400 border-t border-white/10 pt-3">
+                  <p className="text-[10px] uppercase tracking-widest text-gray-400 border-t border-white/10 pt-3 mt-auto">
                     {item.examples}
                   </p>
                 </div>

@@ -31,9 +31,9 @@ export default function Home() {
             <span className="text-brandCyan">jest Twoim ekranem.</span>
           </h1>
           <p className="text-muted400 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            18m² ekranu LED (jeden samochód) jedzie tam, gdzie jest Twoja grupa docelowa.
-            Centrum Warszawy, 15 godzin dziennie, 3 dedykowane trasy.
-            Twoja marka tam, gdzie dzieje się miasto.
+            18m² ekranu LED, który podąża za Twoimi klientami.
+            Ścisłe centrum Warszawy, do 15 godzin dziennie na trzech strategicznych trasach.
+            Przejmij ulice stolicy i bądź dokładnie tam, gdzie tętni życie.
           </p>
           <a
             href="#wycena"

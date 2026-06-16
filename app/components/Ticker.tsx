@@ -25,7 +25,7 @@ function TickerRow() {
           >
             ·
           </span>
-          <span className="text-[10px] uppercase tracking-[0.28em] text-gray-400">
+          <span className="text-[10px] uppercase tracking-[0.28em] text-muted400">
             {item}
           </span>
         </span>

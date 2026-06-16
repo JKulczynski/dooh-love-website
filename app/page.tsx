@@ -30,7 +30,7 @@ export default function Home() {
             <span className="text-white">Całe miasto</span>{" "}
             <span className="text-brandCyan">jest Twoim ekranem.</span>
           </h1>
-          <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xl mx-auto">
+          <p className="text-muted400 text-base leading-relaxed mb-8 max-w-xl mx-auto">
             18m² ekranu LED (jeden samochód) jedzie tam, gdzie jest Twoja grupa docelowa.
             Centrum Warszawy, 15 godzin dziennie, 3 dedykowane trasy.
             Twoja marka tam, gdzie dzieje się miasto.
@@ -52,7 +52,7 @@ export default function Home() {
               <div className="text-4xl font-bold text-brandCyan mb-2">
                 <AnimatedCounter value={18} suffix=" m²" />
               </div>
-              <div className="text-xs uppercase tracking-widest text-gray-400">Powierzchnia ekranu (jeden samochód)</div>
+              <div className="text-xs uppercase tracking-widest text-muted400">Powierzchnia ekranu (jeden samochód)</div>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={100}>
@@ -60,7 +60,7 @@ export default function Home() {
               <div className="text-4xl font-bold text-brandMagenta mb-2">
                 <AnimatedCounter value={15} suffix="h" />
               </div>
-              <div className="text-xs uppercase tracking-widest text-gray-400">Ekspozycja dziennie</div>
+              <div className="text-xs uppercase tracking-widest text-muted400">Ekspozycja dziennie</div>
             </div>
           </RevealOnScroll>
           <RevealOnScroll delay={200}>
@@ -68,7 +68,7 @@ export default function Home() {
               <div className="text-4xl font-bold text-brandCyan mb-2">
                 <AnimatedCounter value={3} />
               </div>
-              <div className="text-xs uppercase tracking-widest text-gray-400">Trasy w Warszawie</div>
+              <div className="text-xs uppercase tracking-widest text-muted400">Trasy w Warszawie</div>
             </div>
           </RevealOnScroll>
         </div>
@@ -102,7 +102,7 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-              <p className="text-xs uppercase tracking-widest text-gray-400">Materiał wideo, wkrótce</p>
+              <p className="text-xs uppercase tracking-widest text-muted400">Materiał wideo, wkrótce</p>
             </div>
             <div className="absolute inset-0 pointer-events-none opacity-20" style={{
               backgroundImage: "repeating-linear-gradient(0deg, transparent 0px, transparent 3px, rgba(0,0,0,0.3) 3px, rgba(0,0,0,0.3) 4px)",
@@ -122,7 +122,7 @@ export default function Home() {
                 Przyjdź z pomysłem.<br />
                 <span className="text-brandCyan">Wyjdź z kampanią.</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto text-base leading-relaxed mt-6">
+              <p className="text-muted400 max-w-2xl mx-auto text-base leading-relaxed mt-6">
                 Masz galę, launch albo event? Przynieś nam termin i cel.
                 My wyjeżdżamy na miasto z Twoją marką i wracamy z trasą, kreacją
                 oraz materiałem do social media gotowym jeszcze tego samego wieczoru.
@@ -142,7 +142,7 @@ export default function Home() {
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-4">
                       <span className="text-brandMagenta font-bold text-lg leading-none mt-0.5">→</span>
-                      <span className="text-gray-300 text-sm leading-relaxed">{item}</span>
+                      <span className="text-muted300 text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -160,7 +160,7 @@ export default function Home() {
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-4">
                       <span className="text-brandCyan font-bold text-lg leading-none mt-0.5">✓</span>
-                      <span className="text-gray-300 text-sm leading-relaxed">{item}</span>
+                      <span className="text-muted300 text-sm leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -210,7 +210,7 @@ export default function Home() {
                 }`}>
                   <div className={`text-2xl mb-5 ${item.color} group-hover:scale-110 transition-transform`}>{item.icon}</div>
                   <h3 className="text-lg font-bold mb-3 uppercase">{item.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                  <p className="text-muted400 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </RevealOnScroll>
             ))}
@@ -243,11 +243,11 @@ export default function Home() {
                 <h3 className="text-2xl md:text-3xl font-bold uppercase mb-3 leading-tight">
                   Twoja reklama jest tam, gdzie tłum.
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed max-w-xl">
+                <p className="text-muted300 text-sm leading-relaxed max-w-xl">
                   Kampania LED przed i podczas eventu. Kiedy tysiące ludzi zbiera się w jednym miejscu, jesteś tam z nimi. Nie na billboardzie przy obwodnicy.
                 </p>
               </div>
-              <p className="text-[10px] uppercase tracking-widest text-gray-400 md:text-right md:max-w-[180px] md:pt-1">
+              <p className="text-[10px] uppercase tracking-widest text-muted400 md:text-right md:max-w-[180px] md:pt-1">
                 Festiwale muzyczne · gale sportowe · premiery · konferencje
               </p>
             </div>
@@ -283,7 +283,7 @@ export default function Home() {
                   <h3 className="text-base font-bold uppercase mb-4 leading-tight">
                     {item.tagline}
                   </h3>
-                  <p className="text-[10px] uppercase tracking-widest text-gray-400 border-t border-white/10 pt-3 mt-auto">
+                  <p className="text-[10px] uppercase tracking-widest text-muted400 border-t border-white/10 pt-3 mt-auto">
                     {item.examples}
                   </p>
                 </div>
@@ -296,7 +296,7 @@ export default function Home() {
       {/* Logotypy klientów — ukryte, czeka na realne loga */}
       <section className="hidden py-20 px-6 bg-black border-t border-white/5">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-xs uppercase tracking-[0.3em] text-gray-400 mb-10">
+          <p className="text-center text-xs uppercase tracking-[0.3em] text-muted400 mb-10">
             Zaufali nam
           </p>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-6 items-center">
@@ -349,7 +349,7 @@ export default function Home() {
       <section className="py-16 px-6 bg-black border-t border-white/5">
         <div className="max-w-5xl mx-auto">
           <RevealOnScroll>
-            <p className="text-xs uppercase tracking-[0.3em] text-gray-500 mb-10 text-center">To jest proste</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-muted500 mb-10 text-center">To jest proste</p>
           </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
             {[
@@ -361,7 +361,7 @@ export default function Home() {
                 <div className="bg-black p-8 h-full">
                   <div className={`text-5xl font-bold ${step.color} mb-4`}>{step.n}</div>
                   <h3 className="text-lg font-bold uppercase mb-3">{step.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{step.desc}</p>
+                  <p className="text-muted400 text-sm leading-relaxed">{step.desc}</p>
                 </div>
               </RevealOnScroll>
             ))}
@@ -378,7 +378,7 @@ export default function Home() {
                 Przygotowanie <span className="text-brandCyan">Projektu</span>
               </h2>
               <div className="w-20 h-1 bg-brandMagenta mx-auto" />
-              <p className="text-gray-400 text-sm mt-6 max-w-xl mx-auto">
+              <p className="text-muted400 text-sm mt-6 max-w-xl mx-auto">
                 Nie masz kreacji? Produkujemy grafikę i animacje na ekrany LED. Wybierz pakiet odpowiedni do skali kampanii.
               </p>
             </div>
@@ -390,7 +390,7 @@ export default function Home() {
                 price: "2 500",
                 tag: null,
                 color: "border-white/10",
-                accent: "text-gray-300",
+                accent: "text-muted300",
                 items: [
                   "Statyczna grafika na ekrany LED",
                   "Prosty projekt wizualny",
@@ -403,8 +403,8 @@ export default function Home() {
                 price: "6 000",
                 originalPrice: "9 000",
                 tag: "Promocja",
-                color: "border-brandCyan",
-                accent: "text-brandCyan",
+                color: "border-brandAmber",
+                accent: "text-brandAmber",
                 items: [
                   "Animowana kreacja na ekrany LED",
                   "Motion graphics i efekty",
@@ -430,26 +430,26 @@ export default function Home() {
               },
             ].map((pkg, i) => (
               <RevealOnScroll key={i} delay={i * 100}>
-                <div className={`border ${pkg.color} p-8 relative h-full flex flex-col ${pkg.tag ? "bg-brandCyan/5" : "bg-white/5"}`}>
+                <div className={`border ${pkg.color} p-8 relative h-full flex flex-col ${pkg.tag ? "bg-brandAmber/5" : "bg-white/5"}`}>
                   {pkg.tag && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brandCyan text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brandAmber text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1">
                       {pkg.tag}
                     </div>
                   )}
                   <div className="mb-6">
                     <h3 className={`text-lg font-bold uppercase tracking-widest mb-4 ${pkg.accent}`}>{pkg.name}</h3>
                     <div className="flex items-baseline gap-2 flex-wrap">
-                      <span className="text-xs text-gray-400 uppercase tracking-widest">od</span>
+                      <span className="text-xs text-muted400 uppercase tracking-widest">od</span>
                       {pkg.originalPrice && (
-                        <span className="text-lg font-bold text-gray-500 line-through">{pkg.originalPrice}</span>
+                        <span className="text-lg font-bold text-muted500 line-through">{pkg.originalPrice}</span>
                       )}
                       <span className="text-3xl font-bold text-white">{pkg.price}</span>
-                      <span className="text-xs text-gray-400 uppercase tracking-widest">PLN netto</span>
+                      <span className="text-xs text-muted400 uppercase tracking-widest">PLN netto</span>
                     </div>
                   </div>
                   <ul className="space-y-3 flex-1">
                     {pkg.items.map((item, j) => (
-                      <li key={j} className="flex items-start gap-3 text-sm text-gray-400">
+                      <li key={j} className="flex items-start gap-3 text-sm text-muted400">
                         <span className={`${pkg.accent} font-bold mt-0.5`}>✓</span>
                         {item}
                       </li>
@@ -460,7 +460,7 @@ export default function Home() {
             ))}
           </div>
           <RevealOnScroll>
-            <p className="text-center text-xs text-gray-400 uppercase tracking-widest mt-8">
+            <p className="text-center text-xs text-muted400 uppercase tracking-widest mt-8">
               Ceny netto. Kreacja nie jest wymagana - możesz dostarczyć własne materiały.
             </p>
           </RevealOnScroll>
@@ -477,7 +477,7 @@ export default function Home() {
                 Content <span className="text-brandCyan">Package</span>
               </h2>
               <div className="w-20 h-1 bg-brandMagenta" />
-              <p className="text-gray-400 text-sm mt-6 max-w-xl">
+              <p className="text-muted400 text-sm mt-6 max-w-xl">
                 Twoja kampania nie kończy się na ekranie. Tworzymy materiały, które żyją dalej w social media.
               </p>
             </div>
@@ -495,7 +495,7 @@ export default function Home() {
                 <div className="border border-white/10 bg-white/5 p-6 hover:border-brandMagenta/40 transition-all group h-full">
                   <div className="text-2xl mb-4">{item.icon}</div>
                   <h3 className="text-sm font-bold uppercase mb-2 group-hover:text-brandCyan transition-colors">{item.label}</h3>
-                  <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
+                  <p className="text-muted400 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               </RevealOnScroll>
             ))}
@@ -521,7 +521,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4">
               30 minut. <span className="text-brandCyan">Gotowy plan kampanii.</span>
             </h2>
-            <p className="text-gray-400 text-sm max-w-xl mx-auto mb-10">
+            <p className="text-muted400 text-sm max-w-xl mx-auto mb-10">
               Powiedz nam o swoim evencie lub produkcie. Wyjdziesz z gotowym planem tras, budzetem i terminami.
             </p>
           </RevealOnScroll>
@@ -535,7 +535,7 @@ export default function Home() {
                 title="Umow rozmowe"
               />
             </div>
-            <p className="text-[10px] uppercase tracking-widest text-gray-600 mt-4">
+            <p className="text-[10px] uppercase tracking-widest text-muted600 mt-4">
               Link Calendly do ustawienia przez Pawla — dooh-love/30min
             </p>
           </RevealOnScroll>
@@ -549,22 +549,22 @@ export default function Home() {
             <div className="font-bold text-2xl tracking-tighter">
               DOOH<span className="text-brandCyan">-</span>LOVE
             </div>
-            <p className="text-gray-400 text-sm">
+            <p className="text-muted400 text-sm">
               Rewolucjonizujemy miejską reklamę. Wykorzystujemy najnowocześniejsze ekrany LED mobilne, by Twoja marka zawsze była tam, gdzie dzieje się akcja.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-12">
             <div className="space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400">Nawigacja</h3>
-              <ul className="text-sm space-y-2 text-gray-400">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-muted400">Nawigacja</h3>
+              <ul className="text-sm space-y-2 text-muted400">
                 <li><a className="hover:text-brandCyan transition-colors" href="#">Start</a></li>
                 <li><a className="hover:text-brandCyan transition-colors" href="#solutions">Tak to działa</a></li>
                 <li><a className="hover:text-brandCyan transition-colors" href="#dla-kogo">Dla kogo</a></li>
               </ul>
             </div>
             <div className="space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400">Kontakt</h3>
-              <ul className="text-sm space-y-3 text-gray-400">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-muted400">Kontakt</h3>
+              <ul className="text-sm space-y-3 text-muted400">
                 <li>
                   <a href="mailto:hello@dooh-love.pl" className="hover:text-brandCyan transition-colors">
                     hello@dooh-love.pl
@@ -588,12 +588,12 @@ export default function Home() {
                     WhatsApp
                   </a>
                 </li>
-                <li className="text-gray-400">Warszawa, PL</li>
+                <li className="text-muted400">Warszawa, PL</li>
               </ul>
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest text-gray-400 flex flex-col md:flex-row justify-between gap-3">
+        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-[10px] uppercase tracking-widest text-muted400 flex flex-col md:flex-row justify-between gap-3">
           <span>© 2026 DOOH-LOVE</span>
           <div className="flex gap-6">
             <a href="/polityka-prywatnosci" className="hover:text-brandCyan transition-colors">Polityka prywatności</a>

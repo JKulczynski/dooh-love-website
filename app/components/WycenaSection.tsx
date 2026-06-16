@@ -14,7 +14,7 @@ export default function WycenaSection() {
               Wyślij <span className="text-brandMagenta">zapytanie</span>
             </h2>
             <div className="w-20 h-1 bg-brandCyan mb-6" />
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-muted400 text-sm leading-relaxed">
               Opisz swoją kampanię — odpowiemy w przeciągu 24h z ofertą skrojoną dokładnie pod Twoje potrzeby.
             </p>
           </div>

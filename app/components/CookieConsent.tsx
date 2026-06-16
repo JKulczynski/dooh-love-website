@@ -28,7 +28,7 @@ export default function CookieConsent() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-black border-t border-white/10 px-6 py-5">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
-        <p className="text-xs text-gray-400 leading-relaxed max-w-2xl">
+        <p className="text-xs text-muted400 leading-relaxed max-w-2xl">
           Używamy plików cookie do analizy ruchu i poprawy działania strony.
           Więcej informacji w{" "}
           <a href="/polityka-prywatnosci" className="text-brandCyan underline hover:text-white transition-colors">
@@ -39,7 +39,7 @@ export default function CookieConsent() {
         <div className="flex gap-3 shrink-0">
           <button
             onClick={reject}
-            className="px-5 py-2 text-xs font-bold uppercase tracking-widest border border-white/20 text-gray-400 hover:border-white/50 hover:text-white transition-colors"
+            className="px-5 py-2 text-xs font-bold uppercase tracking-widest border border-white/20 text-muted400 hover:border-white/50 hover:text-white transition-colors"
           >
             Odrzuc
           </button>

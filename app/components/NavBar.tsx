@@ -1,24 +1,19 @@
 "use client";
-
 import { useState, useEffect } from "react";
-
 const links = [
   { label: "Tak to działa", href: "#solutions" },
   { label: "Dla kogo", href: "#dla-kogo" },
   { label: "Galeria", href: "#galeria" },
   { label: "Wycena", href: "#wycena" },
 ];
-
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-black/95 border-b border-white/10" : "bg-black/80 border-b border-white/5"} backdrop-blur-md`}>
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -32,14 +27,13 @@ export default function NavBar() {
             style={{ textShadow: "0 0 10px #00FFE5, 0 0 28px rgba(0,255,229,0.7), 0 0 50px rgba(0,255,229,0.3)" }}
           >-</span>LOVE
         </a>
-
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-xs uppercase tracking-widest text-gray-400 hover:text-brandCyan transition-colors"
+              className="text-xs uppercase tracking-widest text-muted400 hover:text-brandCyan transition-colors"
             >
               {l.label}
             </a>
@@ -51,8 +45,7 @@ export default function NavBar() {
               background: "#050505",
               border: "1px solid rgba(0,255,229,0.65)",
               color: "#00FFE5",
-              textShadow: "0 0 6px #00FFE5, 0 0 18px rgba(0,255,229,0.7), 0 0 35px rgba(0,255,229,0.35)",
-              boxShadow: "0 0 10px rgba(0,255,229,0.3), 0 0 22px rgba(0,255,229,0.12), inset 0 0 8px rgba(0,255,229,0.07)",
+              textShadow: "0 0 4px rgba(0,255,229,0.5)",
             }}
           >
             <span className="relative" style={{ zIndex: 10 }}>Zarezerwuj</span>
@@ -81,7 +74,6 @@ export default function NavBar() {
             </svg>
           </a>
         </div>
-
         {/* Hamburger */}
         <button
           aria-label={open ? "Zamknij menu" : "Otwórz menu"}
@@ -99,7 +91,6 @@ export default function NavBar() {
           )}
         </button>
       </div>
-
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-black border-t border-white/10 px-4 py-6 flex flex-col gap-5">
@@ -108,7 +99,7 @@ export default function NavBar() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-sm uppercase tracking-widest text-gray-300 hover:text-brandCyan transition-colors"
+              className="text-sm uppercase tracking-widest text-muted300 hover:text-brandCyan transition-colors"
             >
               {l.label}
             </a>
@@ -121,8 +112,7 @@ export default function NavBar() {
               background: "#050505",
               border: "1px solid rgba(0,255,229,0.65)",
               color: "#00FFE5",
-              textShadow: "0 0 6px #00FFE5, 0 0 18px rgba(0,255,229,0.7), 0 0 35px rgba(0,255,229,0.35)",
-              boxShadow: "0 0 10px rgba(0,255,229,0.3), 0 0 22px rgba(0,255,229,0.12), inset 0 0 8px rgba(0,255,229,0.07)",
+              textShadow: "0 0 4px rgba(0,255,229,0.5)",
             }}
           >
             <span className="relative" style={{ zIndex: 10 }}>Zarezerwuj</span>

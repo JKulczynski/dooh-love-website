@@ -60,7 +60,7 @@ export default function LeadForm() {
       <div className="border border-brandCyan/30 p-10 text-center">
         <div className="text-brandCyan text-5xl mb-4">✓</div>
         <p className="text-white font-bold uppercase tracking-widest text-sm mb-2">Zapytanie wysłane.</p>
-        <p className="text-gray-400 text-xs uppercase tracking-widest">
+        <p className="text-muted400 text-xs uppercase tracking-widest">
           Odpowiemy w przeciągu 24h. Jeśli sprawa jest pilna, zachęcamy do kontaktu telefonicznego.
         </p>
       </div>
@@ -75,7 +75,7 @@ export default function LeadForm() {
         <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-4">Dane kontaktowe</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="lead-email" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">E-mail *</label>
+            <label htmlFor="lead-email" className="block text-xs uppercase tracking-widest text-muted400 mb-2">E-mail *</label>
             <input
               id="lead-email"
               type="email"
@@ -87,7 +87,7 @@ export default function LeadForm() {
             />
           </div>
           <div>
-            <label htmlFor="lead-telefon" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Telefon *</label>
+            <label htmlFor="lead-telefon" className="block text-xs uppercase tracking-widest text-muted400 mb-2">Telefon *</label>
             <input
               id="lead-telefon"
               type="tel"
@@ -108,7 +108,7 @@ export default function LeadForm() {
         <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-4">Szczegóły kampanii</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="lead-lokalizacja" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Miasto / lokalizacja</label>
+            <label htmlFor="lead-lokalizacja" className="block text-xs uppercase tracking-widest text-muted400 mb-2">Miasto / lokalizacja</label>
             <input
               id="lead-lokalizacja"
               type="text"
@@ -119,7 +119,7 @@ export default function LeadForm() {
             />
           </div>
           <div>
-            <label htmlFor="lead-termin" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Termin kampanii</label>
+            <label htmlFor="lead-termin" className="block text-xs uppercase tracking-widest text-muted400 mb-2">Termin kampanii</label>
             <input
               id="lead-termin"
               type="text"
@@ -130,7 +130,7 @@ export default function LeadForm() {
             />
           </div>
           <div>
-            <label htmlFor="lead-dni" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Liczba dni / godzin</label>
+            <label htmlFor="lead-dni" className="block text-xs uppercase tracking-widest text-muted400 mb-2">Liczba dni / godzin</label>
             <input
               id="lead-dni"
               type="text"
@@ -141,7 +141,7 @@ export default function LeadForm() {
             />
           </div>
           <div>
-            <label htmlFor="lead-pojazdy" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">Liczba pojazdów LED</label>
+            <label htmlFor="lead-pojazdy" className="block text-xs uppercase tracking-widest text-muted400 mb-2">Liczba pojazdów LED</label>
             <input
               id="lead-pojazdy"
               type="text"
@@ -159,7 +159,7 @@ export default function LeadForm() {
         <p className="text-xs uppercase tracking-[0.3em] text-brandMagenta mb-4">Materiały reklamowe</p>
         <div className="space-y-2">
           {MATERIALY.map((m) => (
-            <label key={m} className="flex items-center gap-3 text-sm text-gray-300 cursor-pointer">
+            <label key={m} className="flex items-center gap-3 text-sm text-muted300 cursor-pointer">
               <input
                 type="radio"
                 name="materialy"
@@ -179,7 +179,7 @@ export default function LeadForm() {
         <p className="text-xs uppercase tracking-[0.3em] text-brandMagenta mb-4">Dodatkowe usługi</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {USLUGI.map((u) => (
-            <label key={u} className="flex items-center gap-3 text-sm text-gray-300 cursor-pointer">
+            <label key={u} className="flex items-center gap-3 text-sm text-muted300 cursor-pointer">
               <input
                 type="checkbox"
                 checked={form.uslugi.includes(u)}
@@ -194,7 +194,7 @@ export default function LeadForm() {
 
       {/* Dodatkowe informacje */}
       <div>
-        <label htmlFor="lead-notatka" className="block text-xs uppercase tracking-widest text-gray-400 mb-2">
+        <label htmlFor="lead-notatka" className="block text-xs uppercase tracking-widest text-muted400 mb-2">
           Dodatkowe informacje
         </label>
         <textarea
@@ -207,7 +207,7 @@ export default function LeadForm() {
         />
       </div>
 
-      <p className="text-gray-400 text-xs leading-relaxed border-t border-white/10 pt-6">
+      <p className="text-muted400 text-xs leading-relaxed border-t border-white/10 pt-6">
         Potrzebujesz czegoś więcej? Możemy kompleksowo przygotować i zrealizować całą kampanię — od koncepcji
         i projektów graficznych, przez produkcję materiałów reklamowych, aż po eventy, mapping 3D czy pokazy
         laserowe oraz dronów.
@@ -221,7 +221,7 @@ export default function LeadForm() {
       >
         {sending ? "Wysyłanie..." : "Wyślij zapytanie"}
       </button>
-      <p className="text-center text-xs text-gray-400 uppercase tracking-widest">
+      <p className="text-center text-xs text-muted400 uppercase tracking-widest">
         Odpowiemy w przeciągu 24h. Sprawa pilna? Zachęcamy do kontaktu telefonicznego.
       </p>
     </form>

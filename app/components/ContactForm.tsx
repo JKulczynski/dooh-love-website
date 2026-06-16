@@ -21,7 +21,7 @@ export default function ContactForm() {
       <div className="border border-brandCyan/30 p-8 text-center">
         <div className="text-brandCyan text-4xl mb-4">✓</div>
         <p className="text-white font-bold uppercase tracking-widest text-sm mb-2">Dziękujemy!</p>
-        <p className="text-gray-400 text-xs uppercase tracking-widest">Odezwiemy się w ciągu 48h.</p>
+        <p className="text-muted400 text-xs uppercase tracking-widest">Odezwiemy się w ciągu 48h.</p>
       </div>
     );
   }
@@ -70,7 +70,7 @@ export default function ContactForm() {
       >
         Zarezerwuj w 48h
       </button>
-      <p className="text-center text-xs text-gray-400 uppercase tracking-widest">
+      <p className="text-center text-xs text-muted400 uppercase tracking-widest">
         Briefing → kampania w 48 godzin
       </p>
     </form>

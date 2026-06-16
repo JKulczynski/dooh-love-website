@@ -12,6 +12,10 @@
   --color-brandMagenta: #FF00AA;
   --color-brandAmber: #FFB020;
   --color-darkBg: #0a0a0a;
+  --color-muted300: #d4dde2;
+  --color-muted400: #9eb0ba;
+  --color-muted500: #748894;
+  --color-muted600: #4f6168;
 }
 
 html {

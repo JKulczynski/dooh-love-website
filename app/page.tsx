@@ -123,9 +123,10 @@ export default function Home() {
                 <span className="text-brandCyan">Wyjdź z kampanią.</span>
               </h2>
               <p className="text-muted400 max-w-2xl mx-auto text-base leading-relaxed mt-6">
-                Masz galę, launch albo event? Przynieś nam termin i cel.
-                My wyjeżdżamy na miasto z Twoją marką i wracamy z trasą, kreacją
-                oraz materiałem do social media gotowym jeszcze tego samego wieczoru.
+                Planujesz galę, premierę lub event? Podaj nam cel i termin.
+                My zajmiemy się resztą: zaplanujemy trasę, dopasujemy kreację i wyjedziemy
+                w miasto z Twoją reklamą. Gotowe materiały na social media dostaniesz od nas
+                jeszcze tego samego wieczoru.
               </p>
             </div>
           </RevealOnScroll>

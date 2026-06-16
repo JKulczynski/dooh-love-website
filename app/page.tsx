@@ -1,5 +1,4 @@
 import HeroSection from "./components/HeroSection";
-import AdVisualizer from "./components/AdVisualizer";
 import StickyBar from "./components/StickyBar";
 import NavBar from "./components/NavBar";
 import Ticker from "./components/Ticker";
@@ -217,33 +216,6 @@ export default function Home() {
         </div>
       </section>
       </PixelReveal>
-
-      {/* Ad Visualizer */}
-      <section className="py-20 px-6 bg-black border-t border-white/5">
-        <div className="max-w-5xl mx-auto">
-          <RevealOnScroll>
-            <div className="mb-10 text-center">
-              <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-3">Zreszta sprawdz sam</p>
-              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4">
-                Jak Twoja marka <span className="text-brandCyan">wygląda na ekranie?</span>
-              </h2>
-              <p className="text-gray-400 text-sm max-w-xl mx-auto">
-                Wgraj logo lub kreację — zobaczysz jak wygląda na 18m² ekranu LED (jeden samochód) jadącego przez centrum Warszawy.
-              </p>
-            </div>
-          </RevealOnScroll>
-          <RevealOnScroll delay={100}>
-            <AdVisualizer />
-          </RevealOnScroll>
-          <RevealOnScroll delay={200}>
-            <div className="mt-8 text-center">
-              <a href="#wycena" className="inline-flex items-center gap-3 bg-brandCyan text-black font-bold py-4 px-10 rounded-lg uppercase tracking-widest hover:bg-white transition-colors text-sm">
-                Chce tak wygladac na ulicach Warszawy
-              </a>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
 
       {/* Campaign Planner */}
       <WycenaSection />

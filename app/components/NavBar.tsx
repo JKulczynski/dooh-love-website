@@ -19,7 +19,7 @@ export default function NavBar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-black/95 border-b border-white/10" : "bg-black/80 border-b border-white/5"} backdrop-blur-md`}>
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <a href="#">
-          <Image src="/logo.png" alt="DOOH-LOVE" width={140} height={40} className="h-9 w-auto" priority />
+          <Image src="/logo.png" alt="DOOH-LOVE" width={168} height={48} className="h-11 w-auto" priority />
         </a>
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">

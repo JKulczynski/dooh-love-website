@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 const links = [
   { label: "Tak to działa", href: "#solutions" },
   { label: "Dla kogo", href: "#dla-kogo" },
@@ -17,15 +18,8 @@ export default function NavBar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-black/95 border-b border-white/10" : "bg-black/80 border-b border-white/5"} backdrop-blur-md`}>
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-        <a
-          href="#"
-          className="font-bold text-xl tracking-tighter"
-          style={{ textShadow: "0 0 10px rgba(0,255,229,0.4), 0 0 25px rgba(0,255,229,0.15)" }}
-        >
-          DOOH<span
-            className="text-brandCyan"
-            style={{ textShadow: "0 0 10px #00FFE5, 0 0 28px rgba(0,255,229,0.7), 0 0 50px rgba(0,255,229,0.3)" }}
-          >-</span>LOVE
+        <a href="#">
+          <Image src="/logo.png" alt="DOOH-LOVE" width={140} height={40} className="h-9 w-auto" priority />
         </a>
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">

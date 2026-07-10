@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 const links = [
   { label: "Tak to działa", href: "#solutions" },
@@ -10,6 +11,10 @@ const links = [
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const resolve = (href: string) =>
+    href.startsWith("#") ? (isHome ? href : `/${href}`) : href;
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -18,7 +23,7 @@ export default function NavBar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-black/95 border-b border-white/10" : "bg-black/80 border-b border-white/5"} backdrop-blur-md`}>
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="#">
+        <a href="/">
           <Image src="/logo.png" alt="DOOH-LOVE" width={168} height={48} className="h-11 w-auto" priority />
         </a>
         {/* Desktop links */}
@@ -26,14 +31,14 @@ export default function NavBar() {
           {links.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={resolve(l.href)}
               className="text-xs uppercase tracking-widest text-muted400 hover:text-brandCyan transition-colors"
             >
               {l.label}
             </a>
           ))}
           <a
-            href="#wycena"
+            href={resolve("#wycena")}
             className="relative overflow-hidden text-xs font-bold uppercase tracking-widest py-2 px-5 rounded-lg transition-all hover:brightness-125"
             style={{
               background: "#050505",
@@ -91,7 +96,7 @@ export default function NavBar() {
           {links.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={resolve(l.href)}
               onClick={() => setOpen(false)}
               className="text-sm uppercase tracking-widest text-muted300 hover:text-brandCyan transition-colors"
             >
@@ -99,7 +104,7 @@ export default function NavBar() {
             </a>
           ))}
           <a
-            href="#wycena"
+            href={resolve("#wycena")}
             onClick={() => setOpen(false)}
             className="relative overflow-hidden mt-2 text-sm font-bold uppercase tracking-widest py-3 px-5 rounded-lg text-center transition-all"
             style={{

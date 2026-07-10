@@ -4,7 +4,7 @@ import Image from "next/image";
 const links = [
   { label: "Tak to działa", href: "#solutions" },
   { label: "Dla kogo", href: "#dla-kogo" },
-  { label: "Galeria", href: "#galeria" },
+  { label: "Nasze trasy", href: "/trasy" },
   { label: "Wycena", href: "#wycena" },
 ];
 export default function NavBar() {
@@ -53,7 +53,7 @@ export default function NavBar() {
             />
           </a>
           <a
-            href="https://wa.me/48500600700?text=Chc%C4%99%20zarezerwowa%C4%87%20kampani%C4%99%20DOOH-LOVE"
+            href="https://wa.me/48668046599?text=Chc%C4%99%20zarezerwowa%C4%87%20kampani%C4%99%20DOOH-LOVE"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"

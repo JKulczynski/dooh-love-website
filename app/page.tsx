@@ -579,7 +579,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
           <div className="space-y-6 max-w-sm">
             <div>
-              <Image src="/logo.png" alt="DOOH-LOVE" width={168} height={48} className="h-11 w-auto" />
+              <Image src="/logo.png" alt="DOOH-LOVE" width={336} height={96} className="h-[88px] w-auto" />
             </div>
             <p className="text-muted400 text-sm">
               Rewolucjonizujemy miejską reklamę. Wykorzystujemy najnowocześniejsze ekrany LED mobilne, by Twoja marka zawsze była tam, gdzie dzieje się akcja.

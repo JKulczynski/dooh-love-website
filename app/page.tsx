@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HeroSection from "./components/HeroSection";
 import StickyBar from "./components/StickyBar";
 import NavBar from "./components/NavBar";
@@ -577,8 +578,8 @@ export default function Home() {
       <footer className="bg-black py-20 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
           <div className="space-y-6 max-w-sm">
-            <div className="font-bold text-2xl tracking-tighter">
-              DOOH<span className="text-brandCyan">-</span>LOVE
+            <div>
+              <Image src="/logo.png" alt="DOOH-LOVE" width={168} height={48} className="h-11 w-auto" />
             </div>
             <p className="text-muted400 text-sm">
               Rewolucjonizujemy miejską reklamę. Wykorzystujemy najnowocześniejsze ekrany LED mobilne, by Twoja marka zawsze była tam, gdzie dzieje się akcja.

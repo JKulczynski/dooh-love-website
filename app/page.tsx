@@ -223,6 +223,21 @@ export default function Home() {
       {/* Campaign Planner */}
       <WycenaSection />
 
+      {/* Trasy teaser */}
+      <section className="py-12 px-6 bg-black border-t border-white/5">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+          <p className="text-base md:text-lg font-bold uppercase tracking-tight text-center sm:text-left">
+            Jeździmy po <span className="text-brandCyan">3 trasach</span> w samym centrum Warszawy.
+          </p>
+          <a
+            href="/trasy"
+            className="shrink-0 inline-flex items-center gap-2 border border-brandCyan text-brandCyan font-bold py-3 px-7 rounded-lg uppercase tracking-widest hover:bg-brandCyan hover:text-black transition-all text-xs"
+          >
+            Poznaj nasze trasy →
+          </a>
+        </div>
+      </section>
+
       {/* Dla kogo */}
       <section className="py-24 px-6 bg-darkBg" id="dla-kogo">
         <div className="max-w-7xl mx-auto">

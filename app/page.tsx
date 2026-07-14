@@ -258,7 +258,7 @@ export default function Home() {
                   Eventy &amp; Festiwale
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold uppercase mb-3 leading-tight">
-                  Twoja reklama jest tam, gdzie tłum.
+                  Twoja reklama jest tam, gdzie ludzie.
                 </h3>
                 <p className="text-muted300 text-sm leading-relaxed max-w-xl">
                   Mobilna kampania zsynchronizowana z Twoim wydarzeniem. Bądź w samym środku tłumu i zgarnij całą uwagę. Zostaw nudne billboardy na obwodnicy dla swojej konkurencji.

@@ -33,11 +33,13 @@ export const metadata: Metadata = {
     siteName: "DOOH-LOVE",
     locale: "pl_PL",
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "DOOH-LOVE — Mobilna Reklama LED Warszawa" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "DOOH-LOVE | Mobilna Reklama LED Warszawa",
     description: "18m² ekranu LED jedzie przez centrum Warszawy. Kampania gotowa w 48h. Od 3 500 PLN netto/dzień.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

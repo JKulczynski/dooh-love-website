@@ -105,6 +105,78 @@ export default function TrasyPage() {
         </div>
       </section>
 
+      {/* Cennik */}
+      <section className="py-16 px-6 bg-black border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <RevealOnScroll>
+            <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-4">Pakiety</p>
+            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-10">
+              Wybierz zasięg <span className="text-brandCyan">kampanii</span>
+            </h2>
+          </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "START",
+                price: "od 10 000 zł",
+                unit: "/ tydzień",
+                features: ["Spot do 15 sekund", "ok. 1 godziny emisji dziennie", "ok. 5 godzin emisji tygodniowo"],
+                accent: "#00FFE5",
+              },
+              {
+                name: "BUSINESS",
+                price: "od 50 000 zł",
+                unit: "/ miesiąc",
+                features: ["Spot do 15 sekund", "ok. 20 godzin emisji miesięcznie", "stała obecność na trasie"],
+                accent: "#FF2D9B",
+              },
+              {
+                name: "FLAGSHIP",
+                price: "od 100 000 zł",
+                unit: "/ 3 miesiące",
+                features: ["Spot do 15 sekund", "ok. 60 godzin emisji", "długoterminowa obecność marki", "najlepszy koszt pojedynczej emisji"],
+                accent: "#FFB020",
+              },
+            ].map((pkg, i) => (
+              <RevealOnScroll key={pkg.name} delay={i * 100}>
+                <div className="h-full border border-white/10 p-8 flex flex-col">
+                  <span
+                    className="text-[10px] font-bold uppercase tracking-widest px-2 py-1 self-start mb-6"
+                    style={{ background: pkg.accent + "22", color: pkg.accent, border: `1px solid ${pkg.accent}44` }}
+                  >
+                    {pkg.name}
+                  </span>
+                  <p className="text-2xl font-bold tracking-tight mb-1">
+                    {pkg.price} <span className="text-sm font-normal text-muted400">{pkg.unit}</span>
+                  </p>
+                  <ul className="mt-6 space-y-3 flex-1">
+                    {pkg.features.map((f) => (
+                      <li key={f} className="text-sm text-muted400 flex items-start gap-2">
+                        <span style={{ color: pkg.accent }}>✓</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={`https://wa.me/48668046599?text=Interesuje%20mnie%20pakiet%20${pkg.name}%20DOOH-LOVE`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-8 inline-flex items-center justify-center gap-2 font-bold py-3 px-6 rounded-lg uppercase tracking-widest text-xs transition-all text-black hover:brightness-110"
+                    style={{ background: pkg.accent }}
+                  >
+                    Zapytaj o pakiet
+                  </a>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+          <p className="text-[11px] text-muted400/70 leading-relaxed mt-8 max-w-3xl">
+            Podane czasy emisji są wartościami orientacyjnymi i odnoszą się do standardowego dnia pracy pojazdu (8 godzin).
+            Rzeczywista liczba emisji zależy od długości pętli reklamowej oraz liczby aktywnych kampanii na danej trasie.
+          </p>
+        </div>
+      </section>
+
       {/* Trasy */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto space-y-20">

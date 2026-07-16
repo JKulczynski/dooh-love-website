@@ -5,30 +5,17 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-end pb-20 overflow-hidden">
 
-      {/* Video background */}
+      {/* Image background */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-          <track kind="captions" srcLang="pl" label="Polski" default />
-        </video>
-        {/* Fallback: static image if video fails */}
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/hero-pixel.jpg"
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover object-[60%_center] md:object-center"
-            quality={75}
-            aria-hidden="true"
-          />
-        </div>
+        <Image
+          src="/hero-truck-skyline.jpg"
+          alt="Samochód DOOH-LOVE z ekranem LED na tle panoramy miasta"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[70%_center] md:object-center"
+          quality={85}
+        />
         {/* Gradient: bottom fade to black */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40" />
         {/* Gradient: top fade to black (nav area) */}

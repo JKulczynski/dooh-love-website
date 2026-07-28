@@ -110,7 +110,7 @@ export default function AdVisualizer() {
       <img
         ref={imgRef}
         src="/bus-mockup.jpg"
-        alt="DOOH LOVE LED bus Warszawa"
+        alt="DOOH LOVE LED bus"
         className="w-full h-auto block"
         onLoad={sync}
       />

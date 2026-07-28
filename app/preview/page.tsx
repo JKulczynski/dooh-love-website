@@ -26,7 +26,7 @@ export default function PreviewPage() {
       <div className="relative z-30 w-full flex flex-col items-center gap-6 px-6">
         <p className="text-xs uppercase tracking-[0.3em] text-brandCyan font-light"
           style={{ textShadow: "0 0 12px #00FFE5" }}>
-          Mobilna Reklama LED · Warszawa
+          Mobilna Reklama LED
         </p>
         <a
           href="/"

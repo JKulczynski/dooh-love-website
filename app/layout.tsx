@@ -23,22 +23,22 @@ const spaceGrotesk = Space_Grotesk({
 const siteUrl = "https://dooh-love.pl";
 
 export const metadata: Metadata = {
-  title: "DOOH-LOVE | Mobilna Reklama LED Warszawa",
-  description: "18m² ekranu LED jedzie przez centrum Warszawy. 3 dedykowane trasy, 15h ekspozycji dziennie. Kampania LED gotowa w 48h od briefingu. Od 3 500 PLN netto/dzień.",
+  title: "DOOH-LOVE | Mobilna Reklama LED",
+  description: "18m² ekranu LED jedzie przez centrum miasta. 3 dedykowane trasy, 15h ekspozycji dziennie. Kampania LED gotowa w 48h od briefingu. Od 3 500 PLN netto/dzień.",
   metadataBase: new URL(siteUrl),
   openGraph: {
-    title: "DOOH-LOVE | Mobilna Reklama LED Warszawa",
-    description: "18m² ekranu LED jedzie przez centrum Warszawy. Kampania gotowa w 48h. Od 3 500 PLN netto/dzień.",
+    title: "DOOH-LOVE | Mobilna Reklama LED",
+    description: "18m² ekranu LED jedzie przez centrum miasta. Kampania gotowa w 48h. Od 3 500 PLN netto/dzień.",
     url: siteUrl,
     siteName: "DOOH-LOVE",
     locale: "pl_PL",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "DOOH-LOVE — Mobilna Reklama LED Warszawa" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "DOOH-LOVE — Mobilna Reklama LED" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DOOH-LOVE | Mobilna Reklama LED Warszawa",
-    description: "18m² ekranu LED jedzie przez centrum Warszawy. Kampania gotowa w 48h. Od 3 500 PLN netto/dzień.",
+    title: "DOOH-LOVE | Mobilna Reklama LED",
+    description: "18m² ekranu LED jedzie przez centrum miasta. Kampania gotowa w 48h. Od 3 500 PLN netto/dzień.",
     images: ["/og-image.png"],
   },
   robots: {

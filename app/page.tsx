@@ -25,7 +25,7 @@ export default function Home() {
       <section className="py-10 px-6 bg-black border-t border-white/5 text-center">
         <div className="max-w-2xl mx-auto">
           <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-5 font-light">
-            Mobilna reklama LED · Warszawa
+            Mobilna reklama LED
           </p>
           <h1 className="text-[clamp(1.875rem,5vw+1rem,3.5rem)] font-bold uppercase tracking-tight leading-tight mb-5" style={{ textWrap: "balance" } as React.CSSProperties}>
             <span className="text-white">Całe miasto</span>{" "}
@@ -620,7 +620,6 @@ export default function Home() {
                     WhatsApp
                   </a>
                 </li>
-                <li className="text-muted400">Warszawa, PL</li>
               </ul>
             </div>
           </div>

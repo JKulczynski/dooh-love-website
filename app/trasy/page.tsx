@@ -68,7 +68,7 @@ export default function TrasyPage() {
       <section className="pt-32 pb-16 px-6 bg-black border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll>
-            <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-4">Warszawa · 3 trasy</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-brandCyan mb-4">3 trasy</p>
             <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tight mb-6">
               Nasze <span className="text-brandCyan">trasy</span>
             </h1>
@@ -273,7 +273,7 @@ export default function TrasyPage() {
           <a href="/" className="font-bold text-xl tracking-tighter">
             DOOH<span className="text-brandCyan">-</span>LOVE
           </a>
-          <p className="text-[10px] uppercase tracking-widest text-muted400">© 2026 DOOH-LOVE · Warszawa</p>
+          <p className="text-[10px] uppercase tracking-widest text-muted400">© 2026 DOOH-LOVE</p>
           <a href="/" className="text-xs text-muted400 hover:text-brandCyan transition-colors uppercase tracking-widest">
             Wróć na stronę główną
           </a>

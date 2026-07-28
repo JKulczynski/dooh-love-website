@@ -48,7 +48,7 @@ export default function HeroSection() {
         {/* Tagline */}
         <p className="text-xs uppercase tracking-[0.3em] text-brandCyan font-light"
           style={{ textShadow: "0 0 12px #00FFE5" }}>
-          Mobilna Reklama LED · Warszawa
+          Mobilna Reklama LED
         </p>
 
         {/* CTA */}

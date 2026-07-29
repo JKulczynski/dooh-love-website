@@ -13,7 +13,7 @@ export default function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[70%_center] md:object-center"
+          className="object-cover object-[45%_center] md:object-center"
           quality={85}
         />
         {/* Gradient: bottom fade to black */}

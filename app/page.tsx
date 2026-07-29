@@ -7,7 +7,6 @@ import AnimatedCounter from "./components/AnimatedCounter";
 import RevealOnScroll from "./components/RevealOnScroll";
 import WycenaSection from "./components/WycenaSection";
 import LedGrid from "./components/LedGrid";
-import PixelReveal from "./components/PixelReveal";
 
 export default function Home() {
   return (
@@ -113,7 +112,6 @@ export default function Home() {
       </section>
 
       {/* Przyjdź z pomysłem */}
-      <PixelReveal>
       <section className="py-24 px-6 bg-darkBg border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll>
@@ -181,10 +179,8 @@ export default function Home() {
           </RevealOnScroll>
         </div>
       </section>
-      </PixelReveal>
 
       {/* Dlaczego to działa */}
-      <PixelReveal>
       <section className="relative py-24 px-6 bg-black" id="solutions">
         <LedGrid />
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0a0a0a] to-transparent pointer-events-none z-10" />
@@ -219,7 +215,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      </PixelReveal>
 
       {/* Campaign Planner */}
       <WycenaSection />

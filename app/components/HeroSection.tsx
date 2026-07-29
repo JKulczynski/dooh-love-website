@@ -7,13 +7,24 @@ export default function HeroSection() {
 
       {/* Image background */}
       <div className="absolute inset-0 z-0">
+        {/* Mobile: dedicated portrait crop */}
+        <Image
+          src="/hero-truck-mobile.jpg"
+          alt="Samochód DOOH-LOVE z ekranem LED na tle panoramy miasta"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center md:hidden"
+          quality={85}
+        />
+        {/* Desktop: wide 21:9 crop */}
         <Image
           src="/hero-truck-skyline.jpg"
           alt="Samochód DOOH-LOVE z ekranem LED na tle panoramy miasta"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[45%_center] md:object-center"
+          className="hidden md:block object-cover object-center"
           quality={85}
         />
         {/* Gradient: bottom fade to black */}

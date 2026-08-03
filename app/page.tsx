@@ -7,6 +7,7 @@ import AnimatedCounter from "./components/AnimatedCounter";
 import RevealOnScroll from "./components/RevealOnScroll";
 import WycenaSection from "./components/WycenaSection";
 import LedGrid from "./components/LedGrid";
+import VisualizerGallery from "./components/VisualizerGallery";
 
 export default function Home() {
   return (
@@ -321,39 +322,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Galeria kampanii */}
-      <section className="hidden py-24 px-6 bg-black" id="galeria">
+      {/* Wizualizacje */}
+      <section className="py-24 px-6 bg-black" id="galeria">
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll>
-            <div className="mb-16 text-right">
+            <div className="mb-16">
+              <p className="text-xs uppercase tracking-[0.3em] text-brandMagenta mb-3">Wizualizacje</p>
               <h2 className="text-3xl font-bold uppercase tracking-tight mb-2">
-                Kampanie <span className="text-brandMagenta">w akcji</span>
+                Sprawdź, jak to <span className="text-brandCyan">może wyglądać</span>
               </h2>
-              <div className="w-20 h-1 bg-brandCyan ml-auto" />
+              <div className="w-20 h-1 bg-brandMagenta" />
             </div>
           </RevealOnScroll>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[
-              { size: "md:col-span-2", aspect: "aspect-[16/9]" },
-              { size: "",             aspect: "aspect-square" },
-              { size: "",             aspect: "aspect-square" },
-              { size: "",             aspect: "aspect-square" },
-              { size: "md:col-span-2", aspect: "aspect-[16/9]" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className={`${item.size} ${item.aspect} border border-white/10 bg-white/5 relative overflow-hidden group hover:border-brandMagenta/40 transition-all`}
-              >
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                  <svg className="h-8 w-8 text-white/20 group-hover:text-brandMagenta/40 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                    <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-                  </svg>
-                  <span className="text-[10px] uppercase tracking-widest text-white/20" aria-hidden="true">Zdjęcie kampanii</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <RevealOnScroll delay={100}>
+            <VisualizerGallery />
+          </RevealOnScroll>
         </div>
       </section>
 

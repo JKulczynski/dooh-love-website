@@ -9,17 +9,17 @@ const STYLES: {
   id: string;
   label: string;
   accent: string;
-  hero?: { img: Img; aspectClass: string };
+  heroes?: { img: Img; aspectClass: string }[];
   tiles: Img[];
 }[] = [
   {
     id: "neon-night",
     label: "Neon Night",
     accent: "brandCyan",
-    hero: {
-      img: { src: "/wizualizacje/neon-night/skyline.webp", w: 1600, h: 679 },
-      aspectClass: "aspect-[21/9]",
-    },
+    heroes: [
+      { img: { src: "/wizualizacje/neon-night/skyline.webp", w: 1600, h: 679 }, aspectClass: "aspect-[21/9]" },
+      { img: { src: "/wizualizacje/neon-night/swit.webp", w: 1000, h: 558 }, aspectClass: "aspect-[16/9]" },
+    ],
     tiles: [
       { src: "/wizualizacje/neon-night/deszcz.webp", w: 1000, h: 1241 },
       { src: "/wizualizacje/neon-night/rynek.webp", w: 1000, h: 1241 },
@@ -32,10 +32,9 @@ const STYLES: {
     id: "polish-urban",
     label: "Polska Ulica",
     accent: "brandMagenta",
-    hero: {
-      img: { src: "/wizualizacje/polish-urban/tramwaj.webp", w: 1600, h: 679 },
-      aspectClass: "aspect-[21/9]",
-    },
+    heroes: [
+      { img: { src: "/wizualizacje/polish-urban/tramwaj.webp", w: 1600, h: 679 }, aspectClass: "aspect-[21/9]" },
+    ],
     tiles: [
       { src: "/wizualizacje/polish-urban/targ.webp", w: 1000, h: 1241 },
       { src: "/wizualizacje/polish-urban/kazimierz.webp", w: 1000, h: 1241 },
@@ -46,10 +45,9 @@ const STYLES: {
     id: "hero-campaign",
     label: "Biznes",
     accent: "brandCyan",
-    hero: {
-      img: { src: "/wizualizacje/hero-campaign/financial.webp", w: 1600, h: 893 },
-      aspectClass: "aspect-[16/9]",
-    },
+    heroes: [
+      { img: { src: "/wizualizacje/hero-campaign/financial.webp", w: 1600, h: 893 }, aspectClass: "aspect-[16/9]" },
+    ],
     tiles: [
       { src: "/wizualizacje/hero-campaign/dron.webp", w: 1000, h: 1241 },
       { src: "/wizualizacje/hero-campaign/zmierzch.webp", w: 1000, h: 1241 },
@@ -71,10 +69,9 @@ const STYLES: {
     id: "moving-times-square",
     label: "Wielka Kampania",
     accent: "brandCyan",
-    hero: {
-      img: { src: "/wizualizacje/moving-times-square/konwoj.webp", w: 1600, h: 679 },
-      aspectClass: "aspect-[21/9]",
-    },
+    heroes: [
+      { img: { src: "/wizualizacje/moving-times-square/konwoj.webp", w: 1600, h: 679 }, aspectClass: "aspect-[21/9]" },
+    ],
     tiles: [
       { src: "/wizualizacje/moving-times-square/gala.webp", w: 1000, h: 1241 },
       { src: "/wizualizacje/moving-times-square/rooftop.webp", w: 1000, h: 1241 },
@@ -122,16 +119,16 @@ export default function VisualizerGallery() {
         })}
       </div>
 
-      {/* Hero, w naturalnych proporcjach zdjecia - bez wymuszonego kadrowania */}
-      {style.hero && (
-        <div className={`relative w-full ${style.hero.aspectClass} mb-3`}>
+      {/* Duze zdjecia u gory, kazde w swoich naturalnych proporcjach - bez wymuszonego kadrowania */}
+      {style.heroes?.map((h, i) => (
+        <div key={h.img.src} className={`relative w-full ${h.aspectClass} mb-3`}>
           <GalleryImage
-            src={style.hero.img.src}
-            alt={`Wizualizacja DOOH-LOVE, styl ${style.label}`}
+            src={h.img.src}
+            alt={`Wizualizacja DOOH-LOVE, styl ${style.label} ${i + 1}`}
             sizes="(max-width: 768px) 100vw, 1200px"
           />
         </div>
-      )}
+      ))}
 
       {/* Rowna siatka pozostalych zdjec, proporcja 4:5 dopasowana do oryginalow */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">

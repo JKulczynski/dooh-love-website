@@ -18,7 +18,6 @@ const STYLES: {
     accent: "brandCyan",
     heroes: [
       { img: { src: "/wizualizacje/neon-night/skyline.webp", w: 1600, h: 679 }, aspectClass: "aspect-[21/9]" },
-      { img: { src: "/wizualizacje/neon-night/swit.webp", w: 1000, h: 558 }, aspectClass: "aspect-[16/9]" },
     ],
     tiles: [
       { src: "/wizualizacje/neon-night/deszcz.webp", w: 1000, h: 1241 },

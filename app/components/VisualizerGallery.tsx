@@ -47,7 +47,7 @@ const STYLES = [
   {
     id: "moving-times-square",
     label: "Wielka Kampania",
-    accent: "brandAmber",
+    accent: "brandCyan",
     wide: { src: "/wizualizacje/moving-times-square/konwoj.webp", w: 1600, h: 679 },
     tiles: [
       { src: "/wizualizacje/moving-times-square/gala.webp", w: 1000, h: 1241 },

@@ -1,3 +1,4 @@
+import { EMAIL } from "./site";
 import Image from "next/image";
 import HeroSection from "./components/HeroSection";
 import StickyBar from "./components/StickyBar";
@@ -575,11 +576,13 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-xs font-bold uppercase tracking-widest text-muted400">Kontakt</h3>
               <ul className="text-sm space-y-3 text-muted400">
-                <li>
-                  <a href="mailto:hello@dooh-love.pl" className="hover:text-brandCyan transition-colors">
-                    hello@dooh-love.pl
-                  </a>
-                </li>
+                {EMAIL && (
+                  <li>
+                    <a href={`mailto:${EMAIL}`} className="hover:text-brandCyan transition-colors">
+                      {EMAIL}
+                    </a>
+                  </li>
+                )}
                 <li>
                   <a href="tel:+48668046599" className="hover:text-brandCyan transition-colors">
                     +48 668 046 599

@@ -3,7 +3,7 @@
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/48500600700?text=Chc%C4%99%20zarezerwowa%C4%87%20kampani%C4%99%20DOOH-LOVE"
+      href="https://wa.me/48668046599?text=Chc%C4%99%20zarezerwowa%C4%87%20kampani%C4%99%20DOOH-LOVE"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Napisz na WhatsApp"

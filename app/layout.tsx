@@ -1,3 +1,4 @@
+import { EMAIL, PHONE_E164, SITE_URL } from "./site";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
@@ -20,7 +21,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const siteUrl = "https://dooh-love.pl";
+const siteUrl = SITE_URL;
 
 export const metadata: Metadata = {
   title: "DOOH-LOVE | Mobilna Reklama LED",
@@ -59,8 +60,8 @@ const jsonLd = {
       name: "DOOH-LOVE",
       description: "Mobilna reklama LED w Warszawie. 18m² ekranu LED na ciężarówce jeździ przez centrum miasta 15 godzin dziennie po 3 dedykowanych trasach.",
       url: siteUrl,
-      telephone: "+48500600700",
-      email: "hello@dooh-love.pl",
+      telephone: PHONE_E164,
+      ...(EMAIL ? { email: EMAIL } : {}),
       address: {
         "@type": "PostalAddress",
         addressLocality: "Warszawa",

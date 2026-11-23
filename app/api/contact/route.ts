@@ -5,31 +5,42 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const TO = "kulczynski.jan.tomasz@gmail.com";
 const FROM = "onboarding@resend.dev";
 
+function esc(v: unknown) {
+  return String(v ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { type, ...fields } = body;
+    const { type, ...raw } = body;
+    const fields: Record<string, string> = Object.fromEntries(
+      Object.entries(raw).map(([k, v]) => [k, esc(Array.isArray(v) ? v.join(", ") : v)])
+    );
 
     let subject: string;
     let html: string;
 
     if (type === "lead") {
-      subject = `Wycena indywidualna — ${fields.firma || "brak firmy"}`;
+      subject = `Zapytanie ofertowe: ${raw.email || "brak maila"}`;
       html = `
         <h2>Nowe zapytanie o wycenę</h2>
         <table cellpadding="6">
-          <tr><td><b>Firma / Marka</b></td><td>${fields.firma || "-"}</td></tr>
           <tr><td><b>E-mail</b></td><td>${fields.email || "-"}</td></tr>
           <tr><td><b>Telefon</b></td><td>${fields.telefon || "-"}</td></tr>
-          <tr><td><b>Trasa / Miejsce</b></td><td>${fields.trasa || "-"}</td></tr>
+          <tr><td><b>Miasto / lokalizacja</b></td><td>${fields.lokalizacja || "-"}</td></tr>
           <tr><td><b>Termin kampanii</b></td><td>${fields.termin || "-"}</td></tr>
-          <tr><td><b>Ilość aut</b></td><td>${fields.ilosc || "1"}</td></tr>
-          <tr><td><b>Dodatkowe aktywności</b></td><td>${fields.aktywnosci?.join(", ") || "brak"}</td></tr>
+          <tr><td><b>Liczba dni / godzin</b></td><td>${fields.dni || "-"}</td></tr>
+          <tr><td><b>Liczba pojazdów LED</b></td><td>${fields.pojazdy || "-"}</td></tr>
+          <tr><td><b>Materiały reklamowe</b></td><td>${fields.materialy || "-"}</td></tr>
+          <tr><td><b>Dodatkowe usługi</b></td><td>${fields.uslugi || "brak"}</td></tr>
           <tr><td><b>Notatka</b></td><td>${fields.notatka || "brak"}</td></tr>
         </table>
       `;
     } else {
-      subject = `Zapytanie o kampanię — ${fields.name || "nowy kontakt"}`;
+      subject = `Zapytanie o kampanię: ${raw.name || "nowy kontakt"}`;
       html = `
         <h2>Nowe zapytanie przez formularz kontaktowy</h2>
         <table cellpadding="6">
@@ -40,7 +51,8 @@ export async function POST(req: NextRequest) {
       `;
     }
 
-    await resend.emails.send({ from: FROM, to: TO, subject, html });
+    const { error } = await resend.emails.send({ from: FROM, to: TO, subject, html });
+    if (error) throw new Error(error.message);
 
     return NextResponse.json({ ok: true });
   } catch (err) {

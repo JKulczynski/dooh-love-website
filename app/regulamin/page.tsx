@@ -1,3 +1,4 @@
+import { EMAIL, PHONE } from "../site";
 import NavBar from "../components/NavBar";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -29,7 +30,7 @@ export default function Regulamin() {
               <p>
                 Niniejszy regulamin określa zasady świadczenia usług mobilnej reklamy LED
                 przez DOOH-LOVE z siedzibą w Warszawie, NIP: [do uzupełnienia],
-                e-mail: hello@dooh-love.pl (dalej: Usługodawca).
+                {EMAIL ? <>e-mail: {EMAIL}</> : <>tel.: {PHONE}</>} (dalej: Usługodawca).
               </p>
               <p className="mt-3">
                 Korzystanie z usług DOOH-LOVE oznacza akceptację niniejszego regulaminu.
@@ -119,7 +120,8 @@ export default function Regulamin() {
                 7. Reklamacje
               </h2>
               <p>
-                Reklamacje należy składać drogą mailową na adres hello@dooh-love.pl
+                Reklamacje należy składać {" "}
+                {EMAIL ? <>drogą mailową na adres {EMAIL}</> : <>telefonicznie pod numerem {PHONE} lub przez formularz na stronie</>}{" "}
                 w terminie 7 dni od daty realizacji kampanii. Usługodawca rozpatruje
                 reklamacje w terminie 14 dni roboczych.
               </p>

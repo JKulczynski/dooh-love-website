@@ -1,5 +1,6 @@
 "use client";
 
+import { PHONE, PHONE_E164 } from "../site";
 import { useState } from "react";
 
 const MATERIALY = [
@@ -20,6 +21,7 @@ const USLUGI = [
 export default function LeadForm() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
   const [form, setForm] = useState({
     email: "",
     telefon: "",
@@ -43,13 +45,17 @@ export default function LeadForm() {
     e.preventDefault();
     if (sending) return;
     setSending(true);
+    setFailed(false);
     try {
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ type: "lead", ...form }),
       });
-      setSent(true);
+      if (res.ok) setSent(true);
+      else setFailed(true);
+    } catch {
+      setFailed(true);
     } finally {
       setSending(false);
     }
@@ -221,6 +227,12 @@ export default function LeadForm() {
       >
         {sending ? "Wysyłanie..." : "Wyślij zapytanie"}
       </button>
+      {failed && (
+        <p role="alert" className="text-center text-sm text-brandMagenta">
+          Nie udało się wysłać zapytania. Spróbuj ponownie albo zadzwoń:{" "}
+          <a href={`tel:${PHONE_E164}`} className="underline">{PHONE}</a>
+        </p>
+      )}
       <p className="text-center text-xs text-muted400 uppercase tracking-widest">
         Odpowiemy w przeciągu 24h. Sprawa pilna? Zachęcamy do kontaktu telefonicznego.
       </p>

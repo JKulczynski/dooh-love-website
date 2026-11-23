@@ -1,3 +1,4 @@
+import { EMAIL, PHONE } from "../site";
 import NavBar from "../components/NavBar";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -29,7 +30,7 @@ export default function PolitykaPrywatnosci() {
               <p>
                 Administratorem Twoich danych osobowych jest DOOH-LOVE,
                 z siedzibą w Warszawie (adres do uzupełnienia), NIP: [do uzupełnienia],
-                e-mail: hello@dooh-love.pl, tel.: +48 500 600 700.
+                {EMAIL && <>e-mail: {EMAIL}, </>}tel.: {PHONE}.
               </p>
             </div>
 
@@ -74,7 +75,7 @@ export default function PolitykaPrywatnosci() {
                 Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia,
                 ograniczenia przetwarzania, przenoszenia oraz wniesienia sprzeciwu.
                 Możesz w każdej chwili wycofać zgodę, kontaktując się z nami
-                pod adresem hello@dooh-love.pl.
+                {EMAIL ? <>pod adresem {EMAIL}</> : <>pod numerem {PHONE}</>}.
               </p>
               <p className="mt-3">
                 Przysługuje Ci również prawo wniesienia skargi do Prezesa Urzędu
@@ -99,7 +100,7 @@ export default function PolitykaPrywatnosci() {
               </h2>
               <p>
                 W sprawach związanych z ochroną danych osobowych skontaktuj się
-                pod adresem: hello@dooh-love.pl lub telefonicznie: +48 500 600 700.
+                {EMAIL && <>pod adresem: {EMAIL} lub </>}telefonicznie: {PHONE}.
               </p>
             </div>
 
